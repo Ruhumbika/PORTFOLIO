@@ -50,7 +50,11 @@ export const projects: Project[] = [
     users:
       'Council administrators, licensing officers and revenue staff at Kilindi District Council.',
     images: [
-      { label: 'Administrative dashboard', ratio: 'video' },
+      {
+        label: 'KDILMS super admin analytical dashboard',
+        src: '/projects/kdilms/admin-dashboard.webp',
+        ratio: 'video',
+      },
       { label: 'Trader management screen', ratio: 'video' },
       { label: 'Licence issuance & renewal', ratio: 'video' },
       { label: 'Reporting view', ratio: 'video' },
@@ -335,7 +339,11 @@ export const projects: Project[] = [
     ],
     users: 'Barbershop customers booking appointments and browsing styles and services.',
     images: [
-      { label: 'Homepage', ratio: 'video' },
+      {
+        label: 'RJAY Barbershop haircut gallery and booking interface',
+        src: '/projects/rjay-barbershop/gallery-booking.webp',
+        ratio: 'video',
+      },
       { label: 'Booking journey', ratio: 'portrait' },
       { label: 'Services', ratio: 'video' },
       { label: 'Haircut catalogue', ratio: 'square' },

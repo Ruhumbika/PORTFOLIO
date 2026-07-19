@@ -1,0 +1,196 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+   Strict three-colour system
+   Near Black  #0B0F14
+   White       #FFFFFF
+   Teal        #14B8A6
+   All muted backgrounds, borders and secondary text are opacity variations
+   of these three colours only.
+   ========================================================================== */
+
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Dark mode is the default */
+:root,
+.dark {
+  color-scheme: dark;
+
+  --background: #0b0f14;
+  --foreground: #ffffff;
+
+  --card: rgba(255, 255, 255, 0.04);
+  --card-foreground: #ffffff;
+
+  --popover: #10151b;
+  --popover-foreground: #ffffff;
+
+  --primary: #14b8a6;
+  --primary-foreground: #04110f;
+
+  --secondary: rgba(255, 255, 255, 0.06);
+  --secondary-foreground: #ffffff;
+
+  --muted: rgba(255, 255, 255, 0.04);
+  --muted-foreground: rgba(255, 255, 255, 0.66);
+
+  --accent: #14b8a6;
+  --accent-foreground: #04110f;
+
+  --destructive: #14b8a6;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: rgba(20, 184, 166, 0.5);
+
+  --radius: 0.5rem;
+
+  --font-geist-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* subtle hero wash: near-black -> near-black with teal opacity */
+  --hero-wash: radial-gradient(
+    120% 90% at 80% 0%,
+    rgba(20, 184, 166, 0.14) 0%,
+    rgba(20, 184, 166, 0.04) 30%,
+    transparent 62%
+  );
+}
+
+.light {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #0b0f14;
+
+  --card: rgba(11, 15, 20, 0.02);
+  --card-foreground: #0b0f14;
+
+  --popover: #ffffff;
+  --popover-foreground: #0b0f14;
+
+  --primary: #14b8a6;
+  --primary-foreground: #ffffff;
+
+  --secondary: rgba(11, 15, 20, 0.04);
+  --secondary-foreground: #0b0f14;
+
+  --muted: rgba(11, 15, 20, 0.03);
+  --muted-foreground: rgba(11, 15, 20, 0.65);
+
+  --accent: #14b8a6;
+  --accent-foreground: #ffffff;
+
+  --destructive: #14b8a6;
+
+  --border: rgba(11, 15, 20, 0.1);
+  --input: rgba(11, 15, 20, 0.16);
+  --ring: rgba(20, 184, 166, 0.5);
+
+  --hero-wash: radial-gradient(
+    120% 90% at 80% 0%,
+    rgba(20, 184, 166, 0.1) 0%,
+    rgba(20, 184, 166, 0.03) 30%,
+    transparent 62%
+  );
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+  ::selection {
+    background: rgba(20, 184, 166, 0.28);
+  }
+  /* Visible, consistent focus states */
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility: fine technical grid detail */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      var(--border) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.hero-wash {
+  background-image: var(--hero-wash);
+}
+
+/* Animated underline for links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.28s ease;
+}
+.link-underline:hover::after,
+.link-underline[data-active='true']::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

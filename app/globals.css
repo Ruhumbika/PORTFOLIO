@@ -414,6 +414,11 @@
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
 }
 
+.ascii-system-signal {
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--primary) 78%, transparent);
+}
+
 .light .ascii-tree-shell {
   background: rgba(235, 235, 232, 0.74);
   box-shadow:
@@ -449,6 +454,16 @@
 
 .ascii-tree-prefix {
   color: color-mix(in srgb, var(--primary) 68%, var(--muted-foreground));
+}
+
+.ascii-proof-card {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+.light .ascii-proof-card {
+  box-shadow:
+    7px 8px 18px rgba(125, 125, 121, 0.14),
+    -5px -5px 14px rgba(255, 255, 255, 0.62);
 }
 
 @keyframes orbit-ring-breathe {

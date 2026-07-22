@@ -126,6 +126,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: 'liga' 1, 'calt' 1;
+    padding-bottom: 7rem;
     transition: background-color 0.35s ease, color 0.35s ease;
   }
   ::selection {
@@ -299,12 +300,22 @@
 
 /* Continuous right-to-left technical logo rail. */
 .skill-logo-flow {
+  background: rgba(11, 15, 20, 0.88);
+  box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px) saturate(140%);
   animation: skill-rail-reveal 0.85s 0.8s both cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.light .skill-logo-flow {
+  background: rgba(231, 231, 229, 0.88);
+  box-shadow:
+    0 -16px 40px rgba(125, 125, 121, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .skill-logo-viewport {
   overflow: hidden;
-  padding-block: 1rem;
+  padding-block: 0.5rem;
   mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 

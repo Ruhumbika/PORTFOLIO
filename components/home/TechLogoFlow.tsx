@@ -86,8 +86,8 @@ function LogoSet({ duplicate = false }: { duplicate?: boolean }) {
 
 export function TechLogoFlow() {
   return (
-    <section className="skill-logo-flow relative border-b border-border py-7" aria-labelledby="skill-flow-title">
-      <div className="mx-auto mb-5 flex max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+    <section className="skill-logo-flow fixed inset-x-0 bottom-0 z-[55] border-t border-border py-2" aria-labelledby="skill-flow-title">
+      <div className="mx-auto mb-1 flex max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <p id="skill-flow-title" className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
           Technical stack in motion
         </p>

@@ -35,7 +35,7 @@ export function FloatingHire() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.9 }}
           transition={{ type: 'spring', stiffness: 380, damping: 26 }}
-          className="fixed bottom-5 right-5 z-50 flex items-center"
+          className="fixed bottom-[8rem] right-5 z-50 flex items-center"
         >
           <motion.div
             whileHover={reduce ? undefined : { y: -3 }}

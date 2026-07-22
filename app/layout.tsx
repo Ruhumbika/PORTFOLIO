@@ -6,6 +6,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { FloatingHire } from '@/components/shared/FloatingHire'
 import { SitePreloader } from '@/components/shared/SitePreloader'
+import { TechLogoFlow } from '@/components/home/TechLogoFlow'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -115,6 +116,7 @@ export default function RootLayout({
           <main id="main">{children}</main>
           <Footer />
           <FloatingHire />
+          <TechLogoFlow />
         </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

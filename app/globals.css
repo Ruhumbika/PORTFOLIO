@@ -270,6 +270,62 @@
   pointer-events: none;
 }
 
+.profile-flip-card {
+  transform-style: preserve-3d;
+}
+
+.profile-flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.profile-flip-back {
+  transform: rotateY(180deg);
+}
+
+.profile-flip-card[data-flipped='false'] .profile-flip-back,
+.profile-flip-card[data-flipped='true'] .profile-flip-front {
+  pointer-events: none;
+}
+
+.profile-opportunity-popup {
+  position: absolute;
+  left: 50%;
+  top: -4.25rem;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  white-space: nowrap;
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  padding: 0.65rem 0.9rem;
+  color: var(--foreground);
+  font-family: var(--font-geist-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px);
+}
+
+.light .profile-opportunity-popup {
+  background: rgba(239, 239, 237, 0.92);
+  box-shadow:
+    8px 10px 20px rgba(125, 125, 121, 0.2),
+    -7px -7px 16px rgba(255, 255, 255, 0.76);
+}
+
+.opportunity-icon {
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--primary) 24%, transparent);
+}
+
+.opportunity-glow {
+  animation: opportunity-glow 4s ease-in-out infinite;
+}
+
 .profile-orbit-card {
   position: absolute;
   left: 50%;
@@ -404,6 +460,18 @@
   50% {
     transform: scale(1.02) rotate(4deg);
     opacity: 0.78;
+  }
+}
+
+@keyframes opportunity-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
   }
 }
 

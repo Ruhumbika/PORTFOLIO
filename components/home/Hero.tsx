@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import {
+  AnimatePresence,
   motion,
   useMotionValue,
   useReducedMotion,
@@ -12,12 +14,14 @@ import {
 import {
   ArrowRight,
   BrainCircuit,
+  BriefcaseBusiness,
   CalendarDays,
   Code2,
   Download,
   MapPin,
   PenTool,
   Rocket,
+  RotateCcw,
 } from 'lucide-react'
 import { site } from '@/data/site'
 import { Button } from '@/components/shared/Button'
@@ -55,6 +59,8 @@ const orbitCards = [
 
 export function Hero() {
   const reduce = useReducedMotion()
+  const [profileFlipped, setProfileFlipped] = useState(false)
+  const [autoRevealCancelled, setAutoRevealCancelled] = useState(false)
   const pointerX = useMotionValue(0)
   const pointerY = useMotionValue(0)
   const rotateX = useSpring(useTransform(pointerY, [-0.5, 0.5], [5, -5]), {
@@ -75,6 +81,17 @@ export function Hero() {
     stiffness: 150,
     damping: 22,
   })
+
+  useEffect(() => {
+    if (autoRevealCancelled) return
+    const timer = window.setTimeout(() => setProfileFlipped(true), 30_000)
+    return () => window.clearTimeout(timer)
+  }, [autoRevealCancelled])
+
+  function toggleProfileCard() {
+    setAutoRevealCancelled(true)
+    setProfileFlipped((current) => !current)
+  }
 
   function handleVisualPointer(event: React.PointerEvent<HTMLDivElement>) {
     if (reduce) return
@@ -240,6 +257,28 @@ export function Hero() {
             className="relative w-full max-w-sm"
             style={reduce ? undefined : { rotateX, rotateY, perspective: 1100 }}
           >
+            <AnimatePresence>
+              {profileFlipped ? (
+                <motion.div
+                  initial={reduce ? false : { opacity: 0, x: '-50%', y: 10, scale: 0.92 }}
+                  animate={{ opacity: 1, x: '-50%', y: 0, scale: 1 }}
+                  exit={reduce ? undefined : { opacity: 0, x: '-50%', y: 8, scale: 0.94 }}
+                  transition={{ type: 'spring', stiffness: 320, damping: 24 }}
+                  className="profile-opportunity-popup"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <span className="relative flex h-2 w-2">
+                    {!reduce ? (
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-55" />
+                    ) : null}
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                  </span>
+                  Currently seeking a role
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
+
             <div className="profile-orbit-ring" aria-hidden="true" />
             {orbitCards.map(({ label, Icon, x, y }) => (
               <motion.div
@@ -272,15 +311,30 @@ export function Hero() {
               <span className="[writing-mode:vertical-rl]">product · engineer</span>
             </div>
 
-            <div className="hero-profile-surface group rounded-2xl border border-border bg-card p-3 backdrop-blur-sm">
+            <motion.div
+              className="profile-flip-card relative"
+              animate={{ rotateY: profileFlipped ? 180 : 0 }}
+              transition={
+                reduce
+                  ? { duration: 0 }
+                  : { duration: 0.85, ease: [0.22, 1, 0.36, 1] }
+              }
+              data-flipped={profileFlipped}
+            >
+              <div className="hero-profile-surface profile-flip-face profile-flip-front group rounded-2xl border border-border bg-card p-3 backdrop-blur-sm">
               <div className="flex items-center justify-between border-b border-border pb-3">
                 <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   ~/ruhumbika
                 </span>
-                <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-primary">
+                <button
+                  type="button"
+                  onClick={toggleProfileCard}
+                  className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-primary transition-colors hover:bg-primary/10"
+                  aria-label="Show current job opportunity message"
+                >
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  online
-                </span>
+                  opportunity
+                </button>
               </div>
 
               <div className="relative mt-3 aspect-[4/5] w-full overflow-hidden rounded-lg border border-border bg-background/40">
@@ -326,7 +380,64 @@ export function Hero() {
                   </TechTag>
                 ))}
               </div>
-            </div>
+              </div>
+              <div className="hero-profile-surface profile-flip-face profile-flip-back absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 backdrop-blur-xl sm:p-7">
+                <div className="bg-grid pointer-events-none absolute inset-0 opacity-20" aria-hidden="true" />
+                <div className="opportunity-glow pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-primary/20 blur-3xl" aria-hidden="true" />
+
+                <div className="relative flex items-center justify-between border-b border-border pb-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
+                    Opportunity signal
+                  </span>
+                  <button
+                    type="button"
+                    onClick={toggleProfileCard}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-secondary text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                    aria-label="Show profile photo"
+                  >
+                    <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+                  </button>
+                </div>
+
+                <div className="relative flex flex-1 flex-col justify-center py-6">
+                  <motion.span
+                    animate={reduce ? undefined : { y: [0, -6, 0], rotate: [0, -3, 0] }}
+                    transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
+                    className="opportunity-icon flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-primary"
+                  >
+                    <BriefcaseBusiness className="h-7 w-7" aria-hidden="true" />
+                  </motion.span>
+
+                  <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
+                    Available now
+                  </p>
+                  <h3 className="mt-3 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+                    Open to the right opportunity.
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    I&apos;m currently seeking graduate, internship and junior developer roles where I can contribute across full-stack systems, AI applications and user-centred products.
+                  </p>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {['Full-stack', 'AI applications', 'Dar es Salaam'].map((item) => (
+                      <span key={item} className="rounded-full border border-border bg-secondary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative grid gap-2 border-t border-border pt-4 sm:grid-cols-2">
+                  <Button href="/availability" size="sm">
+                    Let&apos;s talk
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </Button>
+                  <Button href="/contact" variant="outline" size="sm">
+                    Contact me
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

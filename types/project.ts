@@ -12,7 +12,7 @@ export interface ProjectImage {
   /** Optional real screenshot path, e.g. /projects/kdilms/dashboard.webp */
   src?: string
   /** Suggested aspect ratio for the placeholder frame. */
-  ratio?: 'video' | 'square' | 'portrait' | 'wide'
+  ratio?: 'video' | 'square' | 'portrait' | 'wide' | 'screen'
 }
 
 export interface CaseStudySection {

@@ -8,6 +8,7 @@ const ratioClass: Record<NonNullable<ProjectImage['ratio']>, string> = {
   square: 'aspect-square',
   portrait: 'aspect-[3/4]',
   wide: 'aspect-[16/7]',
+  screen: 'aspect-[2/1]',
 }
 
 interface PlaceholderImageProps {

@@ -107,9 +107,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Education */}
+      {/* Academic qualifications */}
       <div className="mt-20">
-        <SectionHeading label="Education" title="Academic background" />
+        <SectionHeading label="Academic credentials" title="Academic qualifications" />
         <div className="mt-8 space-y-4">
           {education.map((e, i) => (
             <Reveal key={e.qualification} delay={i * 0.05}>
@@ -145,9 +145,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Training */}
+      {/* Professional certifications and training */}
       <div className="mt-20">
-        <SectionHeading label="Development" title="Training and programmes" />
+        <SectionHeading label="Professional credentials" title="Certifications and training" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {training.map((t, i) => (
             <Reveal key={t.title} delay={i * 0.05}>

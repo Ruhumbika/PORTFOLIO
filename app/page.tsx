@@ -11,6 +11,7 @@ import { QuickHire } from "@/components/home/QuickHire"
 import { ContactCTA } from "@/components/home/ContactCTA"
 import { TestimonialsSection } from "@/components/home/TestimonialsSection"
 import { AsciiTreeSection } from "@/components/home/AsciiTreeSection"
+import { CertificationsSection } from "@/components/home/CertificationsSection"
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ExpertiseSection />
       <FeaturedProjects />
       <TechnicalCapabilities />
+      <CertificationsSection />
       <ExperiencePreview />
       <TestimonialsSection />
       <ProcessSection />

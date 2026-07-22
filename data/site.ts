@@ -61,7 +61,7 @@ export const site = {
     { value: 'Full-Stack + AI', label: 'Core Focus' },
     { value: 'Dar es Salaam', label: 'Based in Tanzania' },
   ],
-  url: 'https://ruhumbika.vercel.app',
+  url: 'https://portfolio-ruhumbikas-projects.vercel.app',
 } as const
 
 export const navItems = [

@@ -6,7 +6,7 @@ type Variant = 'primary' | 'outline' | 'ghost'
 type Size = 'sm' | 'md'
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-md font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 will-change-transform active:translate-y-px'
+  'madde-button inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 will-change-transform active:translate-y-px'
 
 const variants: Record<Variant, string> = {
   primary:

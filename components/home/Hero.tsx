@@ -1,7 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import { motion, useReducedMotion, type Variants } from 'framer-motion'
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  useTransform,
+  type Variants,
+} from 'framer-motion'
 import { ArrowRight, CalendarDays, Download, MapPin } from 'lucide-react'
 import { site } from '@/data/site'
 import { Button } from '@/components/shared/Button'
@@ -9,9 +16,34 @@ import { SocialLinks } from '@/components/shared/SocialLinks'
 import { TechTag } from '@/components/shared/TechTag'
 
 const heroTech = ['Laravel', 'FastAPI', 'Flutter', 'Node.js', 'Ollama', 'PostgreSQL']
+const workflowNodes = Array.from({ length: 20 }, (_, index) => index)
 
 export function Hero() {
   const reduce = useReducedMotion()
+  const pointerX = useMotionValue(0)
+  const pointerY = useMotionValue(0)
+  const rotateX = useSpring(useTransform(pointerY, [-0.5, 0.5], [5, -5]), {
+    stiffness: 180,
+    damping: 22,
+  })
+  const rotateY = useSpring(useTransform(pointerX, [-0.5, 0.5], [-6, 6]), {
+    stiffness: 180,
+    damping: 22,
+  })
+  const nodeX = useSpring(useTransform(pointerX, [-0.5, 0.5], [-12, 12]))
+  const nodeY = useSpring(useTransform(pointerY, [-0.5, 0.5], [-10, 10]))
+
+  function handleVisualPointer(event: React.PointerEvent<HTMLDivElement>) {
+    if (reduce) return
+    const bounds = event.currentTarget.getBoundingClientRect()
+    pointerX.set((event.clientX - bounds.left) / bounds.width - 0.5)
+    pointerY.set((event.clientY - bounds.top) / bounds.height - 0.5)
+  }
+
+  function resetVisualPointer() {
+    pointerX.set(0)
+    pointerY.set(0)
+  }
 
   const container = {
     hidden: {},
@@ -138,19 +170,38 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative flex items-center justify-center"
+          className="relative flex min-h-[31rem] items-center justify-center"
+          onPointerMove={handleVisualPointer}
+          onPointerLeave={resetVisualPointer}
         >
           {/* Subtle abstract teal shape behind image */}
           <div
             className="absolute -right-6 -top-6 h-40 w-40 rounded-2xl bg-primary/15 blur-2xl"
             aria-hidden="true"
           />
-          <div className="relative w-full max-w-sm">
+          <motion.div
+            className="workflow-field"
+            style={reduce ? undefined : { x: nodeX, y: nodeY }}
+            aria-hidden="true"
+          >
+            {workflowNodes.map((node) => (
+              <span
+                key={node}
+                className={`workflow-node ${node === 6 || node === 14 ? 'is-active' : ''}`}
+                style={{ '--node-index': node } as React.CSSProperties}
+              />
+            ))}
+          </motion.div>
+
+          <motion.div
+            className="relative w-full max-w-sm"
+            style={reduce ? undefined : { rotateX, rotateY, perspective: 1100 }}
+          >
             <div className="absolute -left-3 top-6 hidden font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground lg:block">
               <span className="[writing-mode:vertical-rl]">product · engineer</span>
             </div>
 
-            <div className="group rounded-xl border border-border bg-card p-3 backdrop-blur-sm">
+            <div className="hero-profile-surface group rounded-2xl border border-border bg-card p-3 backdrop-blur-sm">
               <div className="flex items-center justify-between border-b border-border pb-3">
                 <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   ~/ruhumbika
@@ -190,7 +241,7 @@ export function Hero() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 

@@ -9,6 +9,7 @@ import { EntrepreneurshipSection } from "@/components/home/EntrepreneurshipSecti
 import { InterviewBookingPreview } from "@/components/home/InterviewBookingPreview"
 import { QuickHire } from "@/components/home/QuickHire"
 import { ContactCTA } from "@/components/home/ContactCTA"
+import { TestimonialsSection } from "@/components/home/TestimonialsSection"
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <FeaturedProjects />
       <TechnicalCapabilities />
       <ExperiencePreview />
+      <TestimonialsSection />
       <ProcessSection />
       <EntrepreneurshipSection />
       <InterviewBookingPreview />

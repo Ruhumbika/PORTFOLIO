@@ -3,14 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ==========================================================================
-   Strict three-colour system
-   Near Black  #0B0F14
-   White       #FFFFFF
-   Teal        #14B8A6
-   All muted backgrounds, borders and secondary text are opacity variations
-   of these three colours only.
-   ========================================================================== */
+/* Core tokens. Dark mode keeps the original teal system. Light mode uses a
+   pearl, ink and muted-blue palette with soft dimensional surfaces. */
 
 @theme inline {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -90,39 +84,36 @@
 .light {
   color-scheme: light;
 
-  --background: #ffffff;
-  --foreground: #0b0f14;
+  --background: #e7e7e5;
+  --foreground: #0c0e19;
 
-  --card: rgba(11, 15, 20, 0.02);
-  --card-foreground: #0b0f14;
+  --card: rgba(244, 244, 242, 0.72);
+  --card-foreground: #0c0e19;
 
-  --popover: #ffffff;
-  --popover-foreground: #0b0f14;
+  --popover: #efefed;
+  --popover-foreground: #0c0e19;
 
-  --primary: #14b8a6;
-  --primary-foreground: #ffffff;
+  --primary: #171d46;
+  --primary-foreground: #f8f8f6;
 
-  --secondary: rgba(11, 15, 20, 0.04);
-  --secondary-foreground: #0b0f14;
+  --secondary: rgba(255, 255, 255, 0.38);
+  --secondary-foreground: #0c0e19;
 
-  --muted: rgba(11, 15, 20, 0.03);
-  --muted-foreground: rgba(11, 15, 20, 0.65);
+  --muted: rgba(255, 255, 255, 0.28);
+  --muted-foreground: #585c5f;
 
-  --accent: #14b8a6;
+  --accent: #2a62ab;
   --accent-foreground: #ffffff;
 
-  --destructive: #14b8a6;
+  --destructive: #ac554f;
 
-  --border: rgba(11, 15, 20, 0.1);
-  --input: rgba(11, 15, 20, 0.16);
-  --ring: rgba(20, 184, 166, 0.5);
+  --border: rgba(12, 14, 25, 0.11);
+  --input: rgba(12, 14, 25, 0.18);
+  --ring: rgba(42, 98, 171, 0.42);
 
-  --hero-wash: radial-gradient(
-    120% 90% at 80% 0%,
-    rgba(20, 184, 166, 0.1) 0%,
-    rgba(20, 184, 166, 0.03) 30%,
-    transparent 62%
-  );
+  --hero-wash:
+    radial-gradient(70% 75% at 84% 28%, rgba(255, 255, 255, 0.78) 0%, transparent 66%),
+    radial-gradient(55% 55% at 12% 8%, rgba(255, 255, 255, 0.48) 0%, transparent 72%);
 }
 
 @layer base {
@@ -135,6 +126,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: 'liga' 1, 'calt' 1;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
   ::selection {
     background: rgba(20, 184, 166, 0.28);
@@ -171,6 +163,138 @@
 
 .hero-wash {
   background-image: var(--hero-wash);
+}
+
+/* Pearl light theme inspired by tactile industrial interfaces. */
+.light body {
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.52), transparent 28rem),
+    linear-gradient(180deg, #e9e9e7 0%, #e4e4e2 100%);
+  background-attachment: fixed;
+}
+
+.light .bg-card {
+  box-shadow:
+    12px 12px 28px rgba(126, 126, 122, 0.14),
+    -10px -10px 24px rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(14px);
+}
+
+.light .madde-button {
+  border-color: rgba(12, 14, 25, 0.08);
+  box-shadow:
+    5px 6px 13px rgba(121, 121, 117, 0.2),
+    -5px -5px 12px rgba(255, 255, 255, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.light .madde-button:hover {
+  box-shadow:
+    8px 9px 18px rgba(121, 121, 117, 0.24),
+    -6px -6px 14px rgba(255, 255, 255, 0.78);
+}
+
+.light .madde-button:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 3px 3px 7px rgba(121, 121, 117, 0.19),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.66);
+}
+
+.light .madde-button.border-border,
+.light .madde-button.bg-transparent {
+  background: rgba(239, 239, 237, 0.72);
+}
+
+.light .link-underline::after {
+  background: var(--accent);
+}
+
+.workflow-field {
+  position: absolute;
+  inset: 3% -2% 4% 2%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.55rem, 1.4vw, 1rem);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.light .workflow-field {
+  opacity: 0.9;
+}
+
+.workflow-node {
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+  animation: node-float 5.5s ease-in-out infinite;
+  animation-delay: calc(var(--node-index) * -170ms);
+}
+
+.light .workflow-node {
+  background: linear-gradient(145deg, #f1f1ef, #dededb);
+  box-shadow:
+    8px 10px 17px rgba(132, 132, 128, 0.22),
+    -7px -7px 14px rgba(255, 255, 255, 0.78);
+}
+
+.workflow-node.is-active {
+  background: linear-gradient(145deg, #252d63, #11152f);
+  border-color: rgba(42, 98, 171, 0.34);
+  box-shadow: 0 15px 28px rgba(12, 14, 25, 0.28);
+}
+
+.hero-profile-surface {
+  transform-style: preserve-3d;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.22);
+}
+
+.light .hero-profile-surface {
+  background: rgba(237, 237, 234, 0.83);
+  box-shadow:
+    20px 24px 48px rgba(125, 125, 121, 0.24),
+    -16px -16px 36px rgba(255, 255, 255, 0.74);
+}
+
+.testimonial-card {
+  transform-style: preserve-3d;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+.light .testimonial-card {
+  background: linear-gradient(145deg, rgba(242, 242, 239, 0.86), rgba(222, 222, 219, 0.7));
+  box-shadow:
+    15px 18px 34px rgba(125, 125, 121, 0.19),
+    -12px -12px 28px rgba(255, 255, 255, 0.68);
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(42, 98, 171, 0.16), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.testimonial-card:hover::after,
+.testimonial-card:focus-visible::after {
+  opacity: 1;
+}
+
+@keyframes node-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -7px, 0);
+  }
 }
 
 /* Animated underline for links */

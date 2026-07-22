@@ -60,7 +60,6 @@ const orbitCards = [
 export function Hero() {
   const reduce = useReducedMotion()
   const [profileFlipped, setProfileFlipped] = useState(false)
-  const [autoRevealCancelled, setAutoRevealCancelled] = useState(false)
   const pointerX = useMotionValue(0)
   const pointerY = useMotionValue(0)
   const rotateX = useSpring(useTransform(pointerY, [-0.5, 0.5], [5, -5]), {
@@ -83,13 +82,16 @@ export function Hero() {
   })
 
   useEffect(() => {
-    if (autoRevealCancelled) return
-    const timer = window.setTimeout(() => setProfileFlipped(true), 30_000)
-    return () => window.clearTimeout(timer)
-  }, [autoRevealCancelled])
+    const revealTimer = window.setTimeout(() => setProfileFlipped(true), 30_000)
+    const resetTimer = window.setTimeout(() => setProfileFlipped(false), 90_000)
+
+    return () => {
+      window.clearTimeout(revealTimer)
+      window.clearTimeout(resetTimer)
+    }
+  }, [])
 
   function toggleProfileCard() {
-    setAutoRevealCancelled(true)
     setProfileFlipped((current) => !current)
   }
 
@@ -415,11 +417,11 @@ export function Hero() {
                     Open to the right opportunity.
                   </h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    I&apos;m currently seeking graduate, internship and junior developer roles where I can contribute across full-stack systems, AI applications and user-centred products.
+                    I&apos;m currently seeking graduate, internship and junior opportunities in software engineering, quality assurance, full-stack systems, AI applications and data-driven products.
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {['Full-stack', 'AI applications', 'Dar es Salaam'].map((item) => (
+                    {['Software engineering', 'Quality assurance', 'Data & AI'].map((item) => (
                       <span key={item} className="rounded-full border border-border bg-secondary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em]">
                         {item}
                       </span>

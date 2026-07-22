@@ -52,7 +52,29 @@ export const skillGroups: SkillGroup[] = [
       'SQLite',
       'Microsoft SQL Server',
       'Database Design',
+    ],
+  },
+  {
+    category: 'Data & Business Intelligence',
+    emphasis: true,
+    items: [
+      'Power BI (Strong Proficiency)',
+      'Data Visualization',
+      'Reporting Dashboards',
+      'Data Analysis',
+      'Business Intelligence',
       'Data Import & Validation',
+    ],
+  },
+  {
+    category: 'Quality Assurance & Testing',
+    items: [
+      'Manual Functional Testing',
+      'System Testing',
+      'User Acceptance Testing',
+      'API Testing with Postman',
+      'Test Case Design',
+      'Defect Documentation & Retesting',
     ],
   },
   {
@@ -78,7 +100,6 @@ export const skillGroups: SkillGroup[] = [
       'User Stories',
       'UAT',
       'SRS Documentation',
-      'System Testing',
       'Troubleshooting',
       'Technical Documentation',
       'Systems Analysis & Design',

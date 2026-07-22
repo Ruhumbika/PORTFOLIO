@@ -33,6 +33,11 @@ interface LogoSkill {
   icon: SimpleIcon
 }
 
+const powerBiIcon = {
+  hex: 'F2C811',
+  path: 'M3 15.75a1.75 1.75 0 0 1 1.75-1.75h1.5A1.75 1.75 0 0 1 8 15.75v4.5A1.75 1.75 0 0 1 6.25 22h-1.5A1.75 1.75 0 0 1 3 20.25zm4.4-5A1.75 1.75 0 0 1 9.15 9h1.5a1.75 1.75 0 0 1 1.75 1.75v9.5A1.75 1.75 0 0 1 10.65 22h-1.5a1.75 1.75 0 0 1-1.75-1.75zm4.4-4A1.75 1.75 0 0 1 13.55 5h1.5a1.75 1.75 0 0 1 1.75 1.75v13.5A1.75 1.75 0 0 1 15.05 22h-1.5a1.75 1.75 0 0 1-1.75-1.75zm4.4-3A1.75 1.75 0 0 1 17.95 2h1.3A1.75 1.75 0 0 1 21 3.75v16.5A1.75 1.75 0 0 1 19.25 22h-1.3a1.75 1.75 0 0 1-1.75-1.75z',
+} as SimpleIcon
+
 const logoSkills: LogoSkill[] = [
   { name: 'Laravel', icon: siLaravel },
   { name: 'PHP', icon: siPhp },
@@ -60,6 +65,7 @@ const logoSkills: LogoSkill[] = [
   { name: 'XAMPP', icon: siXampp },
   { name: 'Android Studio', icon: siAndroidstudio },
   { name: 'Figma', icon: siFigma },
+  { name: 'Power BI', icon: powerBiIcon },
 ]
 
 function LogoSet({ duplicate = false }: { duplicate?: boolean }) {

@@ -20,7 +20,7 @@ export const site = {
   linkedin:
     'https://linkedin.com/in/ruhumbika-mtumba-john-750b502a2',
   github: 'https://github.com/Ruhumbika',
-  cv: '/cv/ruhumbika-mtumba-john-cv.pdf',
+  cv: '/cv/Ruhumbika_Mtumba_John_CV.pdf',
   profileImage: '/profile/ruhumbika-profile.webp',
   profileImageSquare: '/profile/ruhumbika-profile-square.webp',
   availability:

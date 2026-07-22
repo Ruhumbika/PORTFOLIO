@@ -36,7 +36,7 @@ export function ExperiencePreview() {
                     <h3 className="text-lg font-semibold tracking-tight">
                       {item.organisation}
                       {item.unit ? (
-                        <span className="text-muted-foreground"> — {item.unit}</span>
+                        <span className="text-muted-foreground"> · {item.unit}</span>
                       ) : null}
                     </h3>
                     <p className="mt-1 text-sm text-muted-foreground">

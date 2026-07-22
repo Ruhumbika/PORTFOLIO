@@ -7,7 +7,7 @@ export function TechnicalCapabilities() {
       <SectionHeading
         label="Technical Capabilities"
         title="Tools across the full product lifecycle"
-        description="Grouped by discipline, with backend and AI application development leading. No ratings, no progress bars — just the technologies I actually work with."
+        description="Grouped by discipline, with backend and AI application development leading. No ratings or progress bars, just the technologies I actually work with."
       />
       <div className="mt-12">
         <SkillsGrid />

@@ -133,7 +133,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right column — profile + technical detail */}
+        {/* Right column with profile and technical detail */}
         <motion.div
           initial={reduce ? false : { opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}

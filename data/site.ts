@@ -1,6 +1,6 @@
 export const site = {
   name: 'Ruhumbika Mtumba John',
-  initials: 'RMJ',
+  initials: 'R',
   title: 'Full-Stack Developer | AI Application Developer | UI/UX Designer',
   roles: [
     'Full-Stack Developer',
@@ -33,7 +33,7 @@ export const site = {
     whatsappTemplate:
       "Hi Ruhumbika, I reviewed your product portfolio and I'm impressed. I'd like to fast-track a conversation about a role or contract. When are you free to talk?",
     emailSubject:
-      'Opportunity for Ruhumbika — let’s fast-track a conversation',
+      'Opportunity for Ruhumbika: let’s fast-track a conversation',
     emailBody:
       "Hi Ruhumbika,\n\nI reviewed your portfolio and would like to discuss a role or project that fits your full-stack and AI focus.\n\nA few details:\n- Company/Team:\n- Role or project:\n- Timeline:\n\nWhen are you available for a short call?\n\nThanks,",
     reasons: [
@@ -61,7 +61,7 @@ export const site = {
     { value: 'Full-Stack + AI', label: 'Core Focus' },
     { value: 'Dar es Salaam', label: 'Based in Tanzania' },
   ],
-  url: 'https://ruhumbika.dev',
+  url: 'https://ruhumbika.vercel.app',
 } as const
 
 export const navItems = [

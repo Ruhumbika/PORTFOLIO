@@ -57,8 +57,7 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
           >
             <div className="flex h-16 items-center justify-between border-b border-border px-4">
               <span className="font-mono text-sm text-foreground">
-                {site.initials}
-                <span className="text-muted-foreground">.dev</span>
+                Ruhumbika
               </span>
               <button
                 type="button"

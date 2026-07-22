@@ -4,7 +4,7 @@ export default function Loading() {
       <div className="w-full max-w-3xl" role="status" aria-label="Loading page">
         <div className="flex items-center gap-4">
           <span className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-primary/40 bg-primary/10 font-mono text-sm font-semibold text-primary">
-            RMJ
+            R
             <span className="absolute inset-[-4px] animate-pulse rounded-[15px] border border-primary/30" aria-hidden="true" />
           </span>
           <div className="flex-1">

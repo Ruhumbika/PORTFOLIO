@@ -10,7 +10,7 @@ import { Github, Linkedin, Whatsapp } from '@/components/shared/BrandIcons'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Ruhumbika Mtumba John — full-stack and AI application developer based in Dar es Salaam, Tanzania. Available for graduate roles, internships, contracts and collaborations.',
+    'Get in touch with Ruhumbika Mtumba John, a full-stack and AI application developer based in Dar es Salaam, Tanzania. Available for graduate roles, internships, contracts and collaborations.',
   alternates: { canonical: '/contact' },
 }
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
         </div>
         <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground">
           Whether it&apos;s a graduate role, an internship, a contract or a
-          product idea — reach me on your preferred channel with a message
+          product idea, reach me on your preferred channel with a message
           already written, or send the form and I&apos;ll reply personally.
         </p>
       </Reveal>

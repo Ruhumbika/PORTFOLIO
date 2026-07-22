@@ -41,14 +41,13 @@ export function Navbar() {
         <Link
           href="/"
           className="group inline-flex items-center gap-2"
-          aria-label={`${site.name} — home`}
+          aria-label={`${site.name}, home`}
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-md border border-primary/40 bg-primary/10 font-mono text-sm font-semibold text-primary">
             {site.initials}
           </span>
           <span className="hidden font-mono text-sm tracking-tight text-foreground sm:inline">
-            {site.initials}
-            <span className="text-muted-foreground">.dev</span>
+            Ruhumbika
           </span>
         </Link>
 

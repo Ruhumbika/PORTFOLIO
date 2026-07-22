@@ -6,7 +6,7 @@ import { ProjectsExplorer } from "@/components/projects/ProjectsExplorer"
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected projects by Ruhumbika Mtumba John — full-stack web systems, AI applications and digital products built for local government, education, housing and small business.",
+    "Selected projects by Ruhumbika Mtumba John, including full-stack web systems, AI applications and digital products built for local government, education, housing and small business.",
   alternates: { canonical: "/projects" },
 }
 

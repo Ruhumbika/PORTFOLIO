@@ -40,6 +40,30 @@ export function Footer() {
             </ul>
           </nav>
 
+          <nav aria-label="Legal" className="flex flex-col gap-3">
+            <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
+              Legal
+            </span>
+            <ul className="flex flex-col gap-2">
+              <li>
+                <Link
+                  href="/privacy"
+                  className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <div className="flex flex-col gap-3">
             <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
               Connect

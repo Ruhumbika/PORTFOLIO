@@ -89,7 +89,7 @@ export function QuickHire() {
         <SectionHeading
           label="Available for hire"
           title="Let’s fast-track a conversation"
-          description="Skip the long forms. Reach me on the channel you prefer with a message already written for you — I read every one."
+          description="Skip the long forms. Reach me on the channel you prefer with a message already written for you. I read every one."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
@@ -214,7 +214,7 @@ export function QuickHire() {
               ))}
               <p className="mt-auto pt-3 text-xs leading-relaxed text-muted-foreground">
                 Each channel opens with a high-intent message pre-written for
-                you — just add your details and send.
+                you. Just add your details and send.
               </p>
             </div>
           </Reveal>

@@ -8,7 +8,7 @@ export function ProcessSection() {
       <SectionHeading
         label="How I Build"
         title="A practical, feedback-driven process"
-        description="From understanding the real problem to improving through feedback — the workflow I apply to every product I build."
+        description="From understanding the real problem to improving through feedback. This is the workflow I apply to every product I build."
       />
 
       <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

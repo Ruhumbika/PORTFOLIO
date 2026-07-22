@@ -18,7 +18,7 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined)
 
-const STORAGE_KEY = 'rmj-theme'
+const STORAGE_KEY = 'ruhumbika-theme'
 
 /**
  * Inline script that applies the stored / system theme before hydration

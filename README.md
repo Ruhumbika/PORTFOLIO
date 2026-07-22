@@ -1,4 +1,4 @@
-# Ruhumbika Mtumba John — Personal Portfolio
+# Ruhumbika Mtumba John: Personal Portfolio
 
 A responsive portfolio built with Next.js App Router, TypeScript, Tailwind CSS and Framer Motion. It positions Ruhumbika as a Full-Stack Developer, AI Application Developer and Digital Product Builder, with UI/UX as a supporting advantage.
 

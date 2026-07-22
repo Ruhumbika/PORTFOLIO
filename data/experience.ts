@@ -6,7 +6,7 @@ export const experience: ExperienceItem[] = [
     unit: 'ICT Unit',
     location: 'Tanzania',
     role: 'Field Practical Training',
-    // Two distinct placements in the same unit — never one continuous span.
+    // Two distinct placements in the same unit, never one continuous span.
     periods: ['July 2024 – November 2024', 'July 2025 – November 2025'],
     summary:
       'Completed two separate practical training placements in the same ICT Unit. The second placement built directly on the experience gained during the first, deepening both technical support skills and understanding of public-sector service delivery.',
@@ -59,7 +59,7 @@ export const training: TrainingItem[] = [
     ],
   },
   {
-    title: 'National Service Training (JKT) — 822 KJ',
+    title: 'National Service Training (JKT), 822 KJ',
     period: 'June 2023 – September 2023',
     areas: [
       'Discipline',

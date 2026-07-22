@@ -219,7 +219,7 @@ export const projects: Project[] = [
     caseStudySections: [
       {
         title: 'Architecture',
-        body: 'The application demonstrates a full local LLM pipeline where each layer communicates over clear API boundaries. No external paid AI API is used — inference runs locally through Ollama.',
+        body: 'The application demonstrates a full local LLM pipeline where each layer communicates over clear API boundaries. No external paid AI API is used. Inference runs locally through Ollama.',
         bullets: [
           'User → Streamlit frontend',
           'Streamlit → FastAPI backend',

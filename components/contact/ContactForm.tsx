@@ -30,7 +30,7 @@ export function ContactForm() {
     const next: Errors = {}
     if (!v.name.trim()) next.name = 'Please add your name.'
     if (!v.email.trim()) next.email = 'Please add your email.'
-    else if (!EMAIL_RE.test(v.email.trim())) next.email = 'That email looks off — mind checking it?'
+    else if (!EMAIL_RE.test(v.email.trim())) next.email = 'That email looks off. Mind checking it?'
     if (!v.message.trim()) next.message = 'Add a short note so I know how to help.'
     return next
   }
@@ -57,7 +57,7 @@ export function ContactForm() {
     const body = [
       values.message.trim(),
       '',
-      '—',
+      'Contact details',
       `Name: ${values.name}`,
       `Email: ${values.email}`,
       values.company ? `Company: ${values.company}` : null,
@@ -174,7 +174,7 @@ export function ContactForm() {
           role="status"
         >
           <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-          Your email app just opened with everything filled in — hit send and I&apos;ll reply shortly.
+          Your email app just opened with everything filled in. Hit send and I&apos;ll reply shortly.
         </motion.p>
       )}
     </form>

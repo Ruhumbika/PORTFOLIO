@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { site } from '@/data/site'
 
-const STORAGE_KEY = 'rmj-portfolio-loader-seen'
+const STORAGE_KEY = 'ruhumbika-portfolio-loader-seen'
 
 export function SitePreloader() {
   const reduce = useReducedMotion()

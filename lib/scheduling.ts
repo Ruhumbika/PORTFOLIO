@@ -139,7 +139,7 @@ export function buildInterviewRequestLinks(details: InterviewRequestDetails) {
     .filter(Boolean)
     .join('\n')
 
-  const subject = `Interview request — ${dateLabel}, ${timeLabel}`
+  const subject = `Interview request: ${dateLabel}, ${timeLabel}`
 
   return {
     whatsapp: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(body)}`,
@@ -182,7 +182,7 @@ export function createCalendarFile(details: InterviewRequestDetails): Blob {
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//RMJ Portfolio//Interview Request//EN',
+    'PRODID:-//Ruhumbika Portfolio//Interview Request//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     'BEGIN:VEVENT',

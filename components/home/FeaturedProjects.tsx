@@ -14,7 +14,7 @@ export function FeaturedProjects() {
           <SectionHeading
             label="Selected Work"
             title="Product case studies"
-            description="Real systems built for local government, education, housing and small-business environments — presented as case studies rather than thumbnails."
+            description="Real systems built for local government, education, housing and small-business environments, presented as case studies rather than thumbnails."
           />
           <Button href="/projects" variant="outline" size="sm" className="shrink-0">
             All projects

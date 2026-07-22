@@ -9,7 +9,16 @@ import {
   useTransform,
   type Variants,
 } from 'framer-motion'
-import { ArrowRight, CalendarDays, Download, MapPin } from 'lucide-react'
+import {
+  ArrowRight,
+  BrainCircuit,
+  CalendarDays,
+  Code2,
+  Download,
+  MapPin,
+  PenTool,
+  Rocket,
+} from 'lucide-react'
 import { site } from '@/data/site'
 import { Button } from '@/components/shared/Button'
 import { SocialLinks } from '@/components/shared/SocialLinks'
@@ -17,6 +26,32 @@ import { TechTag } from '@/components/shared/TechTag'
 
 const heroTech = ['Laravel', 'FastAPI', 'Flutter', 'Node.js', 'Ollama', 'PostgreSQL']
 const workflowNodes = Array.from({ length: 20 }, (_, index) => index)
+const orbitCards = [
+  {
+    label: 'Build',
+    Icon: Code2,
+    x: [0, 170, 0, -170, 0],
+    y: [-210, 0, 210, 0, -210],
+  },
+  {
+    label: 'AI',
+    Icon: BrainCircuit,
+    x: [170, 0, -170, 0, 170],
+    y: [0, 210, 0, -210, 0],
+  },
+  {
+    label: 'Design',
+    Icon: PenTool,
+    x: [0, -170, 0, 170, 0],
+    y: [210, 0, -210, 0, 210],
+  },
+  {
+    label: 'Ship',
+    Icon: Rocket,
+    x: [-170, 0, 170, 0, -170],
+    y: [0, -210, 0, 210, 0],
+  },
+]
 
 export function Hero() {
   const reduce = useReducedMotion()
@@ -32,6 +67,14 @@ export function Hero() {
   })
   const nodeX = useSpring(useTransform(pointerX, [-0.5, 0.5], [-12, 12]))
   const nodeY = useSpring(useTransform(pointerY, [-0.5, 0.5], [-10, 10]))
+  const imageX = useSpring(useTransform(pointerX, [-0.5, 0.5], [-8, 8]), {
+    stiffness: 150,
+    damping: 22,
+  })
+  const imageY = useSpring(useTransform(pointerY, [-0.5, 0.5], [-7, 7]), {
+    stiffness: 150,
+    damping: 22,
+  })
 
   function handleVisualPointer(event: React.PointerEvent<HTMLDivElement>) {
     if (reduce) return
@@ -197,6 +240,34 @@ export function Hero() {
             className="relative w-full max-w-sm"
             style={reduce ? undefined : { rotateX, rotateY, perspective: 1100 }}
           >
+            <div className="profile-orbit-ring" aria-hidden="true" />
+            {orbitCards.map(({ label, Icon, x, y }) => (
+              <motion.div
+                key={label}
+                className="profile-orbit-card"
+                initial={reduce ? { x: x[0], y: y[0] } : { opacity: 0, scale: 0.7 }}
+                animate={
+                  reduce
+                    ? { opacity: 1, scale: 1, x: x[0], y: y[0] }
+                    : { opacity: 1, scale: 1, x, y }
+                }
+                transition={
+                  reduce
+                    ? { duration: 0 }
+                    : {
+                        opacity: { duration: 0.45, delay: 0.7 },
+                        scale: { duration: 0.45, delay: 0.7 },
+                        x: { duration: 18, repeat: Infinity, ease: 'linear' },
+                        y: { duration: 18, repeat: Infinity, ease: 'linear' },
+                      }
+                }
+                aria-hidden="true"
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {label}
+              </motion.div>
+            ))}
+
             <div className="absolute -left-3 top-6 hidden font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground lg:block">
               <span className="[writing-mode:vertical-rl]">product · engineer</span>
             </div>
@@ -213,14 +284,29 @@ export function Hero() {
               </div>
 
               <div className="relative mt-3 aspect-[4/5] w-full overflow-hidden rounded-lg border border-border bg-background/40">
-                <Image
-                  src={site.profileImage}
-                  alt="Ruhumbika Mtumba John wearing a professional black suit"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 384px, 90vw"
-                  className="object-cover object-[50%_38%] transition-transform duration-700 group-hover:scale-[1.015]"
+                <motion.div
+                  className="absolute -inset-2"
+                  style={reduce ? undefined : { x: imageX, y: imageY }}
+                >
+                  <Image
+                    src={site.profileImage}
+                    alt="Ruhumbika Mtumba John wearing a professional black suit"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 384px, 90vw"
+                    className="object-cover object-[50%_38%] transition-transform duration-700 group-hover:scale-[1.025]"
+                  />
+                </motion.div>
+                <motion.span
+                  className="profile-scanline"
+                  animate={reduce ? undefined : { top: ['-8%', '108%'] }}
+                  transition={{ duration: 4.2, repeat: Infinity, ease: 'linear', repeatDelay: 1.4 }}
+                  aria-hidden="true"
                 />
+                <span className="profile-corner profile-corner-tl" aria-hidden="true" />
+                <span className="profile-corner profile-corner-tr" aria-hidden="true" />
+                <span className="profile-corner profile-corner-bl" aria-hidden="true" />
+                <span className="profile-corner profile-corner-br" aria-hidden="true" />
                 <div
                   className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background/80 to-transparent"
                   aria-hidden="true"

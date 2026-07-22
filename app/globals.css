@@ -260,6 +260,163 @@
     -16px -16px 36px rgba(255, 255, 255, 0.74);
 }
 
+.profile-orbit-ring {
+  position: absolute;
+  inset: -3.75rem;
+  border: 1px dashed color-mix(in srgb, var(--primary) 25%, transparent);
+  border-radius: 50%;
+  opacity: 0.72;
+  animation: orbit-ring-breathe 4.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.profile-orbit-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  min-width: 5.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-left: -2.625rem;
+  margin-top: -1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  padding: 0.48rem 0.7rem;
+  color: var(--foreground);
+  font-family: var(--font-geist-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+  pointer-events: none;
+}
+
+.light .profile-orbit-card {
+  background: rgba(239, 239, 237, 0.88);
+  box-shadow:
+    7px 9px 18px rgba(125, 125, 121, 0.2),
+    -6px -6px 14px rgba(255, 255, 255, 0.76);
+}
+
+.profile-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--primary) 65%, transparent);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.profile-corner {
+  position: absolute;
+  z-index: 4;
+  height: 1.1rem;
+  width: 1.1rem;
+  border-color: var(--primary);
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.profile-corner-tl {
+  left: 0.65rem;
+  top: 0.65rem;
+  border-left: 1px solid;
+  border-top: 1px solid;
+}
+
+.profile-corner-tr {
+  right: 0.65rem;
+  top: 0.65rem;
+  border-right: 1px solid;
+  border-top: 1px solid;
+}
+
+.profile-corner-bl {
+  bottom: 0.65rem;
+  left: 0.65rem;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.profile-corner-br {
+  bottom: 0.65rem;
+  right: 0.65rem;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.ascii-tree-shell {
+  background: color-mix(in srgb, var(--card) 82%, transparent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+}
+
+.light .ascii-tree-shell {
+  background: rgba(235, 235, 232, 0.74);
+  box-shadow:
+    18px 22px 44px rgba(125, 125, 121, 0.18),
+    -14px -14px 34px rgba(255, 255, 255, 0.66);
+}
+
+.ascii-tree-panel {
+  background:
+    radial-gradient(circle at 18% 20%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 48%),
+    color-mix(in srgb, var(--background) 82%, transparent);
+}
+
+.ascii-tree-line {
+  color: color-mix(in srgb, var(--muted-foreground) 72%, transparent);
+  transition:
+    color 0.25s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    text-shadow 0.25s ease;
+}
+
+.ascii-tree-line[data-related='true'] {
+  color: color-mix(in srgb, var(--foreground) 78%, var(--primary));
+}
+
+.ascii-tree-line:hover,
+.ascii-tree-line:focus-visible,
+.ascii-tree-line[data-selected='true'] {
+  color: var(--foreground);
+  transform: translateX(0.45rem);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--primary) 45%, transparent);
+}
+
+.ascii-tree-prefix {
+  color: color-mix(in srgb, var(--primary) 68%, var(--muted-foreground));
+}
+
+@keyframes orbit-ring-breathe {
+  0%,
+  100% {
+    transform: scale(0.98) rotate(0deg);
+    opacity: 0.46;
+  }
+  50% {
+    transform: scale(1.02) rotate(4deg);
+    opacity: 0.78;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-orbit-ring {
+    inset: -1.75rem;
+  }
+
+  .profile-orbit-card {
+    display: none;
+  }
+}
+
 .testimonial-card {
   transform-style: preserve-3d;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);

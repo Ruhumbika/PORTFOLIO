@@ -14,6 +14,7 @@ import { site } from '@/data/site'
 import { Button } from '@/components/shared/Button'
 import { SocialLinks } from '@/components/shared/SocialLinks'
 import { TechTag } from '@/components/shared/TechTag'
+import { TechLogoFlow } from '@/components/home/TechLogoFlow'
 
 const heroTech = ['Laravel', 'FastAPI', 'Flutter', 'Node.js', 'Ollama', 'PostgreSQL']
 const workflowNodes = Array.from({ length: 20 }, (_, index) => index)
@@ -260,6 +261,8 @@ export function Hero() {
           ))}
         </dl>
       </div>
+
+      <TechLogoFlow />
     </section>
   )
 }

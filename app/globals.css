@@ -413,7 +413,7 @@
   }
 
   .profile-orbit-card {
-    display: none;
+    scale: 0.76;
   }
 }
 

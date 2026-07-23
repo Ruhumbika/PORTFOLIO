@@ -78,6 +78,20 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
+    category: 'System Security & Cybersecurity',
+    emphasis: true,
+    items: [
+      'System Security Fundamentals',
+      'Role-Based Access Control',
+      'Secure API Design',
+      'Web Security Assessment',
+      'Security Header Review',
+      'OSINT',
+      'Password Security Concepts',
+      'IT Audit & Controls',
+    ],
+  },
+  {
     category: 'Tools & Platforms',
     items: [
       'Git',

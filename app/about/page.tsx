@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 const focusAreas = [
   "Full-stack web and mobile systems",
   "Locally hosted, privacy-conscious AI applications",
+  "System security, access control and cybersecurity practice",
   "User-centred digital product design",
   "Public-sector and small-business software",
 ]

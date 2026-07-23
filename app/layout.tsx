@@ -24,6 +24,8 @@ export const metadata: Metadata = {
     'Ruhumbika Mtumba John',
     'Full-Stack Developer',
     'AI Application Developer',
+    'Cybersecurity',
+    'System Security',
     'Laravel',
     'FastAPI',
     'Flutter',

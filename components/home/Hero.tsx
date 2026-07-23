@@ -22,13 +22,14 @@ import {
   PenTool,
   Rocket,
   RotateCcw,
+  ShieldCheck,
 } from 'lucide-react'
 import { site } from '@/data/site'
 import { Button } from '@/components/shared/Button'
 import { SocialLinks } from '@/components/shared/SocialLinks'
 import { TechTag } from '@/components/shared/TechTag'
 
-const heroTech = ['Laravel', 'FastAPI', 'Flutter', 'Node.js', 'Ollama', 'PostgreSQL']
+const heroTech = ['Laravel', 'FastAPI', 'Flutter', 'Node.js', 'Ollama', 'PostgreSQL', 'Cybersecurity']
 const workflowNodes = Array.from({ length: 20 }, (_, index) => index)
 const orbitCards = [
   {
@@ -54,6 +55,12 @@ const orbitCards = [
     Icon: Rocket,
     x: [-170, 0, 170, 0, -170],
     y: [0, -210, 0, 210, 0],
+  },
+  {
+    label: 'Security',
+    Icon: ShieldCheck,
+    x: [120, -120, -120, 120, 120],
+    y: [-155, -155, 155, 155, -155],
   },
 ]
 
@@ -146,7 +153,7 @@ export function Hero() {
             variants={item}
             className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
           >
-            Full-Stack · AI Applications · Digital Products
+            Full-Stack · AI Applications · Cybersecurity · Digital Products
           </motion.p>
 
           <motion.h1
@@ -425,11 +432,11 @@ export function Hero() {
                     Open to the right opportunity.
                   </h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    I&apos;m currently seeking graduate, internship and junior opportunities in software engineering, quality assurance, full-stack systems, AI applications and data-driven products.
+                    I&apos;m currently seeking graduate, internship and junior opportunities in software engineering, quality assurance, system security, full-stack systems, AI applications and data-driven products.
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {['Software engineering', 'Quality assurance', 'Data & AI'].map((item) => (
+                    {['Software engineering', 'Quality assurance', 'Cybersecurity', 'Data & AI'].map((item) => (
                       <span key={item} className="rounded-full border border-border bg-secondary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em]">
                         {item}
                       </span>

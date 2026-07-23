@@ -46,7 +46,7 @@ export function AboutPreview() {
                 BSc Business Information Technology
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                University of Dar es Salaam · Expected July 2026 · GPA 3.3/5.0
+                University of Dar es Salaam · Expected July 2026 · GPA 3.5/5.0
               </p>
             </div>
           </div>

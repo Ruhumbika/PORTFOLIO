@@ -75,7 +75,6 @@ function LogoSet({ duplicate = false }: { duplicate?: boolean }) {
         <li
           key={`${duplicate ? 'duplicate-' : ''}${name}`}
           className="skill-logo-card group"
-          tabIndex={duplicate ? -1 : 0}
           style={{ '--brand-color': `#${icon.hex}` } as React.CSSProperties}
         >
           <span className="skill-logo-mark" aria-hidden="true">
@@ -102,7 +101,12 @@ export function TechLogoFlow() {
         </p>
       </div>
 
-      <div className="skill-logo-viewport">
+      <div
+        className="skill-logo-viewport"
+        role="region"
+        aria-label="Technical skills carousel. Focus or hover to pause the movement."
+        tabIndex={0}
+      >
         <div className="skill-logo-track">
           <LogoSet />
           <LogoSet duplicate />

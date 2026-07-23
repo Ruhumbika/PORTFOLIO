@@ -47,6 +47,11 @@ export function ContactForm() {
     setErrors(next)
     if (Object.keys(next).length > 0) {
       setShakeKey((k) => k + 1) // retrigger shake
+      window.requestAnimationFrame(() => {
+        if (firstErrorRef.current) {
+          document.getElementById(firstErrorRef.current)?.focus()
+        }
+      })
       return
     }
 
@@ -79,11 +84,12 @@ export function ContactForm() {
     type: string
     placeholder: string
     required: boolean
+    autoComplete?: string
     textarea?: boolean
   }[] = [
-    { key: 'name', label: 'Your name', type: 'text', placeholder: 'Jane Recruiter', required: true },
-    { key: 'email', label: 'Email', type: 'email', placeholder: 'jane@company.com', required: true },
-    { key: 'company', label: 'Company / team', type: 'text', placeholder: 'Acme Inc. (optional)', required: false },
+    { key: 'name', label: 'Your name', type: 'text', placeholder: 'Jane Recruiter', required: true, autoComplete: 'name' },
+    { key: 'email', label: 'Email', type: 'email', placeholder: 'jane@company.com', required: true, autoComplete: 'email' },
+    { key: 'company', label: 'Company / team', type: 'text', placeholder: 'Acme Inc. (optional)', required: false, autoComplete: 'organization' },
     {
       key: 'message',
       label: 'Message',
@@ -120,7 +126,7 @@ export function ContactForm() {
                 {f.required && <span className="ml-1 text-primary">*</span>}
               </span>
               {hasError && (
-                <span className="inline-flex items-center gap-1 normal-case tracking-normal text-primary">
+                <span id={`${f.key}-error`} className="inline-flex items-center gap-1 normal-case tracking-normal text-primary">
                   <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
                   {errors[f.key]}
                 </span>
@@ -129,11 +135,15 @@ export function ContactForm() {
             {f.textarea ? (
               <textarea
                 id={f.key}
+                name={f.key}
                 value={values[f.key]}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) => update(f.key, e.target.value)}
                 placeholder={f.placeholder}
                 rows={5}
+                required={f.required}
+                maxLength={2000}
                 aria-invalid={hasError}
+                aria-describedby={hasError ? `${f.key}-error` : undefined}
                 className={`resize-y rounded-lg border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary ${
                   hasError ? 'border-primary' : 'border-border'
                 }`}
@@ -141,11 +151,16 @@ export function ContactForm() {
             ) : (
               <input
                 id={f.key}
+                name={f.key}
                 type={f.type}
                 value={values[f.key]}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => update(f.key, e.target.value)}
                 placeholder={f.placeholder}
+                required={f.required}
+                autoComplete={f.autoComplete}
+                maxLength={f.key === 'email' ? 254 : 120}
                 aria-invalid={hasError}
+                aria-describedby={hasError ? `${f.key}-error` : undefined}
                 className={`h-11 rounded-lg border bg-card px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary ${
                   hasError ? 'border-primary' : 'border-border'
                 }`}

@@ -11,6 +11,8 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  applicationName: `${site.name} Portfolio`,
+  category: 'technology',
   title: {
     default:
       'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
@@ -48,7 +50,6 @@ export const metadata: Metadata = {
       'Building practical web, mobile and intelligent digital products.',
     images: ['/og/portfolio-og.jpg'],
   },
-  generator: 'v0.app',
 }
 
 export const viewport: Viewport = {

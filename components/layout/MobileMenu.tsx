@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Download, Menu, X } from 'lucide-react'
 import { navItems, site } from '@/data/site'
@@ -15,6 +15,9 @@ interface MobileMenuProps {
 export function MobileMenu({ isActive }: MobileMenuProps) {
   const [open, setOpen] = useState(false)
   const reduce = useReducedMotion()
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
+  const closeRef = useRef<HTMLButtonElement | null>(null)
+  const dialogRef = useRef<HTMLDivElement | null>(null)
 
   // Lock scroll while the menu is open.
   useEffect(() => {
@@ -24,20 +27,54 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
     }
   }, [open])
 
-  // Close on Escape.
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    if (!open) return
+
+    const frame = window.requestAnimationFrame(() => closeRef.current?.focus())
+
+    function onKey(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        setOpen(false)
+        return
+      }
+
+      if (event.key !== 'Tab' || !dialogRef.current) return
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      )
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.removeEventListener('keydown', onKey)
+      triggerRef.current?.focus()
+    }
+  }, [open])
 
   return (
     <div className="md:hidden">
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
+        aria-controls="mobile-site-menu"
         className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground transition-colors hover:border-primary hover:text-primary"
       >
         <Menu className="h-4 w-4" aria-hidden="true" />
@@ -46,6 +83,8 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
       <AnimatePresence>
         {open ? (
           <motion.div
+            ref={dialogRef}
+            id="mobile-site-menu"
             className="fixed inset-0 z-[60] bg-background"
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -60,6 +99,7 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
                 Ruhumbika
               </span>
               <button
+                ref={closeRef}
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"

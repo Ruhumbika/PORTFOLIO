@@ -46,6 +46,13 @@ const initialFields: FormFields = {
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const fieldIds: Record<keyof FormFields, string> = {
+  name: 'interview-name',
+  email: 'interview-email',
+  company: 'interview-company',
+  role: 'interview-role',
+  message: 'interview-message',
+}
 
 function dateKey(date: Date) {
   return formatISODate(date)
@@ -93,6 +100,14 @@ export function InterviewScheduler() {
       setNotice('')
     }
     setErrors(next)
+    const firstError = Object.keys(next)[0] as keyof FormFields | undefined
+    window.requestAnimationFrame(() => {
+      if (firstError) {
+        document.getElementById(fieldIds[firstError])?.focus()
+      } else if (!selectedDate || !selectedTime) {
+        document.querySelector<HTMLButtonElement>('[data-interview-time]')?.focus()
+      }
+    })
     return Object.keys(next).length === 0 && Boolean(selectedDate && selectedTime)
   }
 
@@ -248,6 +263,7 @@ export function InterviewScheduler() {
                     <button
                       key={time}
                       type="button"
+                      data-interview-time
                       onClick={() => {
                         setSelectedTime(time)
                         setNotice('')
@@ -307,6 +323,7 @@ export function InterviewScheduler() {
               value={fields.name}
               error={errors.name}
               required
+              autoComplete="name"
               placeholder="Your full name"
               onChange={(value) => updateField('name', value)}
             />
@@ -317,6 +334,7 @@ export function InterviewScheduler() {
               error={errors.email}
               required
               type="email"
+              autoComplete="email"
               placeholder="you@company.com"
               onChange={(value) => updateField('email', value)}
             />
@@ -324,6 +342,7 @@ export function InterviewScheduler() {
               id="interview-company"
               label="Company / organisation"
               value={fields.company}
+              autoComplete="organization"
               placeholder="Optional"
               onChange={(value) => updateField('company', value)}
             />
@@ -342,10 +361,12 @@ export function InterviewScheduler() {
             </span>
             <textarea
               id="interview-message"
+              name="message"
               rows={4}
               value={fields.message}
               onChange={(event: ChangeEvent<HTMLTextAreaElement>) => updateField('message', event.target.value)}
               placeholder="Share any interview agenda, meeting link preference or context."
+              maxLength={2000}
               className="resize-y rounded-lg border border-border bg-background/30 px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
             />
           </label>
@@ -418,6 +439,7 @@ interface FieldProps {
   error?: string
   required?: boolean
   type?: 'text' | 'email'
+  autoComplete?: string
 }
 
 function Field({
@@ -429,7 +451,10 @@ function Field({
   error,
   required,
   type = 'text',
+  autoComplete,
 }: FieldProps) {
+  const errorId = `${id}-error`
+
   return (
     <label className="flex flex-col gap-2" htmlFor={id}>
       <span className="flex items-center justify-between gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -437,15 +462,20 @@ function Field({
           {label}
           {required ? <span className="ml-1 text-primary">*</span> : null}
         </span>
-        {error ? <span className="normal-case tracking-normal text-primary">{error}</span> : null}
+        {error ? <span id={errorId} className="normal-case tracking-normal text-primary">{error}</span> : null}
       </span>
       <input
         id={id}
+        name={id}
         type={type}
         value={value}
         onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(event.target.value)}
         placeholder={placeholder}
+        required={required}
+        autoComplete={autoComplete}
+        maxLength={type === 'email' ? 254 : 120}
         aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
         className={cn(
           'h-11 rounded-lg border bg-background/30 px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary',
           error ? 'border-primary' : 'border-border',

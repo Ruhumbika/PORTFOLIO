@@ -323,7 +323,11 @@ export function Hero() {
               }
               data-flipped={profileFlipped}
             >
-              <div className="hero-profile-surface profile-flip-face profile-flip-front group rounded-2xl border border-border bg-card p-3 backdrop-blur-sm">
+              <div
+                className="hero-profile-surface profile-flip-face profile-flip-front group rounded-2xl border border-border bg-card p-3 backdrop-blur-sm"
+                aria-hidden={profileFlipped}
+                inert={profileFlipped ? true : undefined}
+              >
               <div className="flex items-center justify-between border-b border-border pb-3">
                 <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                   ~/ruhumbika
@@ -383,7 +387,11 @@ export function Hero() {
                 ))}
               </div>
               </div>
-              <div className="hero-profile-surface profile-flip-face profile-flip-back absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 backdrop-blur-xl sm:p-7">
+              <div
+                className="hero-profile-surface profile-flip-face profile-flip-back absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 backdrop-blur-xl sm:p-7"
+                aria-hidden={!profileFlipped}
+                inert={!profileFlipped ? true : undefined}
+              >
                 <div className="bg-grid pointer-events-none absolute inset-0 opacity-20" aria-hidden="true" />
                 <div className="opportunity-glow pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-primary/20 blur-3xl" aria-hidden="true" />
 

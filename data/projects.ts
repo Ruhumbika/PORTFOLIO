@@ -386,8 +386,9 @@ export const projects: Project[] = [
     problem:
       'A growing barbershop needed an organised way for customers to view services, browse styles and book appointments while strengthening its brand online.',
     solution:
-      'A responsive booking platform with a service and haircut-style catalogue, appointment scheduling, admin availability controls and consistent digital branding.',
+      'A responsive booking platform with a Python-powered backend, service and haircut-style catalogue, appointment scheduling, admin availability controls and consistent digital branding.',
     contribution: [
+      'Python backend development and booking-system logic',
       'Product and booking-journey design',
       'Service and haircut-style catalogue structure',
       'Admin availability and scheduling controls',
@@ -405,13 +406,10 @@ export const projects: Project[] = [
       'Social-media marketing',
     ],
     technologies: [
-      'Web Booking Platform',
-      'Responsive Web Design',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Figma',
-      'Digital Branding',
+      'Python 52.2%',
+      'JavaScript 43.8%',
+      'HTML 3.2%',
+      'Other 0.8%',
     ],
     users: 'Barbershop customers booking appointments and browsing styles and services.',
     images: [

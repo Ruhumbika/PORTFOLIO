@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { experience, entrepreneurship } from "@/data/experience"
+import { currentEmployment, experience, entrepreneurship } from "@/data/experience"
 import { Reveal } from "@/components/shared/Reveal"
 import { SectionHeading } from "@/components/shared/SectionHeading"
 import { Button } from "@/components/shared/Button"
@@ -8,7 +8,7 @@ import { Building2, Briefcase, ArrowRight, CheckCircle2 } from "lucide-react"
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Professional experience of Ruhumbika Mtumba John, including ICT field placements at Kilindi District Council and founding RJAY Digital Hub and RJAY Barbershop.",
+    "Professional experience of Ruhumbika Mtumba John as a Full-Stack Developer at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), ICT field placements and founder of RJAY Digital Hub.",
   alternates: { canonical: "/experience" },
 }
 
@@ -24,6 +24,38 @@ export default function ExperiencePage() {
 
       {/* Professional / field training */}
       <div className="mt-16">
+        <SectionHeading label="Current role" title="Full-stack development in logistics" />
+        <Reveal delay={0.05}>
+          <article className="mt-8 rounded-xl border border-primary/30 bg-card p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/40 bg-primary/10 text-primary">
+                <Briefcase className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">{currentEmployment.organisation}</h3>
+                    <p className="text-sm text-muted-foreground">{currentEmployment.unit} · {currentEmployment.location}</p>
+                    <p className="mt-1 font-mono text-xs uppercase tracking-[0.14em] text-primary">{currentEmployment.role}</p>
+                  </div>
+                  <span className="rounded-md border border-primary/30 bg-primary/10 px-3 py-1.5 font-mono text-xs text-primary">Present</span>
+                </div>
+                <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">{currentEmployment.summary}</p>
+                <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                  {currentEmployment.responsibilities.map((responsibility) => (
+                    <li key={responsibility} className="flex items-start gap-2 text-sm text-foreground">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                      {responsibility}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        </Reveal>
+      </div>
+
+      <div className="mt-20">
         <SectionHeading label="Field training" title="ICT field placements" />
         <div className="mt-8 space-y-6">
           {experience.map((exp, i) => (

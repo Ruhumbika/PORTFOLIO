@@ -426,13 +426,13 @@ export function Hero() {
                   </motion.span>
 
                   <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
-                    Available now
+                    Currently employed
                   </p>
                   <h3 className="mt-3 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                    Open to the right opportunity.
+                    Open to more advantageous opportunities.
                   </h3>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    I&apos;m currently seeking graduate, internship and junior opportunities in software engineering, quality assurance, system security, full-stack systems, AI applications and data-driven products.
+                    I&apos;m currently a Full-Stack Developer at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), and I&apos;m open to the right opportunity in software engineering, quality assurance, system security, full-stack systems, AI applications and data-driven products.
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">

@@ -1,5 +1,5 @@
 import { ArrowRight, Building2 } from 'lucide-react'
-import { experience } from '@/data/experience'
+import { currentEmployment, experience } from '@/data/experience'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal } from '@/components/shared/Reveal'
 import { Button } from '@/components/shared/Button'
@@ -11,8 +11,8 @@ export function ExperiencePreview() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             label="Selected Experience"
-            title="Public-sector ICT, in the field"
-            description="Two separate practical training placements in the same District Council ICT Unit, each strengthening hands-on technical support and public-service delivery skills."
+            title="Full-stack development and practical ICT"
+            description="Currently building full-stack solutions at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), with earlier hands-on ICT experience in public-sector service delivery."
           />
           <Button href="/experience" variant="outline" size="sm" className="shrink-0">
             Full experience
@@ -21,7 +21,7 @@ export function ExperiencePreview() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4">
-          {experience.map((item) => (
+          {[currentEmployment, ...experience].map((item) => (
             <Reveal
               key={item.organisation}
               as="article"

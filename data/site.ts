@@ -20,11 +20,11 @@ export const site = {
   linkedin:
     'https://linkedin.com/in/ruhumbika-mtumba-john-750b502a2',
   github: 'https://github.com/Ruhumbika',
-  cv: '/cv/Ruhumbika_Mtumba_John_CV.pdf',
+  cv: '/cv/Ruhumbika_Mtumba_John_Curriculum_Vitae.pdf',
   profileImage: '/profile/ruhumbika-profile.webp',
   profileImageSquare: '/profile/ruhumbika-profile-square.webp',
   availability:
-    'Available for graduate roles, internships, collaborations and freelance projects',
+    'Currently employed · Open to more advantageous full-stack opportunities',
   isAvailable: true,
   availabilityZone: 'EAT · UTC+3',
   responseTime: 'Usually replies within a few hours',
@@ -40,7 +40,7 @@ export const site = {
       'Builds full-stack and AI products end to end',
       'Completed two ICT field placements in a public-sector environment',
       'Works across Laravel, FastAPI, Flutter and Node.js',
-      'Open to graduate roles, internships, contracts and collaborations',
+      'Currently employed and open to more advantageous roles, contracts and collaborations',
     ],
   },
   schedule: {

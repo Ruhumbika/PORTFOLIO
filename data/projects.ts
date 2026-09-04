@@ -2,6 +2,113 @@ import type { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    slug: 'peta-holdings-erp',
+    title: 'PETA Holdings ERP Dashboard',
+    shortTitle: 'PETA ERP',
+    category: 'Enterprise Resource Planning System',
+    status: 'Live',
+    period: '2026 – Present',
+    role: 'Full-Stack Developer',
+    organisation: 'Ma Cargo Transporters and Forwarders (ABOOD Group of Companies)',
+    summary:
+      'An enterprise dashboard for PETA Holdings that brings property, lease, revenue, unit status and operational monitoring into one workspace.',
+    description:
+      'A live ERP dashboard for PETA Holdings (T) Limited, providing a central workspace for property portfolio monitoring, leases, collections and operational performance.',
+    problem:
+      'Property and operational data needs a clear, centralised view so teams can monitor occupancy, leases, revenue and overdue invoices efficiently.',
+    solution:
+      'A role-based ERP dashboard that surfaces portfolio metrics, unit status, lease activity, revenue, expenses and business alerts in one interface.',
+    contribution: [
+      'Full-stack feature development',
+      'ERP dashboard implementation',
+      'Business data visualisation',
+      'Lease and property workflow support',
+      'Production troubleshooting and improvements',
+    ],
+    features: [
+      'Property portfolio overview',
+      'Lease monitoring',
+      'Occupancy and unit status tracking',
+      'Revenue and expense performance',
+      'Overdue invoice alerts',
+      'Business monitoring dashboard',
+    ],
+    technologies: ['Full-Stack Web Development', 'ERP Systems', 'Dashboards', 'Data Visualisation'],
+    users: 'Property, finance and operations teams managing PETA Holdings assets and leases.',
+    images: [
+      {
+        label: 'ABOOD Group of Companies ERP sign-in screen',
+        src: '/projects/peta-holdings-erp/dashboard.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings ERP dashboard overview',
+        src: '/projects/peta-holdings-erp/petadashboard.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings attendance management',
+        src: '/projects/peta-holdings-erp/attendence.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings billing and expenses',
+        src: '/projects/peta-holdings-erp/billingexpenses.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings billing schedule detail',
+        src: '/projects/peta-holdings-erp/billingscheduledetail.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings bills and invoices',
+        src: '/projects/peta-holdings-erp/billsandinvoice.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings contract details',
+        src: '/projects/peta-holdings-erp/contractdetail.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings contracts page',
+        src: '/projects/peta-holdings-erp/contractpage.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings journal voucher creation',
+        src: '/projects/peta-holdings-erp/journalvouchercreate.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings requisitions',
+        src: '/projects/peta-holdings-erp/requisition.png',
+        ratio: 'screen',
+      },
+      {
+        label: 'PETA Holdings requisition details',
+        src: '/projects/peta-holdings-erp/requisitiondetail.png',
+        ratio: 'screen',
+      },
+    ],
+    liveUrl: 'https://app.abooderp.com/#/peta/home',
+    githubUrl: undefined,
+    caseStudySections: [
+      {
+        title: 'Business context',
+        body: 'The ERP workspace supports PETA Holdings teams with a consolidated view of property operations, active leases, collections and unit status.',
+      },
+      {
+        title: 'Developer role',
+        body: 'As a Full-Stack Developer at Ma Cargo Transporters and Forwarders, I contribute to the development and ongoing improvement of this live enterprise system.',
+      },
+    ],
+    outcome:
+      'A live operational dashboard that helps teams understand portfolio performance and act on lease, revenue and invoice information.',
+    featured: true,
+  },
+  {
     slug: 'kdilms',
     title: 'Kilindi Traders Digital License Management System',
     shortTitle: 'KDILMS',

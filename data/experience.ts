@@ -1,5 +1,21 @@
 import type { ExperienceItem, TrainingItem } from '@/types/experience'
 
+export const currentEmployment: ExperienceItem = {
+  organisation: 'Ma Cargo Transporters and Forwarders (ABOOD Group of Companies)',
+  unit: 'Technology / Software Development',
+  location: 'Tanzania',
+  role: 'Full-Stack Developer',
+  periods: ['Present'],
+  summary:
+    'Currently developing and supporting full-stack digital solutions for Ma Cargo Transporters and Forwarders, part of the ABOOD Group of Companies, while remaining open to more advantageous opportunities.',
+  responsibilities: [
+    'Full-stack web application development',
+    'Frontend and backend feature delivery',
+    'Database and API integration',
+    'Production support and troubleshooting',
+  ],
+}
+
 export const experience: ExperienceItem[] = [
   {
     organisation: 'Kilindi District Council',

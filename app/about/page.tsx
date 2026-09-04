@@ -92,7 +92,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex items-center justify-between gap-4">
                   <dt className="text-muted-foreground">Availability</dt>
-                  <dd className="text-right text-foreground">Open to opportunities</dd>
+                  <dd className="text-right text-foreground">Currently employed · Open to better opportunities</dd>
                 </div>
               </dl>
             </div>

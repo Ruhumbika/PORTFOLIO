@@ -18,9 +18,10 @@ export function ContactCTA() {
               Let&apos;s build something useful.
             </h2>
             <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
-              I&apos;m open to graduate opportunities, internships, technology
-              collaborations, freelance development and conversations about
-              practical digital products.
+              I&apos;m currently employed as a Full-Stack Developer at Ma Cargo
+              Transporters and Forwarders (ABOOD Group of Companies), while
+              remaining open to more advantageous opportunities and practical
+              digital product collaborations.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Button href="/contact">

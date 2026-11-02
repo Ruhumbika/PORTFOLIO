@@ -93,7 +93,7 @@ export default function ContactPage() {
                 }`}
               />
             </span>
-            {site.isAvailable ? 'Available for hire & contracts' : 'Currently booked'}
+            {site.isAvailable ? 'Open to strategic partnerships' : 'Currently focused on active projects'}
           </span>
         </div>
         <p className="mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground">

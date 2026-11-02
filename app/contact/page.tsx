@@ -10,7 +10,7 @@ import { Github, Linkedin, Whatsapp } from '@/components/shared/BrandIcons'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Ruhumbika Mtumba John, a full-stack and AI application developer based in Dar es Salaam, Tanzania. Available for graduate roles, internships, contracts and collaborations.',
+    'Connect with Ruhumbika Mtumba John to discuss strategic technology partnerships, enterprise integrations, AI automation and digital product initiatives in Tanzania.',
   alternates: { canonical: '/contact' },
 }
 
@@ -18,8 +18,8 @@ const links = getHireLinks()
 
 const channels = [
   {
-    label: 'Book an interview',
-    sub: 'View weekday availability',
+    label: 'Discuss a project',
+    sub: 'Schedule a conversation',
     href: links.schedule,
     Icon: CalendarDays,
     primary: true,

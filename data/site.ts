@@ -10,9 +10,9 @@ export const site = {
   ],
   supportingRole: 'UI/UX Designer',
   brandStatement:
-    'I engineer secure, intelligent digital products through full-stack software development, AI automation and enterprise systems integration.',
+    'I help businesses build reliable web and mobile applications, automate workflows with AI, and connect enterprise systems through secure, maintainable APIs.',
   shortStatement:
-    'Engineering intelligent, secure and scalable digital solutions.',
+    'Full-stack software, AI automation and ERP integrations that solve real business problems.',
   supportingParagraph:
     'Software engineer and Business Information Technology graduate with hands-on experience in enterprise ERP integration, AI-powered applications, workflow automation, cloud deployments and security-conscious web and mobile development.',
   location: 'Dar es Salaam, Tanzania',

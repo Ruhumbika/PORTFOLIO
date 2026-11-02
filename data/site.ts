@@ -14,7 +14,7 @@ export const site = {
   shortStatement:
     'Engineering intelligent, secure and scalable digital solutions.',
   supportingParagraph:
-    'Software engineer and Business Information Technology student with hands-on experience in enterprise ERP integration, AI-powered applications, workflow automation, cloud deployments and security-conscious web and mobile development.',
+    'Software engineer and Business Information Technology graduate with hands-on experience in enterprise ERP integration, AI-powered applications, workflow automation, cloud deployments and security-conscious web and mobile development.',
   location: 'Dar es Salaam, Tanzania',
   phone: '+255 787 550 399',
   email: 'ruhumbikamtumbajohn@gmail.com',

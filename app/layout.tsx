@@ -15,10 +15,10 @@ export const metadata: Metadata = {
   category: 'technology',
   icons: {
     icon: [
-      { url: '/brand/rj-logo.png', type: 'image/png' },
-      { url: '/brand/rj-logo.png', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
     ],
-    shortcut: '/brand/rj-logo.png',
+    shortcut: '/favicon.ico',
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   title: {

@@ -15,6 +15,7 @@ export function EngineeringHighlights() {
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#F8A706]">Engineering in practice</p>
         <h2 id="engineering-heading" className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">Intelligent systems. Measurable engineering work.</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">A cross-section of real integration work, tested prototypes and deployed digital products. Each case study describes the actual delivery stage.</p>
+        <div className="mt-8"><Link href="/solutions" className="inline-flex items-center rounded-lg border border-[#F8A706]/40 px-4 py-2 text-sm font-semibold text-[#F8A706] transition-colors hover:bg-[#F8A706]/10">Explore technology solutions →</Link></div>
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {highlights.map(({ title, description, href, Icon }) => (
             <Link key={href} href={href} className="group rounded-xl border border-[#F8A706]/25 bg-card p-6 transition-all hover:-translate-y-1 hover:border-[#F8A706]/70 hover:shadow-[0_14px_35px_rgba(248,167,6,0.09)] focus-visible:outline-[#F8A706]">

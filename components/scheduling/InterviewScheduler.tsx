@@ -348,9 +348,9 @@ export function InterviewScheduler() {
             />
             <Field
               id="interview-role"
-              label="Role / opportunity"
+              label="Partnership / project focus"
               value={fields.role}
-              placeholder="Graduate role, internship, project…"
+              placeholder="Enterprise integration, automation, product…"
               onChange={(value) => updateField('role', value)}
             />
           </div>
@@ -365,7 +365,7 @@ export function InterviewScheduler() {
               rows={4}
               value={fields.message}
               onChange={(event: ChangeEvent<HTMLTextAreaElement>) => updateField('message', event.target.value)}
-              placeholder="Share any interview agenda, meeting link preference or context."
+              placeholder="Outline the initiative, goals or preferred meeting format."
               maxLength={2000}
               className="resize-y rounded-lg border border-border bg-background/30 px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
             />

@@ -15,6 +15,7 @@ import { PlaceholderImage } from '@/components/shared/PlaceholderImage'
 import { Reveal } from '@/components/shared/Reveal'
 import { TechTag } from '@/components/shared/TechTag'
 import { getAllProjectSlugs, getProjectBySlug } from '@/data/projects'
+import { ProjectAssets } from '@/components/projects/ProjectAssets'
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>
@@ -123,6 +124,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <Reveal>
           <PlaceholderImage image={project.images[0]} priority className="w-full" />
         </Reveal>
+
+        <ProjectAssets project={project} />
 
         <section className="mt-16 grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
           <Reveal>

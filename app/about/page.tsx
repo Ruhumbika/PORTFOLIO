@@ -13,7 +13,7 @@ import { GraduationCap, Award, ArrowRight, Download } from "lucide-react"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Ruhumbika Mtumba John, a final-year Business Information Technology student and full-stack and AI application developer based in Dar es Salaam, Tanzania.",
+    "About Ruhumbika Mtumba John, a Business Information Technology graduate and full-stack and AI application developer based in Dar es Salaam, Tanzania.",
   alternates: { canonical: "/about" },
 }
 

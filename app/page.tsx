@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero"
+import { VisitorThanks } from "@/components/home/VisitorThanks"
 import { EngineeringHighlights } from "@/components/home/EngineeringHighlights"
 import { AboutPreview } from "@/components/home/AboutPreview"
 import { ExpertiseSection } from "@/components/home/ExpertiseSection"
@@ -32,6 +33,7 @@ export default function HomePage() {
       <InterviewBookingPreview />
       <QuickHire />
       <ContactCTA />
+      <VisitorThanks />
     </>
   )
 }

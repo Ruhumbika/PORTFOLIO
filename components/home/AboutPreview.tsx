@@ -24,7 +24,7 @@ export function AboutPreview() {
 
         <Reveal delay={0.1} className="flex flex-col gap-6">
           <p className="text-pretty leading-relaxed text-muted-foreground">
-            I&apos;m a final-year Business Information Technology student at the
+            I&apos;m a Business Information Technology graduate from the
             University of Dar es Salaam, building web, mobile and AI-enabled
             systems that solve real organisational and community problems. My
             work spans local government, education, housing and small-business
@@ -46,7 +46,7 @@ export function AboutPreview() {
                 BSc Business Information Technology
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                University of Dar es Salaam · Expected July 2026 · GPA 3.5/5.0
+                University of Dar es Salaam · Graduated in 2026
               </p>
             </div>
           </div>

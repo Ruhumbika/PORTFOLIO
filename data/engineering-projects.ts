@@ -162,6 +162,59 @@ export const newEngineeringProjects: Project[] = [
     "outcome": "Confirmed local RadioBOSS playback control and gateway test cases; full ERP schedule integration is ongoing.",
     "featured": true
   },
+{
+  "slug": "attendance-core-dashboard",
+  "title": "Attendance Core — Biometric Attendance Platform",
+  "shortTitle": "Attendance Core",
+  "category": "Enterprise Automation",
+  "status": "Live",
+  "period": "2026",
+  "role": "Integration Developer",
+  "summary": "Enterprise attendance platform combining staff records, biometric devices and operational dashboards, with GHRM integration work.",
+  "description": "Attendance Core provides personnel and device monitoring, attendance reports and operational dashboards. My contribution focuses on integration and event forwarding.",
+  "problem": "Attendance from distributed devices requires central visibility and integration with HR systems.",
+  "solution": "A deployed attendance platform paired with an integration bridge for GHRM attendance ingestion.",
+  "contribution": [
+    "Configured EasyTimePro infrastructure and mobile punch tests",
+    "Developed and tested the GHRM event forwarding bridge",
+    "Validated employee and device transaction fields"
+  ],
+  "features": [
+    "Employee and device overview",
+    "Attendance monitoring",
+    "Biometric device status",
+    "GHRM integration bridge"
+  ],
+  "technologies": [
+    "EasyTimePro",
+    "ZKTeco",
+    "PostgreSQL",
+    "Docker",
+    "Python",
+    "REST APIs"
+  ],
+  "users": "HR, attendance administrators and technical operations teams",
+  "images": [
+    {
+      "label": "Attendance Core dashboard — company personnel, device and attendance overview",
+      "src": "/projects/attendance-core/dashboard.png",
+      "ratio": "screen"
+    }
+  ],
+  "liveUrl": "https://attendance-core.abooderp.com/",
+  "caseStudySections": [
+    {
+      "title": "System and integration",
+      "body": "The dashboard is part of the attendance platform. My engineering work includes deploying supporting services and forwarding attendance transactions to GHRM."
+    },
+    {
+      "title": "Privacy",
+      "body": "Production dashboards require authorized access; the portfolio shows a provided screenshot rather than embedding restricted company data."
+    }
+  ],
+  "outcome": "A working attendance platform with tested GHRM integration workflows; production data handling remains protected.",
+  "featured": true
+},
   {
     "slug": "rjay-wifi-platform",
     "title": "RJAY WiFi Digital Platform",

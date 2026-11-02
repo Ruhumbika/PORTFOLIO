@@ -25,23 +25,23 @@ export const site = {
   profileImage: '/profile/ruhumbika-profile.webp',
   profileImageSquare: '/profile/ruhumbika-profile-square.webp',
   availability:
-    'Currently employed · Open to more advantageous full-stack opportunities',
+    'Building enterprise software · Open to strategic partnerships',
   isAvailable: true,
   availabilityZone: 'EAT · UTC+3',
   responseTime: 'Usually replies within a few hours',
   whatsapp: '255787550399',
   hire: {
     whatsappTemplate:
-      "Hi Ruhumbika, I reviewed your product portfolio and I'm impressed. I'd like to fast-track a conversation about a role or contract. When are you free to talk?",
+      "Hello Ruhumbika, I explored your engineering portfolio and would like to discuss a potential technology partnership or project.",
     emailSubject:
-      'Opportunity for Ruhumbika: let’s fast-track a conversation',
+      'Strategic technology partnership inquiry',
     emailBody:
-      "Hi Ruhumbika,\n\nI reviewed your portfolio and would like to discuss a role or project that fits your full-stack and AI focus.\n\nA few details:\n- Company/Team:\n- Role or project:\n- Timeline:\n\nWhen are you available for a short call?\n\nThanks,",
+      "Hi Ruhumbika,\n\nI explored your engineering portfolio and would like to discuss a potential collaboration, enterprise integration or digital product initiative.\n\nA few details:\n- Company/Team:\n- Partnership or project:\n- Timeline:\n\nWhen are you available for a short call?\n\nThanks,",
     reasons: [
-      'Builds full-stack and AI products end to end',
+      'Builds full-stack software and AI automation solutions',
       'Completed two ICT field placements in a public-sector environment',
       'Works across Laravel, FastAPI, Flutter and Node.js',
-      'Currently employed and open to more advantageous roles, contracts and collaborations',
+      'Open to strategic partnerships, enterprise projects and technical collaborations',
     ],
   },
   schedule: {

@@ -1,19 +1,20 @@
 export const site = {
   name: 'Ruhumbika Mtumba John',
   initials: 'R',
-  title: 'Full-Stack Developer | AI Application Developer | UI/UX Designer',
+  title: 'Software Engineer | AI Automation | Full-Stack Development | Enterprise Integration',
   roles: [
     'Full-Stack Developer',
-    'AI Application Developer',
+    'AI Automation Engineer',
+    'Enterprise Systems Integration Developer',
     'Digital Product Builder',
   ],
   supportingRole: 'UI/UX Designer',
   brandStatement:
-    'I build practical digital products by combining full-stack engineering, artificial intelligence and user-centred design.',
+    'I engineer secure, intelligent digital products through full-stack software development, AI automation and enterprise systems integration.',
   shortStatement:
-    'Building intelligent, useful and human-centred digital products.',
+    'Engineering intelligent, secure and scalable digital solutions.',
   supportingParagraph:
-    'Final-year Business Information Technology student with hands-on experience developing web, mobile and AI-enabled systems for local government, education, housing and small-business environments.',
+    'Software engineer and Business Information Technology student with hands-on experience in enterprise ERP integration, AI-powered applications, workflow automation, cloud deployments and security-conscious web and mobile development.',
   location: 'Dar es Salaam, Tanzania',
   phone: '+255 787 550 399',
   email: 'ruhumbikamtumbajohn@gmail.com',
@@ -56,7 +57,7 @@ export const site = {
     unavailableSlots: [] as string[],
   },
   indicators: [
-    { value: '5', label: 'Featured Digital Products' },
+    { value: 'ERP + AI', label: 'Engineering Focus' },
     { value: '2', label: 'ICT Field Placements' },
     { value: 'Full-Stack + AI', label: 'Core Focus' },
     { value: 'Dar es Salaam', label: 'Based in Tanzania' },

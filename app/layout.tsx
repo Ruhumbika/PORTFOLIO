@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: site.url,
-    title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
+    title: 'Ruhumbika Mtumba John | Software Engineering & Enterprise Automation',
     description:
       'Explore software engineering projects and services in AI automation, ERP integration, web and mobile application development in Tanzania.',
     siteName: site.name,

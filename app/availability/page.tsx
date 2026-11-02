@@ -5,9 +5,9 @@ import { Reveal } from '@/components/shared/Reveal'
 import { site } from '@/data/site'
 
 export const metadata: Metadata = {
-  title: 'Interview Availability',
+  title: 'Schedule a Strategic Conversation',
   description:
-    'View Ruhumbika Mtumba John’s weekday interview availability and prepare a pre-filled interview request by WhatsApp or email.',
+    'Explore a technology partnership with Ruhumbika Mtumba John and request a convenient weekday conversation through WhatsApp or email.',
   alternates: { canonical: '/availability' },
 }
 
@@ -19,7 +19,7 @@ export default function AvailabilityPage() {
           Schedule a conversation
         </p>
         <h1 className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-          Choose a weekday interview slot.
+          Schedule a technology conversation.
         </h1>
         <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
           Availability is displayed in {site.schedule.timeZoneLabel}. Choose a
@@ -44,7 +44,7 @@ export default function AvailabilityPage() {
             {
               Icon: Mail,
               title: 'Email request',
-              text: 'A professional interview request opens in your email app',
+              text: 'A professional meeting request opens in your email app',
             },
           ].map(({ Icon, title, text }) => (
             <div key={title} className="rounded-xl border border-border bg-card p-4">

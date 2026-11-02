@@ -21,3 +21,5 @@ The website's shared navigation and metadata can be switched to `/brand/rj-logo.
 5. On the VPS: `git pull --ff-only origin main && npm ci && npm run check && npm run build && sudo systemctl restart john-portfolio`.
 
 SEO verification: add the domain property in Google Search Console and submit `https://johnportifolio.rjaybarber.shop/sitemap.xml`. Search ranking and resulting snippets are controlled by Google.
+
+The supplied ZIP `rj-portfolio-logo-assets.zip` contains all three brand files in their exact destinations. Extract it in the repository root before starting the preview: `unzip -o rj-portfolio-logo-assets.zip`. The source logo PNG is copied without modification for the navbar and favicon, and only the Apple icon is resized.

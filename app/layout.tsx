@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     template: '%s | Ruhumbika Mtumba John',
   },
   description:
-    'Hire Ruhumbika Mtumba John for full-stack software development, AI automation, ERP and API integrations, mobile apps, and secure digital solutions in Tanzania.',
+    'Ruhumbika Mtumba John builds enterprise software, AI automation, ERP integrations and scalable digital platforms. Explore engineering projects and strategic partnerships in Tanzania.',
   keywords: [
     'Ruhumbika Mtumba John',
     'Full-Stack Developer',
     'AI Automation',
     'Software Engineer Tanzania',
-    'Hire Software Engineer Tanzania',
+    'Enterprise Software Solutions Tanzania',
     'Freelance Full-Stack Developer',
     'Business Software Development',
     'Mobile App Developer Tanzania',

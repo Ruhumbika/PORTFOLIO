@@ -12,20 +12,17 @@ export function ContactCTA() {
           <div className="bg-grid pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" />
           <div className="relative flex flex-col items-start gap-6">
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
-              Let&apos;s work together
+              Partnerships & collaboration
             </span>
             <h2 className="max-w-2xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Let&apos;s build something useful.
+              Engineering for ambitious ideas.
             </h2>
             <p className="max-w-xl text-pretty leading-relaxed text-muted-foreground">
-              I&apos;m currently employed as a Full-Stack Developer at Ma Cargo
-              Transporters and Forwarders (ABOOD Group of Companies), while
-              remaining open to more advantageous opportunities and practical
-              digital product collaborations.
+              I work with people and organizations pursuing impactful software products, enterprise automation and dependable digital infrastructure. Bring a bold idea or a complex systems challenge.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Button href="/contact">
-                Get in touch
+                Explore a partnership
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Button>
               <Button

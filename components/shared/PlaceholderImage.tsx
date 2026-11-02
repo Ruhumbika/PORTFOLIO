@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ImageIcon } from 'lucide-react'
+import { FolderCode, FileImage, Film } from 'lucide-react'
 import type { ProjectImage } from '@/types/project'
 import { cn } from '@/lib/utils'
 
@@ -29,6 +29,17 @@ export function PlaceholderImage({
 }: PlaceholderImageProps) {
   const ratio = ratioClass[image.ratio ?? 'video']
 
+  if (image.videoSrc) {
+    return (
+      <div className={cn('relative overflow-hidden rounded-lg border border-[#F8A706]/30 bg-[#0b1118]', ratio, className)}>
+        <video controls playsInline preload="metadata" poster={image.src} aria-label={image.label} className="h-full w-full object-contain" controlsList="nodownload">
+          <source src={image.videoSrc} type="video/webm" />
+          Your browser does not support WebM video playback.
+        </video>
+      </div>
+    )
+  }
+
   if (image.src) {
     return (
       <div
@@ -53,23 +64,23 @@ export function PlaceholderImage({
   return (
     <div
       role="img"
-      aria-label={`${image.label} (placeholder)`}
+      aria-label={`${image.label} (media not yet provided)`}
       className={cn(
-        'bg-grid relative flex items-center justify-center overflow-hidden rounded-lg border border-dashed border-border bg-card',
+        'bg-grid relative flex items-center justify-center overflow-hidden rounded-lg border border-[#F8A706]/25 bg-[#101820]',
         ratio,
         className,
       )}
     >
-      <div className="flex flex-col items-center gap-2 px-4 text-center">
-        <span className="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-secondary text-muted-foreground">
-          <ImageIcon className="h-4 w-4" aria-hidden="true" />
-        </span>
-        <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-          {image.label}
-        </span>
-        <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground/60">
-          Screenshot placeholder
-        </span>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F8A706]/10 via-transparent to-primary/10" aria-hidden="true" />
+      <div className="relative flex max-w-xs flex-col items-center gap-3 px-5 text-center">
+        <div className="flex items-center gap-2 text-[#F8A706]" aria-hidden="true">
+          <FileImage className="h-5 w-5 opacity-60" />
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#F8A706]/45 bg-[#F8A706]/10"><FolderCode className="h-7 w-7" /></span>
+          <Film className="h-5 w-5 opacity-60" />
+        </div>
+        <span className="text-sm font-semibold text-foreground">Project media in preparation</span>
+        <span className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">{image.label}</span>
+        <span className="rounded-full border border-[#F8A706]/25 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-[#F8A706]">Read case study</span>
       </div>
     </div>
   )

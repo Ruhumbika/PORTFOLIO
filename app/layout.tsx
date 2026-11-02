@@ -15,23 +15,27 @@ export const metadata: Metadata = {
   category: 'technology',
   icons: {
     icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/brand/rj-logo.png', type: 'image/png' },
+      { url: '/brand/rj-logo.png', sizes: 'any' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/brand/rj-logo.png',
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   title: {
     default:
-      'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
+      'Ruhumbika Mtumba John | Software Engineer & AI Automation',
     template: '%s | Ruhumbika Mtumba John',
   },
   description:
-    'Portfolio of Ruhumbika Mtumba John, a full-stack developer and AI application developer building practical web, mobile and intelligent digital products.',
+    'Discover Ruhumbika Mtumba John, a Tanzanian software engineer building AI automation, secure web and mobile apps, ERP integrations and scalable digital products.',
   keywords: [
     'Ruhumbika Mtumba John',
     'Full-Stack Developer',
-    'AI Application Developer',
+    'AI Automation',
+    'Software Engineer Tanzania',
+    'ERP Integration',
+    'REST API Engineering',
+    'Cloud Deployment',
     'Cybersecurity',
     'System Security',
     'Laravel',
@@ -48,7 +52,7 @@ export const metadata: Metadata = {
     url: site.url,
     title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
     description:
-      'Building practical web, mobile and intelligent digital products with full-stack engineering, AI and user-centred design.',
+      'Software engineering, AI automation, ERP integrations, cybersecurity-aware applications and digital product development in Tanzania.',
     siteName: site.name,
     locale: 'en_US',
     images: [{ url: '/og/portfolio-og.jpg', width: 1200, height: 630, alt: site.name }],
@@ -57,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
     description:
-      'Building practical web, mobile and intelligent digital products.',
+      'AI automation, software engineering, ERP integration and security-conscious digital products.',
     images: ['/og/portfolio-og.jpg'],
   },
 }
@@ -74,7 +78,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
-  jobTitle: 'Full-Stack Developer & AI Application Developer',
+  jobTitle: 'Software Engineer, AI Automation and Enterprise Systems Integration',
   url: site.url,
   email: site.email,
   telephone: site.phone,
@@ -85,6 +89,7 @@ const personJsonLd = {
   },
   image: `${site.url}${site.profileImage}`,
   sameAs: [site.github, site.linkedin],
+  knowsAbout: ['Software Engineering', 'AI Automation', 'ERP Integrations', 'API Development', 'Full-Stack Development', 'Cybersecurity-Aware Engineering'],
 }
 
 export default function RootLayout({

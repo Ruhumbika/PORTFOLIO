@@ -19,16 +19,21 @@ export const metadata: Metadata = {
   },
   title: {
     default:
-      'Ruhumbika Mtumba John | Software Engineer & AI Automation',
+      'Ruhumbika Mtumba John | Software Engineer, AI Automation & ERP Integration',
     template: '%s | Ruhumbika Mtumba John',
   },
   description:
-    'Discover Ruhumbika Mtumba John, a Tanzanian software engineer building AI automation, secure web and mobile apps, ERP integrations and scalable digital products.',
+    'Hire Ruhumbika Mtumba John for full-stack software development, AI automation, ERP and API integrations, mobile apps, and secure digital solutions in Tanzania.',
   keywords: [
     'Ruhumbika Mtumba John',
     'Full-Stack Developer',
     'AI Automation',
     'Software Engineer Tanzania',
+    'Hire Software Engineer Tanzania',
+    'Freelance Full-Stack Developer',
+    'Business Software Development',
+    'Mobile App Developer Tanzania',
+    'WhatsApp Business Automation',
     'ERP Integration',
     'REST API Engineering',
     'Cloud Deployment',
@@ -48,7 +53,7 @@ export const metadata: Metadata = {
     url: site.url,
     title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
     description:
-      'Software engineering, AI automation, ERP integrations, cybersecurity-aware applications and digital product development in Tanzania.',
+      'Explore software engineering projects and services in AI automation, ERP integration, web and mobile application development in Tanzania.',
     siteName: site.name,
     locale: 'en_US',
     images: [{ url: '/og/portfolio-og.jpg', width: 1200, height: 630, alt: site.name }],

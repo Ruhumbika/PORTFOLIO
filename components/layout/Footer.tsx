@@ -17,8 +17,7 @@ export function Footer() {
               <span className="text-sm font-semibold">{site.name}</span>
             </Link>
             <p className="mt-4 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Full-Stack Developer · AI Application Developer · Digital Product
-              Builder
+              Software Engineering · AI Automation · Enterprise Integrations
             </p>
           </div>
 

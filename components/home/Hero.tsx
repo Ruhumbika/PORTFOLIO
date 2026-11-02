@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   AnimatePresence,
   motion,
@@ -88,15 +88,6 @@ export function Hero() {
     damping: 22,
   })
 
-  useEffect(() => {
-    const revealTimer = window.setTimeout(() => setProfileFlipped(true), 30_000)
-    const resetTimer = window.setTimeout(() => setProfileFlipped(false), 90_000)
-
-    return () => {
-      window.clearTimeout(revealTimer)
-      window.clearTimeout(resetTimer)
-    }
-  }, [])
 
   function toggleProfileCard() {
     setProfileFlipped((current) => !current)
@@ -153,7 +144,7 @@ export function Hero() {
             variants={item}
             className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
           >
-            Full-Stack · AI Applications · Cybersecurity · Digital Products
+            Software Engineering · AI Automation · Cybersecurity · ERP Systems
           </motion.p>
 
           <motion.h1
@@ -169,10 +160,9 @@ export function Hero() {
             variants={item}
             className="mt-5 text-lg font-medium text-foreground/90"
           >
-            Full-Stack Developer{' '}
-            <span className="text-muted-foreground">|</span> AI Application
-            Developer <span className="text-muted-foreground">|</span> UI/UX
-            Designer
+            Software Engineer{' '}
+            <span className="text-muted-foreground">|</span> AI Automation{' '}
+            <span className="text-muted-foreground">|</span> Full-Stack Developer
           </motion.p>
 
           <motion.p
@@ -207,7 +197,7 @@ export function Hero() {
             </Button>
             <Button href="/availability" variant="ghost">
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
-              Book Interview
+              Discuss a Project
             </Button>
           </motion.div>
 
@@ -239,7 +229,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative flex min-h-[31rem] items-center justify-center"
+          className="relative flex min-h-[26rem] min-w-0 items-center justify-center sm:min-h-[31rem]"
           onPointerMove={handleVisualPointer}
           onPointerLeave={resetVisualPointer}
         >
@@ -263,7 +253,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            className="relative w-full max-w-sm"
+            className="relative w-full max-w-[20rem] sm:max-w-sm"
             style={reduce ? undefined : { rotateX, rotateY, perspective: 1100 }}
           >
             <AnimatePresence>
@@ -283,16 +273,16 @@ export function Hero() {
                     ) : null}
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
                   </span>
-                  Currently seeking a role
+                  Strategic collaborations
                 </motion.div>
               ) : null}
             </AnimatePresence>
 
-            <div className="profile-orbit-ring" aria-hidden="true" />
+            <div className="profile-orbit-ring hidden lg:block" aria-hidden="true" />
             {orbitCards.map(({ label, Icon, x, y }) => (
               <motion.div
                 key={label}
-                className="profile-orbit-card"
+                className="profile-orbit-card hidden lg:flex"
                 initial={reduce ? { x: x[0], y: y[0] } : { opacity: 0, scale: 0.7 }}
                 animate={
                   reduce
@@ -321,7 +311,7 @@ export function Hero() {
             </div>
 
             <motion.div
-              className="profile-flip-card relative"
+              className="profile-flip-card relative min-w-0"
               animate={{ rotateY: profileFlipped ? 180 : 0 }}
               transition={
                 reduce
@@ -343,11 +333,9 @@ export function Hero() {
                   type="button"
                   onClick={toggleProfileCard}
                   className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-primary transition-colors hover:bg-primary/10"
-                  aria-label="Show current job opportunity message"
+                  aria-label="Show partnership and collaboration details"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  opportunity
-                </button>
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />partnership</button>
               </div>
 
               <div className="relative mt-3 aspect-[4/5] w-full overflow-hidden rounded-lg border border-border bg-background/40">
@@ -395,7 +383,7 @@ export function Hero() {
               </div>
               </div>
               <div
-                className="hero-profile-surface profile-flip-face profile-flip-back absolute inset-0 flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-5 backdrop-blur-xl sm:p-7"
+                className="hero-profile-surface profile-flip-face profile-flip-back absolute inset-0 flex flex-col overflow-y-auto overflow-x-hidden rounded-2xl border border-border bg-card p-4 backdrop-blur-xl sm:p-6"
                 aria-hidden={!profileFlipped}
                 inert={!profileFlipped ? true : undefined}
               >
@@ -404,7 +392,7 @@ export function Hero() {
 
                 <div className="relative flex items-center justify-between border-b border-border pb-4">
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
-                    Opportunity signal
+                    Partnership signal
                   </span>
                   <button
                     type="button"
@@ -416,7 +404,7 @@ export function Hero() {
                   </button>
                 </div>
 
-                <div className="relative flex flex-1 flex-col justify-center py-6">
+                <div className="relative flex flex-1 flex-col justify-start py-4 sm:py-6">
                   <motion.span
                     animate={reduce ? undefined : { y: [0, -6, 0], rotate: [0, -3, 0] }}
                     transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
@@ -425,26 +413,26 @@ export function Hero() {
                     <BriefcaseBusiness className="h-7 w-7" aria-hidden="true" />
                   </motion.span>
 
-                  <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
-                    Currently employed
+                  <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
+                    Technology partnerships
                   </p>
-                  <h3 className="mt-3 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                    Open to more advantageous opportunities.
+                  <h3 className="mt-2 text-balance text-xl font-semibold leading-tight tracking-tight sm:text-2xl">
+                    Building systems that move businesses forward.
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    I&apos;m currently a Full-Stack Developer at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), and I&apos;m open to the right opportunity in software engineering, quality assurance, system security, full-stack systems, AI applications and data-driven products.
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                    I collaborate on ambitious digital products, enterprise integrations, AI automation and scalable software platforms. Let&apos;s explore where engineering can create lasting business value.
                   </p>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-3 flex flex-wrap gap-1.5">
                     {['Software engineering', 'Quality assurance', 'Cybersecurity', 'Data & AI'].map((item) => (
-                      <span key={item} className="rounded-full border border-border bg-secondary px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em]">
+                      <span key={item} className="rounded-full border border-border bg-secondary px-2 py-1 font-mono text-[9px] uppercase tracking-[0.1em]">
                         {item}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative grid gap-2 border-t border-border pt-4 sm:grid-cols-2">
+                <div className="relative grid grid-cols-2 gap-2 border-t border-border pt-3">
                   <Button href="/availability" size="sm">
                     Let&apos;s talk
                     <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

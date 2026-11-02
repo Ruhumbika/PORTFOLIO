@@ -20,7 +20,7 @@ const links = getHireLinks()
 
 const channels = [
   {
-    label: 'Choose an interview time',
+    label: 'Schedule a strategy conversation',
     sub: 'Weekday calendar · WhatsApp or email request',
     href: links.schedule,
     Icon: CalendarDays,
@@ -36,7 +36,7 @@ const channels = [
     external: true,
   },
   {
-    label: 'Email me the role',
+    label: 'Discuss a collaboration by email',
     sub: 'Opens a ready-to-send template',
     href: links.email,
     Icon: Mail,
@@ -84,12 +84,12 @@ export function QuickHire() {
   }
 
   return (
-    <section id="hire" className="border-t border-border">
+    <section id="partnerships" className="border-t border-border">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
         <SectionHeading
-          label="Available for hire"
-          title="Let’s fast-track a conversation"
-          description="Skip the long forms. Reach me on the channel you prefer with a message already written for you. I read every one."
+          label="Strategic partnerships"
+          title="Let’s build what comes next"
+          description="Connecting with founders, businesses and technology leaders to build practical solutions and explore high-impact collaborations."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
@@ -132,8 +132,8 @@ export function QuickHire() {
                     />
                   </span>
                   {site.isAvailable
-                    ? 'Available for hire & contracts'
-                    : 'Currently booked'}
+                    ? 'Open to strategic projects'
+                    : 'Limited project availability'}
                   <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
                     {site.availabilityZone}
                   </span>
@@ -176,7 +176,7 @@ export function QuickHire() {
             <div className="flex h-full flex-col gap-3">
               <div className="mb-1 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-primary">
                 <Zap className="h-3.5 w-3.5" aria-hidden="true" />
-                One-tap outreach
+                Start a conversation
               </div>
               {channels.map(({ label, sub, href, Icon, primary, external }) => (
                 <motion.a

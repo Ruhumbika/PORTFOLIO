@@ -14,24 +14,29 @@ export const metadata: Metadata = {
   applicationName: `${site.name} Portfolio`,
   category: 'technology',
   icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    icon: [{ url: '/icon.png', type: 'image/png' }],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   title: {
     default:
-      'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
+      'Ruhumbika Mtumba John | Software Engineer, AI Automation & ERP Integration',
     template: '%s | Ruhumbika Mtumba John',
   },
   description:
-    'Portfolio of Ruhumbika Mtumba John, a full-stack developer and AI application developer building practical web, mobile and intelligent digital products.',
+    'Ruhumbika Mtumba John builds enterprise software, AI automation, ERP integrations and scalable digital platforms. Explore engineering projects and strategic partnerships in Tanzania.',
   keywords: [
     'Ruhumbika Mtumba John',
     'Full-Stack Developer',
-    'AI Application Developer',
+    'AI Automation',
+    'Software Engineer Tanzania',
+    'Enterprise Software Solutions Tanzania',
+    'Freelance Full-Stack Developer',
+    'Business Software Development',
+    'Mobile App Developer Tanzania',
+    'WhatsApp Business Automation',
+    'ERP Integration',
+    'REST API Engineering',
+    'Cloud Deployment',
     'Cybersecurity',
     'System Security',
     'Laravel',
@@ -46,9 +51,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: site.url,
-    title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
+    title: 'Ruhumbika Mtumba John | Software Engineering & Enterprise Automation',
     description:
-      'Building practical web, mobile and intelligent digital products with full-stack engineering, AI and user-centred design.',
+      'Explore software engineering projects and services in AI automation, ERP integration, web and mobile application development in Tanzania.',
     siteName: site.name,
     locale: 'en_US',
     images: [{ url: '/og/portfolio-og.jpg', width: 1200, height: 630, alt: site.name }],
@@ -57,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
     description:
-      'Building practical web, mobile and intelligent digital products.',
+      'AI automation, software engineering, ERP integration and security-conscious digital products.',
     images: ['/og/portfolio-og.jpg'],
   },
 }
@@ -74,7 +79,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
-  jobTitle: 'Full-Stack Developer & AI Application Developer',
+  jobTitle: 'Software Engineer, AI Automation and Enterprise Systems Integration',
   url: site.url,
   email: site.email,
   telephone: site.phone,
@@ -85,6 +90,7 @@ const personJsonLd = {
   },
   image: `${site.url}${site.profileImage}`,
   sameAs: [site.github, site.linkedin],
+  knowsAbout: ['Software Engineering', 'AI Automation', 'ERP Integrations', 'API Development', 'Full-Stack Development', 'Cybersecurity-Aware Engineering'],
 }
 
 export default function RootLayout({

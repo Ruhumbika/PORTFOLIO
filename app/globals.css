@@ -724,3 +724,12 @@
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* Keep page scrolling, but conceal the visual browser scrollbar and prevent side overflow. */
+html { overflow-x: clip; scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
+body { overflow-x: clip; }
+@media (max-width: 767px) {
+  .profile-opportunity-popup { white-space: normal; max-width: 94%; text-align: center; }
+  .profile-orbit-card, .profile-orbit-ring { display: none; }
+}

@@ -45,7 +45,7 @@ export function FloatingHire() {
             <Link
               href="/availability"
               className="group flex items-center gap-2.5 rounded-full border border-primary/40 bg-primary py-3 pl-3.5 pr-5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20"
-              aria-label="View Ruhumbika's interview availability"
+              aria-label="Explore a strategy conversation with Ruhumbika"
             >
               <span className="relative flex h-6 w-6 items-center justify-center">
                 {!reduce ? (
@@ -53,7 +53,7 @@ export function FloatingHire() {
                 ) : null}
                 <CalendarDays className="relative h-5 w-5" aria-hidden="true" />
               </span>
-              Book interview
+              Discuss a project
             </Link>
           </motion.div>
           <button

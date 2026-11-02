@@ -1,6 +1,8 @@
 import type { Project } from '@/types/project'
+import { newEngineeringProjects } from './engineering-projects'
 
 export const projects: Project[] = [
+  ...newEngineeringProjects,
   {
     slug: 'peta-holdings-erp',
     title: 'PETA Holdings ERP Dashboard',
@@ -397,7 +399,7 @@ export const projects: Project[] = [
     users:
       'Tenants searching for trustworthy housing, landlords listing properties and administrators overseeing the marketplace.',
     images: [
-      { label: 'Mobile discovery screen', ratio: 'portrait' },
+      { label: 'Vyumba Ubungo mobile rental discovery screen', src: '/projects/rental-platform/vyumba-mobile.png', ratio: 'portrait' },
       { label: 'Property details', ratio: 'portrait' },
       { label: 'Map screen', ratio: 'portrait' },
       { label: 'Landlord dashboard', ratio: 'video' },
@@ -522,7 +524,8 @@ export const projects: Project[] = [
     images: [
       {
         label: 'RJAY Barbershop haircut gallery and booking interface',
-        src: '/projects/rjay-barbershop/gallery-booking.webp',
+        src: '/projects/rjay-barbershop/mobile-video-poster.jpg',
+        videoSrc: '/projects/rjay-barbershop/mobile-demo.webm',
         ratio: 'screen',
       },
       {

@@ -22,15 +22,15 @@ export function ProjectCard({ project, reversed, index }: ProjectCardProps) {
     >
       {/* Media */}
       <div className={cn('relative', reversed && 'lg:order-2')}>
-        <Link
-          href={`/projects/${project.slug}`}
-          aria-label={`View ${project.shortTitle ?? project.title} case study`}
-          className="block overflow-hidden rounded-lg"
-        >
-          <div className="transition-transform duration-500 group-hover:scale-[1.02]">
-            <PlaceholderImage image={project.images[0]} />
-          </div>
-        </Link>
+        {project.images[0]?.videoSrc ? (
+          <PlaceholderImage image={project.images[0]} />
+        ) : (
+          <Link href={`/projects/${project.slug}`} aria-label={`View ${project.shortTitle ?? project.title} case study`} className="block overflow-hidden rounded-lg">
+            <div className="transition-transform duration-500 group-hover:scale-[1.02]">
+              <PlaceholderImage image={project.images[0]} />
+            </div>
+          </Link>
+        )}
       </div>
 
       {/* Content */}

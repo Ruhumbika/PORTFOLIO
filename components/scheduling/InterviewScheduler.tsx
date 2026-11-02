@@ -116,7 +116,7 @@ export function InterviewScheduler() {
     const links = buildInterviewRequestLinks(requestDetails)
     window.open(links[channel], '_blank', 'noopener,noreferrer')
     setNotice(
-      `Your ${channel === 'whatsapp' ? 'WhatsApp' : 'email'} request is pre-filled. Send it to complete the interview request.`,
+      `Your ${channel === 'whatsapp' ? 'WhatsApp' : 'email'} request is pre-filled. Send it to complete the meeting request.`,
     )
   }
 
@@ -126,7 +126,7 @@ export function InterviewScheduler() {
 
     try {
       await navigator.clipboard.writeText(body)
-      setNotice('Interview request copied to your clipboard.')
+      setNotice('Meeting request copied to your clipboard.')
     } catch {
       const textArea = document.createElement('textarea')
       textArea.value = body
@@ -136,7 +136,7 @@ export function InterviewScheduler() {
       textArea.select()
       document.execCommand('copy')
       textArea.remove()
-      setNotice('Interview request copied to your clipboard.')
+      setNotice('Meeting request copied to your clipboard.')
     }
   }
 
@@ -146,7 +146,7 @@ export function InterviewScheduler() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `tentative-interview-${requestDetails.date}-${requestDetails.time.replace(':', '')}.ics`
+    link.download = `tentative-meeting-${requestDetails.date}-${requestDetails.time.replace(':', '')}.ics`
     document.body.appendChild(link)
     link.click()
     link.remove()
@@ -161,7 +161,7 @@ export function InterviewScheduler() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-                Interview availability
+                Conversation availability
               </p>
               <h2 className="mt-2 text-2xl font-semibold tracking-tight">
                 Pick a suitable weekday
@@ -307,7 +307,7 @@ export function InterviewScheduler() {
 
         <div className="p-5 sm:p-7">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-            Request the interview
+            Request a conversation
           </p>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight">
             Tell me who I’ll be meeting
@@ -348,9 +348,9 @@ export function InterviewScheduler() {
             />
             <Field
               id="interview-role"
-              label="Role / opportunity"
+              label="Partnership / project focus"
               value={fields.role}
-              placeholder="Graduate role, internship, project…"
+              placeholder="Enterprise integration, automation, product…"
               onChange={(value) => updateField('role', value)}
             />
           </div>
@@ -365,7 +365,7 @@ export function InterviewScheduler() {
               rows={4}
               value={fields.message}
               onChange={(event: ChangeEvent<HTMLTextAreaElement>) => updateField('message', event.target.value)}
-              placeholder="Share any interview agenda, meeting link preference or context."
+              placeholder="Outline the initiative, goals or preferred meeting format."
               maxLength={2000}
               className="resize-y rounded-lg border border-border bg-background/30 px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
             />

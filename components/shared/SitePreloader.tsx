@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { site } from '@/data/site'
 
@@ -56,7 +57,7 @@ export function SitePreloader() {
               transition={{ duration: 0.35 }}
               className="relative flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 font-mono text-lg font-semibold text-primary"
             >
-              <span>{site.initials}</span>
+              <Image src="/brand/rj-logo.png" width={64} height={64} alt="RJ logo" className="h-full w-full rounded-2xl object-contain" />
               {!reduce ? (
                 <motion.span
                   className="absolute inset-[-5px] rounded-[20px] border border-primary/50"

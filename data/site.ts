@@ -1,19 +1,20 @@
 export const site = {
   name: 'Ruhumbika Mtumba John',
   initials: 'R',
-  title: 'Full-Stack Developer | AI Application Developer | UI/UX Designer',
+  title: 'Software Engineer | AI Automation | Full-Stack Development | Enterprise Integration',
   roles: [
     'Full-Stack Developer',
-    'AI Application Developer',
+    'AI Automation Engineer',
+    'Enterprise Systems Integration Developer',
     'Digital Product Builder',
   ],
   supportingRole: 'UI/UX Designer',
   brandStatement:
-    'I build practical digital products by combining full-stack engineering, artificial intelligence and user-centred design.',
+    'I help businesses build reliable web and mobile applications, automate workflows with AI, and connect enterprise systems through secure, maintainable APIs.',
   shortStatement:
-    'Building intelligent, useful and human-centred digital products.',
+    'Full-stack software, AI automation and ERP integrations that solve real business problems.',
   supportingParagraph:
-    'Final-year Business Information Technology student with hands-on experience developing web, mobile and AI-enabled systems for local government, education, housing and small-business environments.',
+    'Software engineer and Business Information Technology graduate with hands-on experience in enterprise ERP integration, AI-powered applications, workflow automation, cloud deployments and security-conscious web and mobile development.',
   location: 'Dar es Salaam, Tanzania',
   phone: '+255 787 550 399',
   email: 'ruhumbikamtumbajohn@gmail.com',
@@ -24,23 +25,23 @@ export const site = {
   profileImage: '/profile/ruhumbika-profile.webp',
   profileImageSquare: '/profile/ruhumbika-profile-square.webp',
   availability:
-    'Currently employed · Open to more advantageous full-stack opportunities',
+    'Building enterprise software · Open to strategic partnerships',
   isAvailable: true,
   availabilityZone: 'EAT · UTC+3',
   responseTime: 'Usually replies within a few hours',
   whatsapp: '255787550399',
   hire: {
     whatsappTemplate:
-      "Hi Ruhumbika, I reviewed your product portfolio and I'm impressed. I'd like to fast-track a conversation about a role or contract. When are you free to talk?",
+      "Hello Ruhumbika, I explored your engineering portfolio and would like to discuss a potential technology partnership or project.",
     emailSubject:
-      'Opportunity for Ruhumbika: let’s fast-track a conversation',
+      'Strategic technology partnership inquiry',
     emailBody:
-      "Hi Ruhumbika,\n\nI reviewed your portfolio and would like to discuss a role or project that fits your full-stack and AI focus.\n\nA few details:\n- Company/Team:\n- Role or project:\n- Timeline:\n\nWhen are you available for a short call?\n\nThanks,",
+      "Hi Ruhumbika,\n\nI explored your engineering portfolio and would like to discuss a potential collaboration, enterprise integration or digital product initiative.\n\nA few details:\n- Company/Team:\n- Partnership or project:\n- Timeline:\n\nWhen are you available for a short call?\n\nThanks,",
     reasons: [
-      'Builds full-stack and AI products end to end',
+      'Builds full-stack software and AI automation solutions',
       'Completed two ICT field placements in a public-sector environment',
       'Works across Laravel, FastAPI, Flutter and Node.js',
-      'Currently employed and open to more advantageous roles, contracts and collaborations',
+      'Open to strategic partnerships, enterprise projects and technical collaborations',
     ],
   },
   schedule: {
@@ -56,7 +57,7 @@ export const site = {
     unavailableSlots: [] as string[],
   },
   indicators: [
-    { value: '5', label: 'Featured Digital Products' },
+    { value: 'ERP + AI', label: 'Engineering Focus' },
     { value: '2', label: 'ICT Field Placements' },
     { value: 'Full-Stack + AI', label: 'Core Focus' },
     { value: 'Dar es Salaam', label: 'Based in Tanzania' },
@@ -68,6 +69,7 @@ export const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Solutions', href: '/solutions' },
   { label: 'Experience', href: '/experience' },
   { label: 'Availability', href: '/availability' },
   { label: 'Contact', href: '/contact' },

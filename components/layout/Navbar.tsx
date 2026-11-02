@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Download } from 'lucide-react'
@@ -43,9 +44,7 @@ export function Navbar() {
           className="group inline-flex items-center gap-2"
           aria-label={`${site.name}, home`}
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-md border border-primary/40 bg-primary/10 font-mono text-sm font-semibold text-primary">
-            {site.initials}
-          </span>
+          <Image src="/brand/rj-logo.png" alt="RJ original logo" width={36} height={36} className="h-9 w-9 rounded-md object-contain" />
           <span className="hidden font-mono text-sm tracking-tight text-foreground sm:inline">
             Ruhumbika
           </span>

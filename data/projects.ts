@@ -1,6 +1,8 @@
 import type { Project } from '@/types/project'
+import { newEngineeringProjects } from './engineering-projects'
 
 export const projects: Project[] = [
+  ...newEngineeringProjects,
   {
     slug: 'peta-holdings-erp',
     title: 'PETA Holdings ERP Dashboard',

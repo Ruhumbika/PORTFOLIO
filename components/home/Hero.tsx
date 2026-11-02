@@ -197,7 +197,7 @@ export function Hero() {
             </Button>
             <Button href="/availability" variant="ghost">
               <CalendarDays className="h-4 w-4" aria-hidden="true" />
-              Book Interview
+              Discuss a Project
             </Button>
           </motion.div>
 
@@ -273,7 +273,7 @@ export function Hero() {
                     ) : null}
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
                   </span>
-                  Currently seeking a role
+                  Strategic collaborations
                 </motion.div>
               ) : null}
             </AnimatePresence>
@@ -333,11 +333,9 @@ export function Hero() {
                   type="button"
                   onClick={toggleProfileCard}
                   className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-primary transition-colors hover:bg-primary/10"
-                  aria-label="Show current job opportunity message"
+                  aria-label="Show partnership and collaboration details"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  opportunity
-                </button>
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />partnership</button>
               </div>
 
               <div className="relative mt-3 aspect-[4/5] w-full overflow-hidden rounded-lg border border-border bg-background/40">
@@ -394,7 +392,7 @@ export function Hero() {
 
                 <div className="relative flex items-center justify-between border-b border-border pb-4">
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
-                    Opportunity signal
+                    Partnership signal
                   </span>
                   <button
                     type="button"
@@ -416,13 +414,13 @@ export function Hero() {
                   </motion.span>
 
                   <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-primary">
-                    Currently employed
+                    Technology partnerships
                   </p>
                   <h3 className="mt-2 text-balance text-xl font-semibold leading-tight tracking-tight sm:text-2xl">
-                    Open to more advantageous opportunities.
+                    Building systems that move businesses forward.
                   </h3>
                   <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-                    I&apos;m currently a Full-Stack Developer at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), and I&apos;m open to the right opportunity in software engineering, quality assurance, system security, full-stack systems, AI applications and data-driven products.
+                    I collaborate on ambitious digital products, enterprise integrations, AI automation and scalable software platforms. Let&apos;s explore where engineering can create lasting business value.
                   </p>
 
                   <div className="mt-3 flex flex-wrap gap-1.5">

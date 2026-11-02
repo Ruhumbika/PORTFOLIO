@@ -11,6 +11,8 @@ export interface ProjectImage {
   label: string
   /** Optional real screenshot path, e.g. /projects/kdilms/dashboard.webp */
   src?: string
+  /** Optional local WebM/MP4 recording, played only after the visitor chooses to play. */
+  videoSrc?: string
   /** Suggested aspect ratio for the placeholder frame. */
   ratio?: 'video' | 'square' | 'portrait' | 'wide' | 'screen'
 }

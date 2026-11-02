@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero"
+import { EngineeringHighlights } from "@/components/home/EngineeringHighlights"
 import { AboutPreview } from "@/components/home/AboutPreview"
 import { ExpertiseSection } from "@/components/home/ExpertiseSection"
 import { FeaturedProjects } from "@/components/home/FeaturedProjects"
@@ -20,6 +21,7 @@ export default function HomePage() {
       <AboutPreview />
       <AsciiTreeSection />
       <ExpertiseSection />
+      <EngineeringHighlights />
       <FeaturedProjects />
       <TechnicalCapabilities />
       <CertificationsSection />

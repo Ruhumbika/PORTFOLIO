@@ -1,4 +1,3 @@
-import Image from "next/image"
 import type { Metadata } from "next"
 import { site } from "@/data/site"
 import { education } from "@/data/education"
@@ -9,6 +8,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading"
 import { Button } from "@/components/shared/Button"
 import { SkillsGrid } from "@/components/shared/SkillsGrid"
 import { GraduationCap, Award, ArrowRight, Download } from "lucide-react"
+import { AboutProfileCard } from "@/components/home/AboutProfileCard"
 
 export const metadata: Metadata = {
   title: "About",
@@ -16,14 +16,6 @@ export const metadata: Metadata = {
     "About Ruhumbika Mtumba John, a Business Information Technology graduate and full-stack and AI application developer based in Dar es Salaam, Tanzania.",
   alternates: { canonical: "/about" },
 }
-
-const focusAreas = [
-  "Full-stack web and mobile systems",
-  "Locally hosted, privacy-conscious AI applications",
-  "System security, access control and cybersecurity practice",
-  "User-centred digital product design",
-  "Public-sector and small-business software",
-]
 
 export default function AboutPage() {
   return (
@@ -60,43 +52,7 @@ export default function AboutPage() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="overflow-hidden rounded-xl border border-border bg-card">
-            <div className="relative aspect-[5/4] overflow-hidden border-b border-border">
-              <Image
-                src={site.profileImageSquare}
-                alt="Professional portrait of Ruhumbika Mtumba John"
-                fill
-                sizes="(min-width: 1024px) 360px, 100vw"
-                className="object-cover object-[50%_35%]"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/85 to-transparent p-5 pt-16">
-                <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-primary">
-                  Engineering · AI · Product thinking
-                </p>
-              </div>
-            </div>
-            <div className="p-6">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Current focus</h2>
-              <ul className="mt-4 space-y-3">
-                {focusAreas.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-foreground">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <dl className="mt-6 space-y-3 border-t border-border pt-6 text-sm">
-                <div className="flex items-center justify-between gap-4">
-                  <dt className="text-muted-foreground">Location</dt>
-                  <dd className="text-right text-foreground">{site.location}</dd>
-                </div>
-                <div className="flex items-center justify-between gap-4">
-                  <dt className="text-muted-foreground">Availability</dt>
-                  <dd className="text-right text-foreground">Currently employed · Open to better opportunities</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
+          <AboutProfileCard />
         </Reveal>
       </div>
 

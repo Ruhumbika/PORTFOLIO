@@ -162,6 +162,8 @@ html[data-theme-transition='reveal']::view-transition-new(root) {
 
 html[data-theme-transition='reveal']::view-transition-new(root) {
   z-index: 2;
+  /* Conceal the incoming theme until the controlled growth begins. */
+  clip-path: circle(0px at var(--theme-reveal-x) var(--theme-reveal-y));
 }
 
 html[data-theme-transition='reveal']::view-transition-old(root) {

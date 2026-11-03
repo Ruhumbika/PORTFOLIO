@@ -36,11 +36,11 @@ export function AboutProfileCard() {
       onPointerMove={onMove}
       onPointerLeave={onLeave}
       style={reduce ? undefined : { rotateX, rotateY, transformPerspective: 1100 }}
-      className="group relative mx-auto w-full max-w-[430px] min-w-0 lg:ml-auto"
+      className="group relative mx-auto w-full max-w-[390px] min-w-0 lg:ml-auto"
     >
       <div className="pointer-events-none absolute -inset-3 rounded-3xl bg-primary/[0.07] blur-2xl transition-opacity duration-500 group-hover:opacity-100" aria-hidden="true" />
       <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_50px_rgba(0,0,0,0.15)] transition-colors duration-300 group-hover:border-primary/50">
-        <div className="relative aspect-[5/4] overflow-hidden border-b border-border">
+        <div className="relative aspect-[4/3] overflow-hidden border-b border-border">
           <motion.div className="absolute inset-0" whileHover={reduce ? undefined : { scale: 1.045 }} transition={{ duration: 0.7 }}>
             <Image src={site.profileImageSquare} alt="Professional portrait of Ruhumbika Mtumba John" fill sizes="(min-width: 1024px) 430px, 100vw" className="object-cover object-[50%_35%]" priority />
           </motion.div>
@@ -49,19 +49,19 @@ export function AboutProfileCard() {
             <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.15em] text-[#f8bd4e]"><Sparkles className="h-3.5 w-3.5"/> Engineering · AI · Product thinking</span>
           </div>
         </div>
-        <div className="p-5 sm:p-6">
+        <div className="p-4 sm:p-5">
           <div className="flex items-center justify-between gap-2">
             <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Core engineering focus</h2>
             <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true"/>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             {focus.map((area, i) => (
               <motion.span key={area} initial={reduce ? false : { opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.12 + i * 0.07 }} className="rounded-lg border border-primary/20 bg-primary/[0.05] px-3 py-2 text-xs font-medium text-foreground">
                 {area}
               </motion.span>
             ))}
           </div>
-          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-4">
             <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground"><MapPin className="h-3.5 w-3.5 text-primary"/>{site.location}</span>
             <Link href="/solutions" className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-foreground">Explore solutions <ArrowUpRight className="h-3.5 w-3.5"/></Link>
           </div>

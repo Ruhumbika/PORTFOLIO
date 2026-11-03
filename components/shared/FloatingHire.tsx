@@ -15,6 +15,7 @@ export function FloatingHire() {
   const reduce = useReducedMotion()
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
+  const [footerVisible, setFooterVisible] = useState(false)
 
   useEffect(() => {
     function onScroll() {
@@ -25,17 +26,28 @@ export function FloatingHire() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const footer = document.getElementById('site-footer')
+    if (!footer || typeof IntersectionObserver === 'undefined') return
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { threshold: 0.01 },
+    )
+    observer.observe(footer)
+    return () => observer.disconnect()
+  }, [])
+
   if (!site.isAvailable) return null
 
   return (
     <AnimatePresence>
-      {visible && !dismissed ? (
+      {visible && !dismissed && !footerVisible ? (
         <motion.div
           initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.9 }}
           transition={{ type: 'spring', stiffness: 380, damping: 26 }}
-          className="fixed bottom-[8rem] right-5 z-50 flex items-center"
+          className="fixed bottom-6 right-4 z-40 hidden items-center sm:flex lg:right-6"
         >
           <motion.div
             whileHover={reduce ? undefined : { y: -3 }}
@@ -59,7 +71,7 @@ export function FloatingHire() {
           <button
             type="button"
             onClick={() => setDismissed(true)}
-            aria-label="Dismiss interview booking button"
+            aria-label="Dismiss project discussion button"
             className="ml-2 flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:text-foreground"
           >
             <X className="h-3.5 w-3.5" aria-hidden="true" />

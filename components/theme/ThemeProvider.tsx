@@ -92,7 +92,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       Math.hypot(window.innerWidth - x, window.innerHeight - y),
     )
 
+    // Set the initial clipping before the browser creates its new snapshot.
+    // Otherwise the fresh theme can flash over the whole page for one frame.
+    root.style.setProperty('--theme-reveal-x', `${x}px`)
+    root.style.setProperty('--theme-reveal-y', `${y}px`)
     root.dataset.themeTransition = 'reveal'
+    const cleanup = () => {
+      delete root.dataset.themeTransition
+      root.style.removeProperty('--theme-reveal-x')
+      root.style.removeProperty('--theme-reveal-y')
+      transitioning.current = false
+    }
     try {
       const transition = document.startViewTransition(() => {
         applyTheme()
@@ -103,16 +113,25 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
           // Both snapshots exist now: the old page stays fully visible while
           // the new-theme snapshot grows from a 0px circle over the button.
           await transition.ready
+          const circle = (radius: number) =>
+            `circle(${Math.round(radius)}px at ${x}px ${y}px)`
+
+          // Build up the new theme from a tiny spark, then let the edge
+          // move out organically rather than instantly exposing the page.
           const animation = root.animate(
+            [
+              { clipPath: circle(0), offset: 0 },
+              { clipPath: circle(8), offset: 0.08 },
+              { clipPath: circle(24), offset: 0.16 },
+              { clipPath: circle(65), offset: 0.27 },
+              { clipPath: circle(endRadius * 0.28), offset: 0.48 },
+              { clipPath: circle(endRadius * 0.62), offset: 0.72 },
+              { clipPath: circle(endRadius * 0.88), offset: 0.89 },
+              { clipPath: circle(endRadius + 4), offset: 1 },
+            ],
             {
-              clipPath: [
-                `circle(0px at ${x}px ${y}px)`,
-                `circle(${endRadius}px at ${x}px ${y}px)`,
-              ],
-            },
-            {
-              duration: 1900,
-              easing: 'cubic-bezier(0.45, 0, 0.2, 1)',
+              duration: 3000,
+              easing: 'cubic-bezier(0.34, 0, 0.18, 1)',
               fill: 'forwards',
               pseudoElement: '::view-transition-new(root)',
             },
@@ -122,13 +141,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
           // A navigation can cancel an in-progress browser view transition.
         } finally {
           await transition.finished.catch(() => undefined)
-          delete root.dataset.themeTransition
-          transitioning.current = false
+          cleanup()
         }
       })()
     } catch {
-      delete root.dataset.themeTransition
-      transitioning.current = false
+      cleanup()
       applyTheme()
     }
   }, [])

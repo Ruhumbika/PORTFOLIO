@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
   type ReactNode,
 } from 'react'
@@ -13,7 +14,7 @@ type Theme = 'dark' | 'light'
 
 interface ThemeContextValue {
   theme: Theme
-  toggleTheme: () => void
+  toggleTheme: (origin?: { x: number; y: number }) => void
 }
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined)
@@ -41,6 +42,7 @@ export const themeInitScript = `
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
+  const transitioning = useRef(false)
 
   // Sync state with whatever the init script already applied.
   useEffect(() => {
@@ -50,19 +52,72 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setTheme(current)
   }, [])
 
-  const toggleTheme = useCallback(() => {
-    setTheme((prev) => {
-      const next: Theme = prev === 'dark' ? 'light' : 'dark'
-      const root = document.documentElement
+  const toggleTheme = useCallback((origin?: { x: number; y: number }) => {
+    if (transitioning.current) return
+
+    const root = document.documentElement
+    const next: Theme = root.classList.contains('dark') ? 'light' : 'dark'
+    const applyTheme = () => {
       root.classList.remove('light', 'dark')
       root.classList.add(next)
+      setTheme(next)
       try {
         localStorage.setItem(STORAGE_KEY, next)
       } catch {
-        /* ignore */
+        // Storage may be unavailable in private browsing.
       }
-      return next
-    })
+    }
+
+    // Keep the switch usable in browsers without View Transitions and for
+    // users who prefer reduced motion.
+    if (
+      !origin ||
+      !('startViewTransition' in document) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      applyTheme()
+      return
+    }
+
+    transitioning.current = true
+    const x = Math.min(Math.max(origin.x, 0), window.innerWidth)
+    const y = Math.min(Math.max(origin.y, 0), window.innerHeight)
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    )
+
+    root.dataset.themeTransition = 'reveal'
+    try {
+      const transition = document.startViewTransition(() => {
+        applyTheme()
+      })
+
+      void (async () => {
+        try {
+          await transition.ready
+          await root.animate(
+            {
+              clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`],
+            },
+            {
+              duration: 950,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              pseudoElement: '::view-transition-new(root)',
+            },
+          ).finished
+        } catch {
+          // View transitions may be interrupted by a navigation or another update.
+        } finally {
+          delete root.dataset.themeTransition
+          transitioning.current = false
+        }
+      })()
+    } catch {
+      delete root.dataset.themeTransition
+      transitioning.current = false
+      applyTheme()
+    }
   }, [])
 
   return (

@@ -23,20 +23,18 @@ export default function AboutPage() {
       {/* Intro */}
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">About</p>
-        <h1 className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-[1.13] tracking-tight sm:text-4xl lg:text-[2.75rem]">
           Building intelligent, useful and human-centred digital products.
         </h1>
       </Reveal>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-        <Reveal delay={0.05}>
-          <div className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
+      <div className="mt-10 grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
+        <Reveal delay={0.05} className="min-w-0">
+          <div className="max-w-[39rem] space-y-4 text-pretty leading-relaxed text-muted-foreground">
             <p>{site.brandStatement}</p>
             <p>{site.supportingParagraph}</p>
             <p>
-              My work sits at the intersection of engineering, artificial intelligence and design. I care about products
-              that solve real problems for real people, from local government offices to schools, housing programmes
-              and small businesses in Tanzania.
+              My approach connects software architecture, dependable integrations and thoughtful product design to practical business outcomes.
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -51,7 +49,7 @@ export default function AboutPage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} className="min-w-0">
           <AboutProfileCard />
         </Reveal>
       </div>

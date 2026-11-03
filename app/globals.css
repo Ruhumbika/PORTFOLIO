@@ -151,6 +151,48 @@
   }
 }
 
+
+/* Sunrise theme transition: a gentle light field, not a hard circular wipe.
+   A registered length lets the browser interpolate the gradient radius smoothly. */
+@property --sunrise-radius {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+html[data-theme-transition='sunrise']::view-transition-old(root),
+html[data-theme-transition='sunrise']::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-theme-transition='sunrise']::view-transition-old(root) {
+  z-index: 1;
+}
+
+html[data-theme-transition='sunrise']::view-transition-new(root) {
+  z-index: 2;
+  --sunrise-radius: 0px;
+  /* Fully new theme near the centre, gradually blended towards the old theme.
+     The transparent feather makes it feel like daylight spreading, not a pop. */
+  -webkit-mask-image: radial-gradient(
+    circle at var(--theme-reveal-x) var(--theme-reveal-y),
+    #000 0px,
+    #000 max(0px, calc(var(--sunrise-radius) - var(--sunrise-softness))),
+    transparent var(--sunrise-radius)
+  );
+  mask-image: radial-gradient(
+    circle at var(--theme-reveal-x) var(--theme-reveal-y),
+    #000 0px,
+    #000 max(0px, calc(var(--sunrise-radius) - var(--sunrise-softness))),
+    transparent var(--sunrise-radius)
+  );
+}
+
+html[data-theme-transition='sunrise'] body {
+  transition: none;
+}
+
 /* Utility: fine technical grid detail */
 .bg-grid {
   background-image: linear-gradient(

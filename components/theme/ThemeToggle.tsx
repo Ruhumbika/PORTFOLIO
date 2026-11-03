@@ -9,7 +9,10 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={(event) => {
+        const rect = event.currentTarget.getBoundingClientRect()
+        toggleTheme({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 })
+      }}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       className="relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
     >

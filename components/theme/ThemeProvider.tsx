@@ -96,11 +96,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     // Otherwise the fresh theme can flash over the whole page for one frame.
     root.style.setProperty('--theme-reveal-x', `${x}px`)
     root.style.setProperty('--theme-reveal-y', `${y}px`)
-    root.dataset.themeTransition = 'reveal'
+    root.style.setProperty('--sunrise-softness', `${Math.min(240, Math.max(90, window.innerWidth * 0.16))}px`)
+    root.dataset.themeTransition = 'sunrise'
     const cleanup = () => {
       delete root.dataset.themeTransition
       root.style.removeProperty('--theme-reveal-x')
       root.style.removeProperty('--theme-reveal-y')
+      root.style.removeProperty('--sunrise-softness')
       transitioning.current = false
     }
     try {
@@ -110,28 +112,22 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
       void (async () => {
         try {
-          // Both snapshots exist now: the old page stays fully visible while
-          // the new-theme snapshot grows from a 0px circle over the button.
+          // The old-theme snapshot remains visible. The incoming snapshot
+          // gets a soft radial mask, expanding as sunrise light spreads.
           await transition.ready
-          const circle = (radius: number) =>
-            `circle(${Math.round(radius)}px at ${x}px ${y}px)`
-
-          // Build up the new theme from a tiny spark, then let the edge
-          // move out organically rather than instantly exposing the page.
+          const softness = Math.min(240, Math.max(90, window.innerWidth * 0.16))
           const animation = root.animate(
             [
-              { clipPath: circle(0), offset: 0 },
-              { clipPath: circle(8), offset: 0.08 },
-              { clipPath: circle(24), offset: 0.16 },
-              { clipPath: circle(65), offset: 0.27 },
-              { clipPath: circle(endRadius * 0.28), offset: 0.48 },
-              { clipPath: circle(endRadius * 0.62), offset: 0.72 },
-              { clipPath: circle(endRadius * 0.88), offset: 0.89 },
-              { clipPath: circle(endRadius + 4), offset: 1 },
+              { '--sunrise-radius': '0px', offset: 0 },
+              { '--sunrise-radius': '16px', offset: 0.12 },
+              { '--sunrise-radius': '56px', offset: 0.24 },
+              { '--sunrise-radius': `${Math.round(endRadius * 0.25)}px`, offset: 0.48 },
+              { '--sunrise-radius': `${Math.round(endRadius * 0.58)}px`, offset: 0.73 },
+              { '--sunrise-radius': `${Math.round(endRadius + softness)}px`, offset: 1 },
             ],
             {
-              duration: 3000,
-              easing: 'cubic-bezier(0.34, 0, 0.18, 1)',
+              duration: 3200,
+              easing: 'cubic-bezier(0.35, 0, 0.2, 1)',
               fill: 'forwards',
               pseudoElement: '::view-transition-new(root)',
             },

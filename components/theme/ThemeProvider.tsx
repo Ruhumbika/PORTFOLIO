@@ -9,6 +9,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
+import { flushSync } from 'react-dom'
 
 type Theme = 'dark' | 'light'
 
@@ -58,21 +59,20 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement
     const next: Theme = root.classList.contains('dark') ? 'light' : 'dark'
     const applyTheme = () => {
-      root.classList.remove('light', 'dark')
-      root.classList.add(next)
-      setTheme(next)
+      root.classList.toggle('dark', next === 'dark')
+      root.classList.toggle('light', next === 'light')
+      // Commit the entire theme-rendered React tree in the same View Transition frame.
+      flushSync(() => setTheme(next))
       try {
         localStorage.setItem(STORAGE_KEY, next)
       } catch {
-        // Storage may be unavailable in private browsing.
+        // The UI must work even when storage is unavailable.
       }
     }
 
-    // Keep the switch usable in browsers without View Transitions and for
-    // users who prefer reduced motion.
     if (
       !origin ||
-      !('startViewTransition' in document) ||
+      typeof document.startViewTransition !== 'function' ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
       applyTheme()
@@ -80,11 +80,16 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
 
     transitioning.current = true
+
+    // The button centre is in viewport coordinates. The circle must reach the
+    // furthest corner, not simply use the viewport diagonal or button radius.
     const x = Math.min(Math.max(origin.x, 0), window.innerWidth)
     const y = Math.min(Math.max(origin.y, 0), window.innerHeight)
-    const radius = Math.hypot(
-      Math.max(x, window.innerWidth - x),
-      Math.max(y, window.innerHeight - y),
+    const endRadius = Math.max(
+      Math.hypot(x, y),
+      Math.hypot(window.innerWidth - x, y),
+      Math.hypot(x, window.innerHeight - y),
+      Math.hypot(window.innerWidth - x, window.innerHeight - y),
     )
 
     root.dataset.themeTransition = 'reveal'
@@ -95,20 +100,28 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
       void (async () => {
         try {
+          // Both snapshots exist now: the old page stays fully visible while
+          // the new-theme snapshot grows from a 0px circle over the button.
           await transition.ready
-          await root.animate(
+          const animation = root.animate(
             {
-              clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`],
+              clipPath: [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${endRadius}px at ${x}px ${y}px)`,
+              ],
             },
             {
-              duration: 950,
-              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              duration: 1900,
+              easing: 'cubic-bezier(0.45, 0, 0.2, 1)',
+              fill: 'forwards',
               pseudoElement: '::view-transition-new(root)',
             },
-          ).finished
+          )
+          await animation.finished
         } catch {
-          // View transitions may be interrupted by a navigation or another update.
+          // A navigation can cancel an in-progress browser view transition.
         } finally {
+          await transition.finished.catch(() => undefined)
           delete root.dataset.themeTransition
           transitioning.current = false
         }

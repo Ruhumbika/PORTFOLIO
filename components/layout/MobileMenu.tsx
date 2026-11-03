@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { BrandLogo } from '@/components/shared/BrandLogo'
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Download, Menu, X } from 'lucide-react'
@@ -95,9 +96,7 @@ export function MobileMenu({ isActive }: MobileMenuProps) {
             aria-label="Site menu"
           >
             <div className="flex h-16 items-center justify-between border-b border-border px-4">
-              <span className="font-mono text-sm text-foreground">
-                Ruhumbika
-              </span>
+              <BrandLogo compact />
               <button
                 ref={closeRef}
                 type="button"

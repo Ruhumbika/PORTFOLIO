@@ -1,4 +1,3 @@
-import Image from "next/image"
 import type { Metadata } from "next"
 import { site } from "@/data/site"
 import { education } from "@/data/education"
@@ -9,6 +8,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading"
 import { Button } from "@/components/shared/Button"
 import { SkillsGrid } from "@/components/shared/SkillsGrid"
 import { GraduationCap, Award, ArrowRight, Download } from "lucide-react"
+import { AboutProfileCard } from "@/components/home/AboutProfileCard"
 
 export const metadata: Metadata = {
   title: "About",
@@ -17,34 +17,24 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 }
 
-const focusAreas = [
-  "Full-stack web and mobile systems",
-  "Locally hosted, privacy-conscious AI applications",
-  "System security, access control and cybersecurity practice",
-  "User-centred digital product design",
-  "Public-sector and small-business software",
-]
-
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
       {/* Intro */}
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">About</p>
-        <h1 className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-[1.13] tracking-tight sm:text-4xl lg:text-[2.75rem]">
           Building intelligent, useful and human-centred digital products.
         </h1>
       </Reveal>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-        <Reveal delay={0.05}>
-          <div className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
+      <div className="mt-10 grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
+        <Reveal delay={0.05} className="min-w-0">
+          <div className="max-w-[39rem] space-y-4 text-pretty leading-relaxed text-muted-foreground">
             <p>{site.brandStatement}</p>
             <p>{site.supportingParagraph}</p>
             <p>
-              My work sits at the intersection of engineering, artificial intelligence and design. I care about products
-              that solve real problems for real people, from local government offices to schools, housing programmes
-              and small businesses in Tanzania.
+              My approach connects software architecture, dependable integrations and thoughtful product design to practical business outcomes.
             </p>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -59,44 +49,8 @@ export default function AboutPage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <div className="overflow-hidden rounded-xl border border-border bg-card">
-            <div className="relative aspect-[5/4] overflow-hidden border-b border-border">
-              <Image
-                src={site.profileImageSquare}
-                alt="Professional portrait of Ruhumbika Mtumba John"
-                fill
-                sizes="(min-width: 1024px) 360px, 100vw"
-                className="object-cover object-[50%_35%]"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/85 to-transparent p-5 pt-16">
-                <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-primary">
-                  Engineering · AI · Product thinking
-                </p>
-              </div>
-            </div>
-            <div className="p-6">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Current focus</h2>
-              <ul className="mt-4 space-y-3">
-                {focusAreas.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-foreground">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <dl className="mt-6 space-y-3 border-t border-border pt-6 text-sm">
-                <div className="flex items-center justify-between gap-4">
-                  <dt className="text-muted-foreground">Location</dt>
-                  <dd className="text-right text-foreground">{site.location}</dd>
-                </div>
-                <div className="flex items-center justify-between gap-4">
-                  <dt className="text-muted-foreground">Availability</dt>
-                  <dd className="text-right text-foreground">Currently employed · Open to better opportunities</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
+        <Reveal delay={0.1} className="min-w-0">
+          <AboutProfileCard />
         </Reveal>
       </div>
 

@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Download } from 'lucide-react'
@@ -11,6 +10,7 @@ import { Button } from '@/components/shared/Button'
 import { Github, Linkedin } from '@/components/shared/BrandIcons'
 import { ThemeToggle } from '@/components/theme/ThemeToggle'
 import { MobileMenu } from './MobileMenu'
+import { BrandLogo } from '@/components/shared/BrandLogo'
 
 export function Navbar() {
   const pathname = usePathname()
@@ -39,16 +39,7 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6"
         aria-label="Primary"
       >
-        <Link
-          href="/"
-          className="group inline-flex items-center gap-2"
-          aria-label={`${site.name}, home`}
-        >
-          <Image src="/brand/rj-logo.png" alt="RJ original logo" width={36} height={36} className="h-9 w-9 rounded-md object-contain" />
-          <span className="hidden font-mono text-sm tracking-tight text-foreground sm:inline">
-            Ruhumbika
-          </span>
-        </Link>
+        <BrandLogo compact className="max-w-[15rem]" />
 
         <ul className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => {

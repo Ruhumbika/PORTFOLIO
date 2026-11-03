@@ -151,6 +151,27 @@
   }
 }
 
+
+/* Circular day/night reveal: the incoming theme grows from the toggle button.
+   The browser supplies a static fallback where View Transitions are unsupported. */
+html[data-theme-transition='reveal']::view-transition-old(root),
+html[data-theme-transition='reveal']::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-theme-transition='reveal']::view-transition-new(root) {
+  z-index: 2;
+}
+
+html[data-theme-transition='reveal']::view-transition-old(root) {
+  z-index: 1;
+}
+
+html[data-theme-transition='reveal'] body {
+  transition: none;
+}
+
 /* Utility: fine technical grid detail */
 .bg-grid {
   background-image: linear-gradient(

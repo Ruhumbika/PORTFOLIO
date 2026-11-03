@@ -1,36 +1,45 @@
 import Link from 'next/link'
-import { navItems, site } from '@/data/site'
+import { site } from '@/data/site'
+import { BrandLogo } from '@/components/shared/BrandLogo'
 import { SocialLinks } from '@/components/shared/SocialLinks'
+
+const explore = [
+  { label: 'Solutions', href: '/solutions' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'About', href: '/about' },
+  { label: 'Experience', href: '/experience' },
+]
 
 export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
-          <div className="max-w-sm">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-md border border-primary/40 bg-primary/10 font-mono text-sm font-semibold text-primary">
-                {site.initials}
-              </span>
-              <span className="text-sm font-semibold">{site.name}</span>
-            </Link>
-            <p className="mt-4 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Software Engineering · AI Automation · Enterprise Integrations
+    <footer id="site-footer" className="relative border-t border-border/70 bg-background">
+      <div className="mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 lg:pt-16">
+        <div className="grid gap-10 border-b border-border/70 pb-10 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,0.7fr)_minmax(0,1fr)] lg:gap-14">
+          <div className="min-w-0">
+            <BrandLogo />
+            <p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">
+              Enterprise software, intelligent automation and connected digital platforms — engineered for real business challenges.
             </p>
+            <Link
+              href="/contact"
+              className="mt-5 inline-flex items-center gap-2 border-b border-primary/40 pb-1 text-sm font-semibold text-primary transition-colors hover:border-primary hover:text-foreground"
+            >
+              Explore a partnership <span aria-hidden="true">↗</span>
+            </Link>
           </div>
 
-          <nav aria-label="Footer" className="flex flex-col gap-3">
-            <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Navigation
-            </span>
-            <ul className="flex flex-col gap-2">
-              {navItems.map((item) => (
+          <nav aria-label="Footer navigation" className="min-w-0">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              Explore
+            </h2>
+            <ul className="mt-5 grid gap-3">
+              {explore.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {item.label}
                   </Link>
@@ -39,51 +48,27 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Legal" className="flex flex-col gap-3">
-            <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
-              Legal
-            </span>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <Link
-                  href="/privacy"
-                  className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          <div className="flex flex-col gap-3">
-            <span className="font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
+          <div className="min-w-0">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
               Connect
-            </span>
-            <SocialLinks />
+            </h2>
+            <div className="mt-5"><SocialLinks /></div>
             <a
               href={`mailto:${site.email}`}
-              className="link-underline text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="mt-4 block break-words text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {site.email}
             </a>
+            <p className="mt-3 text-xs text-muted-foreground">{site.location}</p>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-muted-foreground">
-            © {year} {site.name}. All rights reserved.
-          </p>
-          <p className="font-mono text-xs uppercase tracking-[0.15em] text-primary">
-            Designed around clarity. Built around useful products.
-          </p>
+        <div className="flex flex-col gap-4 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>© {year} {site.name}. All rights reserved.</p>
+          <nav aria-label="Legal information" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">Privacy</Link>
+            <Link href="/terms" className="transition-colors hover:text-foreground">Terms</Link>
+          </nav>
         </div>
       </div>
     </footer>

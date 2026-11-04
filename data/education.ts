@@ -5,7 +5,6 @@ export const education: EducationItem[] = [
     qualification: 'Bachelor of Science in Business Information Technology',
     institution:
       'University of Dar es Salaam, College of Information and Communication Technologies',
-    detail: 'Second Class Lower',
     period: 'October 2023 to 2026',
     areas: [
       'Software Engineering',

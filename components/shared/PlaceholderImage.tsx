@@ -30,7 +30,7 @@ export function PlaceholderImage({
 }: PlaceholderImageProps) {
   const ratio = ratioClass[image.ratio ?? 'video']
 
-  if (image.videoSrc && image.mobileVideo) {
+  if (image.videoSrc && (image.mobileVideo || image.videoSrc === '/projects/rjay-barbershop/mobile-demo.webm')) {
     return <MobileVideoPreview src={image.videoSrc} poster={image.src} label={image.label} className={className} />
   }
 

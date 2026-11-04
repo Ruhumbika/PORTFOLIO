@@ -40,7 +40,7 @@ export async function generateMetadata({
     description: project.summary,
     alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
-      title: `${project.title} | Ruhumbika Mtumba John`,
+      title: `${project.title}, Ruhumbika Mtumba John`,
       description: project.summary,
       type: 'article',
       url: `/projects/${project.slug}`,

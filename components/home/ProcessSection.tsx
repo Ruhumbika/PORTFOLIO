@@ -7,7 +7,7 @@ export function ProcessSection() {
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-28">
       <SectionHeading
         label="How I Build"
-        title="A practical, feedback-driven process"
+        title="A practical, feedback driven process"
         description="From understanding the real problem to improving through feedback. This is the workflow I apply to every product I build."
       />
 

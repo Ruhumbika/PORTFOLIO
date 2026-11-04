@@ -23,7 +23,7 @@ export default function AvailabilityPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
           Availability is displayed in {site.schedule.timeZoneLabel}. Choose a
-          date and time, add your details, then send a pre-filled request through
+          date and time, add your details, then send a pre filled request through
           WhatsApp or email for confirmation.
         </p>
       </Reveal>

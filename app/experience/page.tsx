@@ -8,7 +8,7 @@ import { Building2, Briefcase, ArrowRight, CheckCircle2 } from "lucide-react"
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Professional experience of Ruhumbika Mtumba John as a Full-Stack Developer at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), ICT field placements and founder of RJAY Digital Hub.",
+    "Professional experience of Ruhumbika Mtumba John as a Full Stack Developer at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), ICT field placements and founder of RJAY Digital Hub.",
   alternates: { canonical: "/experience" },
 }
 
@@ -18,13 +18,13 @@ export default function ExperiencePage() {
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">Experience</p>
         <h1 className="mt-4 max-w-3xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-          Practical experience across public-sector ICT and building real businesses.
+          Practical experience across public sector ICT and building real businesses.
         </h1>
       </Reveal>
 
       {/* Professional / field training */}
       <div className="mt-16">
-        <SectionHeading label="Current role" title="Full-stack development in logistics" />
+        <SectionHeading label="Current role" title="Full stack development in logistics" />
         <Reveal delay={0.05}>
           <article className="mt-8 rounded-xl border border-primary/30 bg-card p-6 sm:p-8">
             <div className="flex items-start gap-4">

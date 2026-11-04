@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${site.name} Portfolio`,
     short_name: 'Ruhumbika',
     description:
-      'Full-stack, AI application, quality assurance and digital product portfolio of Ruhumbika Mtumba John.',
+      'Full stack, AI application, quality assurance and digital product portfolio of Ruhumbika Mtumba John.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0b0f14',

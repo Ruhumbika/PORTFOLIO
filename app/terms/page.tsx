@@ -27,11 +27,11 @@ const sections = [
   },
   {
     title: 'External services and links',
-    body: 'The website may link to GitHub, LinkedIn, WhatsApp, email services, live project deployments and other third-party websites. Those services are controlled by their respective providers. I am not responsible for their content, availability, security or terms.',
+    body: 'The website may link to GitHub, LinkedIn, WhatsApp, email services, live project deployments and other third party websites. Those services are controlled by their respective providers. I am not responsible for their content, availability, security or terms.',
   },
   {
     title: 'Availability and accuracy',
-    body: 'I aim to keep this portfolio accurate and available, but the website is provided as available without guarantees that every page, link or statement will always be complete, current or error-free. To the extent permitted by applicable law, I am not liable for losses resulting solely from reliance on, or inability to access, this website.',
+    body: 'I aim to keep this portfolio accurate and available, but the website is provided as available without guarantees that every page, link or statement will always be complete, current or error free. To the extent permitted by applicable law, I am not liable for losses resulting solely from reliance on, or inability to access, this website.',
   },
   {
     title: 'Changes to these terms',

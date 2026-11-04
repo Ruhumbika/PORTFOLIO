@@ -9,8 +9,8 @@ export const projects: Project[] = [
     shortTitle: 'PETA ERP',
     category: 'Enterprise Resource Planning System',
     status: 'Live',
-    period: '2026 – Present',
-    role: 'Full-Stack Developer',
+    period: '2026 to Present',
+    role: 'Full Stack Developer',
     organisation: 'Ma Cargo Transporters and Forwarders (ABOOD Group of Companies)',
     summary:
       'An enterprise dashboard for PETA Holdings that brings property, lease, revenue, unit status and operational monitoring into one workspace.',
@@ -19,9 +19,9 @@ export const projects: Project[] = [
     problem:
       'Property and operational data needs a clear, centralised view so teams can monitor occupancy, leases, revenue and overdue invoices efficiently.',
     solution:
-      'A role-based ERP dashboard that surfaces portfolio metrics, unit status, lease activity, revenue, expenses and business alerts in one interface.',
+      'A role based ERP dashboard that surfaces portfolio metrics, unit status, lease activity, revenue, expenses and business alerts in one interface.',
     contribution: [
-      'Full-stack feature development',
+      'Full stack feature development',
       'ERP dashboard implementation',
       'Business data visualisation',
       'Lease and property workflow support',
@@ -35,7 +35,7 @@ export const projects: Project[] = [
       'Overdue invoice alerts',
       'Business monitoring dashboard',
     ],
-    technologies: ['Full-Stack Web Development', 'ERP Systems', 'Dashboards', 'Data Visualisation'],
+    technologies: ['Full Stack Web Development', 'ERP Systems', 'Dashboards', 'Data Visualisation'],
     users: 'Property, finance and operations teams managing PETA Holdings assets and leases.',
     images: [
       {
@@ -103,7 +103,7 @@ export const projects: Project[] = [
       },
       {
         title: 'Developer role',
-        body: 'As a Full-Stack Developer at Ma Cargo Transporters and Forwarders, I contribute to the development and ongoing improvement of this live enterprise system.',
+        body: 'As a Full Stack Developer at Ma Cargo Transporters and Forwarders, I contribute to the development and ongoing improvement of this live enterprise system.',
       },
     ],
     outcome:
@@ -114,23 +114,23 @@ export const projects: Project[] = [
     slug: 'kdilms',
     title: 'Kilindi Traders Digital License Management System',
     shortTitle: 'KDILMS',
-    category: 'Full-Stack Web Application',
-    status: 'Final-Year Project',
-    period: '2025 – 2026',
-    role: 'Full-Stack Developer',
+    category: 'Full Stack Web Application',
+    status: 'Final Year Project',
+    period: '2025 to 2026',
+    role: 'Full Stack Developer',
     organisation: 'Kilindi District Council',
     summary:
-      'A role-based licensing platform that centralises trader records, licence renewals, debt tracking, SMS reminders and administrative reporting for a district council.',
+      'A role based licensing platform that centralises trader records, licence renewals, debt tracking, SMS reminders and administrative reporting for a district council.',
     description:
-      'A web-based licensing platform developed to improve the management of trader records, business licences, renewals, debts, SMS reminders, reports and administrative accountability at Kilindi District Council.',
+      'A web based licensing platform developed to improve the management of trader records, business licences, renewals, debts, SMS reminders, reports and administrative accountability at Kilindi District Council.',
     problem:
-      'Business licensing information and follow-up processes required improved centralisation, monitoring, reporting and communication with traders.',
+      'Business licensing information and follow up processes required improved centralisation, monitoring, reporting and communication with traders.',
     solution:
-      'A role-based digital platform that supports trader data import, licence administration, debt monitoring, automated SMS reminders, dashboards, reports and audit logs.',
+      'A role based digital platform that supports trader data import, licence administration, debt monitoring, automated SMS reminders, dashboards, reports and audit logs.',
     contribution: [
-      'Full-stack application development',
+      'Full stack application development',
       'Database implementation',
-      'Role-based access control',
+      'Role based access control',
       'Import and validation workflows',
       'System testing and documentation',
       'Deployment support with DNS and SSL troubleshooting',
@@ -141,7 +141,7 @@ export const projects: Project[] = [
       'Licence issuance and renewal',
       'Debt tracking',
       'Automated SMS reminders',
-      'Role-based dashboards',
+      'Role based dashboards',
       'Reporting',
       'Audit logs',
       'User and permission management',
@@ -240,7 +240,7 @@ export const projects: Project[] = [
     caseStudySections: [
       {
         title: 'Context',
-        body: 'Kilindi District Council manages a large base of local traders whose licences, renewals and debts previously depended on fragmented follow-up. The system consolidates these processes into one accountable platform.',
+        body: 'Kilindi District Council manages a large base of local traders whose licences, renewals and debts previously depended on fragmented follow up. The system consolidates these processes into one accountable platform.',
       },
       {
         title: 'Data handling',
@@ -267,32 +267,32 @@ export const projects: Project[] = [
     category: 'AI Application',
     status: 'Academic Project',
     period: '2026',
-    role: 'Full-Stack Developer & AI Integration Developer',
+    role: 'Full Stack Developer & AI Integration Developer',
     summary:
-      'A locally hosted, privacy-conscious AI assistant that answers student academic questions using a lightweight Llama model, a FastAPI backend and Retrieval-Augmented Generation over a custom FAQ knowledge base.',
+      'A locally hosted, privacy conscious AI assistant that answers student academic questions using a lightweight Llama model, a FastAPI backend and Retrieval Augmented Generation over a custom FAQ knowledge base.',
     description:
-      'A locally hosted AI-powered student support assistant developed to provide conversational academic guidance while demonstrating the complete deployment pipeline of an LLM-based application.',
+      'A locally hosted AI powered student support assistant developed to provide conversational academic guidance while demonstrating the complete deployment pipeline of an LLM based application.',
     problem:
       'Students need a convenient way to access common academic guidance, while the academic assignment required an understanding of how a local language model, backend and frontend communicate.',
     solution:
-      'A local AI application in which a Streamlit interface sends requests to a FastAPI backend, which communicates with an Ollama-hosted language model and a custom knowledge base.',
+      'A local AI application in which a Streamlit interface sends requests to a FastAPI backend, which communicates with an Ollama hosted language model and a custom knowledge base.',
     contribution: [
-      'Designed the frontend-to-model request pipeline',
+      'Designed the frontend to model request pipeline',
       'Implemented the FastAPI backend and API contracts',
       'Built the custom FAQ knowledge base',
-      'Integrated the Retrieval-Augmented Generation pipeline',
+      'Integrated the Retrieval Augmented Generation pipeline',
       'Added logging and testing',
-      'Documented production-readiness improvements',
+      'Documented production readiness improvements',
     ],
     features: [
-      'Chat-style user interface',
+      'Chat style user interface',
       'Local model inference',
       'Custom university FAQ knowledge base',
-      'Retrieval-Augmented Generation',
-      'API-based frontend and backend communication',
+      'Retrieval Augmented Generation',
+      'API based frontend and backend communication',
       'Logging and testing',
-      'Privacy-conscious local deployment',
-      'Documented production-readiness improvements',
+      'Privacy conscious local deployment',
+      'Documented production readiness improvements',
     ],
     technologies: [
       'Python',
@@ -301,7 +301,7 @@ export const projects: Project[] = [
       'Streamlit',
       'Ollama',
       'Lightweight Llama model',
-      'Retrieval-Augmented Generation',
+      'Retrieval Augmented Generation',
       'Custom FAQ knowledge base',
     ],
     users:
@@ -318,7 +318,7 @@ export const projects: Project[] = [
         ratio: 'screen',
       },
       {
-        label: 'Student question and follow-up response workflow',
+        label: 'Student question and follow up response workflow',
         src: '/projects/student-support-llm/chat-follow-up.webp',
         ratio: 'screen',
       },
@@ -339,40 +339,40 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: 'Retrieval-Augmented Generation',
+        title: 'Retrieval Augmented Generation',
         body: 'A custom university FAQ knowledge base is retrieved and injected into prompts so answers stay relevant and grounded, while keeping all data on local infrastructure.',
       },
       {
         title: 'Production readiness',
-        body: 'The assistant was built as a learning-focused deployment, with logging, testing and a documented list of improvements needed to move it toward production.',
+        body: 'The assistant was built as a learning focused deployment, with logging, testing and a documented list of improvements needed to move it toward production.',
       },
     ],
     outcome:
-      'Demonstrated an end-to-end, privacy-conscious local LLM deployment with grounded, knowledge-base-driven responses.',
+      'Demonstrated an end to end, privacy conscious local LLM deployment with grounded, knowledge base driven responses.',
     featured: true,
   },
   {
     slug: 'rental-platform',
-    title: 'Mobile-First Rental Platform',
+    title: 'Mobile First Rental Platform',
     shortTitle: 'Rental Platform',
     category: 'Mobile Application / Marketplace MVP',
     status: 'MVP',
-    period: '2025 – 2026',
+    period: '2025 to 2026',
     role: 'Product Developer',
     summary:
-      'A mobile-first rental marketplace MVP designed to improve trust, transparency and accessibility between tenants, landlords and administrators, with several trust-and-safety features prepared as concepts.',
+      'A mobile first rental marketplace MVP designed to improve trust, transparency and accessibility between tenants, landlords and administrators, with several trust and safety features prepared as concepts.',
     description:
-      'A mobile-first rental marketplace designed to improve trust, transparency and accessibility between tenants, landlords and platform administrators.',
+      'A mobile first rental marketplace designed to improve trust, transparency and accessibility between tenants, landlords and platform administrators.',
     problem:
       'Rental seekers may experience fraudulent listings, unclear property information, limited transparency and weak communication with landlords.',
     solution:
-      'A role-based marketplace containing property listings, search, filters, map discovery, digital contract workflows and administrative oversight.',
+      'A role based marketplace containing property listings, search, filters, map discovery, digital contract workflows and administrative oversight.',
     contribution: [
       'Product architecture and data modelling',
-      'Role-based marketplace design',
+      'Role based marketplace design',
       'Authentication with JWT',
       'REST API design',
-      'Trust-and-safety design for listings',
+      'Trust and safety design for listings',
     ],
     features: [
       'Tenant, landlord and administrator roles',
@@ -384,8 +384,8 @@ export const projects: Project[] = [
       'Notifications',
       'Listing availability',
       'Trust and safety workflows (concept)',
-      'Escrow-payment concepts (planned)',
-      'Dispute-handling concepts (planned)',
+      'Escrow payment concepts (planned)',
+      'Dispute handling concepts (planned)',
     ],
     technologies: [
       'Flutter',
@@ -411,7 +411,7 @@ export const projects: Project[] = [
     caseStudySections: [
       {
         title: 'Product thinking',
-        body: 'The platform was scoped as an MVP and startup concept focused on trustworthy housing access. Core discovery and listing flows were designed first, with escrow, dispute-handling and full trust-and-safety systems treated as planned improvements rather than shipped features.',
+        body: 'The platform was scoped as an MVP and startup concept focused on trustworthy housing access. Core discovery and listing flows were designed first, with escrow, dispute handling and full trust and safety systems treated as planned improvements rather than shipped features.',
       },
       {
         title: 'Technical foundation',
@@ -419,7 +419,7 @@ export const projects: Project[] = [
       },
     ],
     outcome:
-      'Produced a working MVP direction and a clear, scalable architecture for a trust-focused rental marketplace.',
+      'Produced a working MVP direction and a clear, scalable architecture for a trust focused rental marketplace.',
     featured: true,
   },
   {
@@ -431,26 +431,26 @@ export const projects: Project[] = [
     period: '2024',
     role: 'Web Developer',
     summary:
-      'An authenticated portal for managing employee information and producing verifiable, QR-enabled employee identity cards, reducing manual ID preparation.',
+      'An authenticated portal for managing employee information and producing verifiable, QR enabled employee identity cards, reducing manual ID preparation.',
     description:
       'An authenticated portal for managing employee information and producing verifiable employee identity cards.',
     problem:
       'Preparing employee identity cards manually was slow and made records harder to organise and verify.',
     solution:
-      'A secure portal that manages employee records and generates verifiable identity cards with QR-based verification and PDF output.',
+      'A secure portal that manages employee records and generates verifiable identity cards with QR based verification and PDF output.',
     contribution: [
       'Authentication and access control',
-      'Employee-record management',
+      'Employee record management',
       'QR code verification',
-      'PDF identity-card generation',
+      'PDF identity card generation',
       'Print tracking and digital record handling',
     ],
     features: [
       'Authentication',
-      'Employee-record management',
+      'Employee record management',
       'QR code verification',
       'Print tracking',
-      'PDF identity-card generation',
+      'PDF identity card generation',
       'Digital record handling',
     ],
     technologies: [
@@ -486,33 +486,33 @@ export const projects: Project[] = [
     shortTitle: 'RJAY Barbershop',
     category: 'Business Digital Product',
     status: 'Business Product',
-    period: '2025 – 2026',
+    period: '2025 to 2026',
     role: 'Product Designer, Business Owner & Operator',
     summary:
-      'A customer-facing booking and brand platform for a real barbershop business, connecting software, design and entrepreneurship into one operating product.',
+      'A customer facing booking and brand platform for a real barbershop business, connecting software, design and entrepreneurship into one operating product.',
     description:
-      'A customer-facing digital booking and brand platform created for a real barbershop business.',
+      'A customer facing digital booking and brand platform created for a real barbershop business.',
     problem:
       'A growing barbershop needed an organised way for customers to view services, browse styles and book appointments while strengthening its brand online.',
     solution:
-      'A responsive booking platform with a Python-powered backend, service and haircut-style catalogue, appointment scheduling, admin availability controls and consistent digital branding.',
+      'A responsive booking platform with a Python powered backend, service and haircut style catalogue, appointment scheduling, admin availability controls and consistent digital branding.',
     contribution: [
-      'Python backend development and booking-system logic',
-      'Product and booking-journey design',
-      'Service and haircut-style catalogue structure',
+      'Python backend development and booking system logic',
+      'Product and booking journey design',
+      'Service and haircut style catalogue structure',
       'Admin availability and scheduling controls',
       'Responsive website and digital branding',
-      'Social-media content planning and business operations',
+      'Social media content planning and business operations',
     ],
     features: [
       'Service catalogue',
-      'Haircut-style catalogue',
+      'Haircut style catalogue',
       'Appointment booking',
       'Scheduling',
       'Admin availability controls',
       'Responsive website',
       'Digital branding',
-      'Social-media marketing',
+      'Social media marketing',
     ],
     technologies: [
       'Python 52.2%',
@@ -578,11 +578,11 @@ export const projects: Project[] = [
       },
       {
         title: 'Brand & operations',
-        body: 'Beyond booking, the platform supports digital branding and social-media marketing that strengthen online visibility and encourage repeat business.',
+        body: 'Beyond booking, the platform supports digital branding and social media marketing that strengthen online visibility and encourage repeat business.',
       },
     ],
     outcome:
-      'Delivered a live, customer-facing product that combines booking, branding and day-to-day business operations.',
+      'Delivered a live, customer facing product that combines booking, branding and day to day business operations.',
     featured: true,
   },
 ]

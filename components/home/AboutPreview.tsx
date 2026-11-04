@@ -14,7 +14,7 @@ export function AboutPreview() {
           </span>
           <blockquote className="mt-6 text-balance text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
             &ldquo;I approach digital products from engineering, business and
-            user-experience perspectives.&rdquo;
+            user experience perspectives.&rdquo;
           </blockquote>
           <Button href="/about" variant="outline" size="sm" className="mt-8 self-start">
             More about me
@@ -25,15 +25,15 @@ export function AboutPreview() {
         <Reveal delay={0.1} className="flex flex-col gap-6">
           <p className="text-pretty leading-relaxed text-muted-foreground">
             I&apos;m a Business Information Technology graduate from the
-            University of Dar es Salaam, building web, mobile and AI-enabled
+            University of Dar es Salaam, building web, mobile and AI enabled
             systems that solve real organisational and community problems. My
-            work spans local government, education, housing and small-business
+            work spans local government, education, housing and small business
             environments.
           </p>
           <p className="text-pretty leading-relaxed text-muted-foreground">
             Alongside engineering, I run RJAY Digital Hub and RJAY Barbershop,
             which keeps me close to real customers, operations and product
-            decisions. That mix of technical, business and user-experience
+            decisions. That mix of technical, business and user experience
             thinking shapes everything I ship.
           </p>
 

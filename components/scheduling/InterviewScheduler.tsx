@@ -116,7 +116,7 @@ export function InterviewScheduler() {
     const links = buildInterviewRequestLinks(requestDetails)
     window.open(links[channel], '_blank', 'noopener,noreferrer')
     setNotice(
-      `Your ${channel === 'whatsapp' ? 'WhatsApp' : 'email'} request is pre-filled. Send it to complete the meeting request.`,
+      `Your ${channel === 'whatsapp' ? 'WhatsApp' : 'email'} request is pre filled. Send it to complete the meeting request.`,
     )
   }
 
@@ -179,7 +179,7 @@ export function InterviewScheduler() {
                 {site.schedule.weekdayLabel}
               </span>
               <p className="mt-1 text-sm text-muted-foreground">
-                {formatTimeLabel(`${String(site.schedule.startHour).padStart(2, '0')}:00`)}–
+                {formatTimeLabel(`${String(site.schedule.startHour).padStart(2, '0')}:00`)} to{' '}
                 {formatTimeLabel(`${String(site.schedule.endHour).padStart(2, '0')}:00`)}
               </p>
             </div>
@@ -313,7 +313,7 @@ export function InterviewScheduler() {
             Tell me who I’ll be meeting
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Your selected slot will be inserted into a ready-to-send WhatsApp message or email. No booking is confirmed until I reply.
+            Your selected slot will be inserted into a ready to send WhatsApp message or email. No booking is confirmed until I reply.
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">

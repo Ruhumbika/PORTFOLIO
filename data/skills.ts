@@ -24,8 +24,8 @@ export const skillGroups: SkillGroup[] = [
     items: [
       'Ollama',
       'Local LLM Deployment',
-      'Retrieval-Augmented Generation',
-      'Knowledge-Base Integration',
+      'Retrieval Augmented Generation',
+      'Knowledge Base Integration',
       'Prompt Engineering',
       'AI Application Architecture',
     ],
@@ -82,7 +82,7 @@ export const skillGroups: SkillGroup[] = [
     emphasis: true,
     items: [
       'System Security Fundamentals',
-      'Role-Based Access Control',
+      'Role Based Access Control',
       'Secure API Design',
       'Web Security Assessment',
       'Security Header Review',
@@ -143,9 +143,9 @@ export interface Pillar {
 export const pillars: Pillar[] = [
   {
     index: '01',
-    title: 'Full-Stack Systems',
+    title: 'Full Stack Systems',
     description:
-      'Designing and developing reliable web and mobile systems with secure backend logic, structured databases, APIs and user-friendly interfaces.',
+      'Designing and developing reliable web and mobile systems with secure backend logic, structured databases, APIs and user friendly interfaces.',
     technologies: [
       'Laravel',
       'PHP',
@@ -161,7 +161,7 @@ export const pillars: Pillar[] = [
     index: '02',
     title: 'AI Applications',
     description:
-      'Building locally hosted and privacy-conscious AI applications using language models, Retrieval-Augmented Generation and structured knowledge bases.',
+      'Building locally hosted and privacy conscious AI applications using language models, Retrieval Augmented Generation and structured knowledge bases.',
     technologies: [
       'Python',
       'FastAPI',
@@ -176,7 +176,7 @@ export const pillars: Pillar[] = [
     index: '03',
     title: 'Digital Product Design',
     description:
-      'Turning real user and business challenges into usable digital products through systems analysis, product thinking and user-centred interface design.',
+      'Turning real user and business challenges into usable digital products through systems analysis, product thinking and user centred interface design.',
     technologies: [
       'Figma',
       'Responsive Design',

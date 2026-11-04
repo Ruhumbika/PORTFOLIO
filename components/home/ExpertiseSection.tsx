@@ -10,7 +10,7 @@ export function ExpertiseSection() {
       <SectionHeading
         label="What I Build"
         title="Three ways I turn problems into products"
-        description="Full-stack systems and AI applications are my core focus. Digital product design is a complementary strength that makes everything I build more usable."
+        description="Full stack systems and AI applications are my core focus. Digital product design is a complementary strength that makes everything I build more usable."
       />
 
       <Stagger className="mt-12 grid gap-4 lg:grid-cols-3">

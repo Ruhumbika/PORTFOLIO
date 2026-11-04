@@ -11,7 +11,7 @@ export function BrandLogo({ compact = false, className = '' }: BrandLogoProps) {
   return (
     <Link
       href="/"
-      aria-label={`${site.name} — home`}
+      aria-label={`${site.name}, home`}
       className={`group inline-flex min-w-0 items-center gap-3 ${className}`}
     >
       <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/20 p-1.5">

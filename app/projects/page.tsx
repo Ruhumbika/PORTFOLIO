@@ -19,8 +19,8 @@ export default function ProjectsPage() {
           Projects and case studies.
         </h1>
         <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
-          A selection of systems and products I have designed and built, spanning full-stack web applications, AI-enabled
-          tools and customer-facing digital products. Each entry links to a detailed case study.
+          A selection of systems and products I have designed and built, spanning full stack web applications, AI enabled
+          tools and customer facing digital products. Each entry links to a detailed case study.
         </p>
       </Reveal>
 

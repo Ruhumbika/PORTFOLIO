@@ -27,7 +27,7 @@ const channels = [
   },
   {
     label: 'WhatsApp',
-    sub: 'Pre-filled message · fastest reply',
+    sub: 'Pre filled message · fastest reply',
     href: links.whatsapp,
     Icon: Whatsapp,
     primary: false,
@@ -35,7 +35,7 @@ const channels = [
   },
   {
     label: 'Email',
-    sub: 'Opens a ready-to-send template',
+    sub: 'Opens a ready to send template',
     href: links.email,
     Icon: Mail,
     primary: false,
@@ -74,7 +74,7 @@ export default function ContactPage() {
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">Contact</p>
         <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <h1 className="max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Let&apos;s fast-track a conversation.
+            Let&apos;s fast track a conversation.
           </h1>
           <span
             className={`inline-flex w-fit items-center gap-2.5 rounded-full border px-3.5 py-1.5 text-sm font-medium ${
@@ -109,7 +109,7 @@ export default function ContactPage() {
           <Reveal>
             <div className="flex flex-col gap-3">
               <h2 className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                One-tap outreach
+                One tap outreach
               </h2>
               {channels.map(({ label, sub, href, Icon, primary, external }) => (
                 <a

@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   title: {
     default:
-      'Ruhumbika Mtumba John | Software Engineer, AI Automation & ERP Integration',
-    template: '%s | Ruhumbika Mtumba John',
+      'Ruhumbika Mtumba John, Software Engineer, AI Automation & ERP Integration',
+    template: '%s, Ruhumbika Mtumba John',
   },
   description:
     'Ruhumbika Mtumba John builds enterprise software, AI automation, ERP integrations and scalable digital platforms. Explore engineering projects and strategic partnerships in Tanzania.',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: site.url,
-    title: 'Ruhumbika Mtumba John | Software Engineering & Enterprise Automation',
+    title: 'Ruhumbika Mtumba John, Software Engineering & Enterprise Automation',
     description:
       'Explore software engineering projects and services in AI automation, ERP integration, web and mobile application development in Tanzania.',
     siteName: site.name,
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ruhumbika Mtumba John | Full-Stack and AI Application Developer',
+    title: 'Ruhumbika Mtumba John, Full Stack and AI Application Developer',
     description:
-      'AI automation, software engineering, ERP integration and security-conscious digital products.',
+      'AI automation, software engineering, ERP integration and security conscious digital products.',
     images: ['/og/portfolio-og.jpg'],
   },
 }

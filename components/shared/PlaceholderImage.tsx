@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { MobileVideoPreview } from './MobileVideoPreview'
 import { FolderCode, FileImage, Film } from 'lucide-react'
 import type { ProjectImage } from '@/types/project'
 import { cn } from '@/lib/utils'
@@ -28,6 +29,10 @@ export function PlaceholderImage({
   priority,
 }: PlaceholderImageProps) {
   const ratio = ratioClass[image.ratio ?? 'video']
+
+  if (image.videoSrc && image.mobileVideo) {
+    return <MobileVideoPreview src={image.videoSrc} poster={image.src} label={image.label} className={className} />
+  }
 
   if (image.videoSrc) {
     return (

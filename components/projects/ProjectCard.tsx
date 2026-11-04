@@ -26,7 +26,7 @@ export function ProjectCard({ project, reversed, index }: ProjectCardProps) {
           <PlaceholderImage image={project.images[0]} />
         ) : (
           <Link href={`/projects/${project.slug}`} aria-label={`View ${project.shortTitle ?? project.title} case study`} className="block overflow-hidden rounded-lg">
-            <div className="transition-transform duration-500 group-hover:scale-[1.02]">
+            <div className={project.images[0]?.uncropped ? undefined : 'transition-transform duration-500 group-hover:scale-[1.02]'}>
               <PlaceholderImage image={project.images[0]} />
             </div>
           </Link>

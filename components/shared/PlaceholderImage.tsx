@@ -41,6 +41,21 @@ export function PlaceholderImage({
   }
 
   if (image.src) {
+    if (image.uncropped) {
+      return (
+        <div className={cn('rounded-lg border border-border bg-card p-4 sm:p-6', className)}>
+          <Image
+            src={image.src}
+            alt={image.label}
+            width={image.uncropped.width}
+            height={image.uncropped.height}
+            sizes="(min-width: 640px) 360px, 90vw"
+            className="mx-auto h-auto w-full max-w-[360px] rounded-xl object-contain"
+            priority={priority}
+          />
+        </div>
+      )
+    }
     return (
       <div
         className={cn(

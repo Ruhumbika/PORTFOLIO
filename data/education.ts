@@ -6,7 +6,7 @@ export const education: EducationItem[] = [
     institution:
       'University of Dar es Salaam, College of Information and Communication Technologies',
     detail: 'Second Class Lower',
-    period: 'October 2023 – 2026',
+    period: 'October 2023 to 2026',
     areas: [
       'Software Engineering',
       'Database Systems',
@@ -23,7 +23,7 @@ export const education: EducationItem[] = [
     qualification: 'Advanced Certificate of Secondary Education (ACSE)',
     institution: 'Bunda High School',
     detail: 'EGM · Division I',
-    period: '2021 – 2023',
+    period: '2021 to 2023',
   },
   {
     qualification: 'Certificate of Secondary Education (CSEE)',

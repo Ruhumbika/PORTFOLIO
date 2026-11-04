@@ -1,9 +1,9 @@
 export const site = {
   name: 'Ruhumbika Mtumba John',
   initials: 'R',
-  title: 'Software Engineer | AI Automation | Full-Stack Development | Enterprise Integration',
+  title: 'Software engineer specialising in AI automation, full stack development and enterprise integration',
   roles: [
-    'Full-Stack Developer',
+    'Full Stack Developer',
     'AI Automation Engineer',
     'Enterprise Systems Integration Developer',
     'Digital Product Builder',
@@ -12,9 +12,9 @@ export const site = {
   brandStatement:
     'I help businesses build reliable web and mobile applications, automate workflows with AI, and connect enterprise systems through secure, maintainable APIs.',
   shortStatement:
-    'Full-stack software, AI automation and ERP integrations that solve real business problems.',
+    'Full stack software, AI automation and ERP integrations that solve real business problems.',
   supportingParagraph:
-    'Software engineer and Business Information Technology graduate with hands-on experience in enterprise ERP integration, AI-powered applications, workflow automation, cloud deployments and security-conscious web and mobile development.',
+    'Software engineer and Business Information Technology graduate with hands on experience in enterprise ERP integration, AI powered applications, workflow automation, cloud deployments and security conscious web and mobile development.',
   location: 'Dar es Salaam, Tanzania',
   phone: '+255 787 550 399',
   email: 'ruhumbikamtumbajohn@gmail.com',
@@ -36,10 +36,10 @@ export const site = {
     emailSubject:
       'Strategic technology partnership inquiry',
     emailBody:
-      "Hi Ruhumbika,\n\nI explored your engineering portfolio and would like to discuss a potential collaboration, enterprise integration or digital product initiative.\n\nA few details:\n- Company/Team:\n- Partnership or project:\n- Timeline:\n\nWhen are you available for a short call?\n\nThanks,",
+      "Hi Ruhumbika,\n\nI explored your engineering portfolio and would like to discuss a potential collaboration, enterprise integration or digital product initiative.\n\nA few details:\nCompany/Team:\nPartnership or project:\nTimeline:\n\nWhen are you available for a short call?\n\nThanks,",
     reasons: [
-      'Builds full-stack software and AI automation solutions',
-      'Completed two ICT field placements in a public-sector environment',
+      'Builds full stack software and AI automation solutions',
+      'Completed two ICT field placements in a public sector environment',
       'Works across Laravel, FastAPI, Flutter and Node.js',
       'Open to strategic partnerships, enterprise projects and technical collaborations',
     ],
@@ -47,7 +47,7 @@ export const site = {
   schedule: {
     timeZone: 'Africa/Dar_es_Salaam',
     timeZoneLabel: 'East Africa Time (EAT · UTC+3)',
-    weekdayLabel: 'Monday–Friday',
+    weekdayLabel: 'Monday to Friday',
     startHour: 9,
     endHour: 17,
     slotMinutes: 60,
@@ -59,7 +59,7 @@ export const site = {
   indicators: [
     { value: 'ERP + AI', label: 'Engineering Focus' },
     { value: '2', label: 'ICT Field Placements' },
-    { value: 'Full-Stack + AI', label: 'Core Focus' },
+    { value: 'Full Stack + AI', label: 'Core Focus' },
     { value: 'Dar es Salaam', label: 'Based in Tanzania' },
   ],
   url: 'https://johnportifolio.rjaybarber.shop',

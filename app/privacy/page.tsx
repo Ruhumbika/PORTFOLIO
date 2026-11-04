@@ -20,7 +20,7 @@ const sections = [
     title: 'Hosting and analytics',
     paragraphs: [
       'This website is hosted by Vercel. Hosting infrastructure may process standard technical request information needed to deliver and secure the website.',
-      'Vercel Web Analytics may collect anonymous, aggregated information such as pages viewed, referrer, approximate country, browser, operating system and device type. It does not use third-party cookies and is not intended to identify individual visitors.',
+      'Vercel Web Analytics may collect anonymous, aggregated information such as pages viewed, referrer, approximate country, browser, operating system and device type. It does not use third party cookies and is not intended to identify individual visitors.',
     ],
   },
   {
@@ -33,13 +33,13 @@ const sections = [
     title: 'How information is used',
     paragraphs: [
       'Information you send directly is used to respond to your enquiry, discuss opportunities and maintain relevant correspondence. Anonymous analytics are used to understand site performance and improve portfolio content.',
-      'I do not sell personal information or use it for automated decision-making.',
+      'I do not sell personal information or use it for automated decision making.',
     ],
   },
   {
     title: 'Retention and your choices',
     paragraphs: [
-      `Direct correspondence is retained only as long as reasonably needed for the conversation, record-keeping or legal obligations. You may ask what personal information I hold about you, request a correction or request deletion by emailing ${site.email}.`,
+      `Direct correspondence is retained only as long as reasonably needed for the conversation, record keeping or legal obligations. You may ask what personal information I hold about you, request a correction or request deletion by emailing ${site.email}.`,
       'You can clear local and session storage through your browser settings. You may also prevent analytics requests with compatible browser privacy tools.',
     ],
   },

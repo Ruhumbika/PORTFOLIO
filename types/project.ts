@@ -1,6 +1,6 @@
 export type ProjectStatus =
   | 'Live'
-  | 'Final-Year Project'
+  | 'Final Year Project'
   | 'Academic Project'
   | 'MVP'
   | 'Prototype'

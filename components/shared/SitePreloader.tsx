@@ -72,7 +72,7 @@ export function SitePreloader() {
                 Loading portfolio
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Full-stack · AI applications · digital products
+                Full stack · AI applications · digital products
               </p>
             </div>
             <div className="h-1 w-40 overflow-hidden rounded-full bg-secondary">

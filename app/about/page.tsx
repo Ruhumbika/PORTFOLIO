@@ -13,7 +13,7 @@ import { AboutProfileCard } from "@/components/home/AboutProfileCard"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Ruhumbika Mtumba John, a Business Information Technology graduate and full-stack and AI application developer based in Dar es Salaam, Tanzania.",
+    "About Ruhumbika Mtumba John, a Business Information Technology graduate and full stack and AI application developer based in Dar es Salaam, Tanzania.",
   alternates: { canonical: "/about" },
 }
 
@@ -24,7 +24,7 @@ export default function AboutPage() {
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">About</p>
         <h1 className="mt-4 max-w-4xl text-balance text-3xl font-semibold leading-[1.13] tracking-tight sm:text-4xl lg:text-[2.75rem]">
-          Building intelligent, useful and human-centred digital products.
+          Building intelligent, useful and human centred digital products.
         </h1>
       </Reveal>
 

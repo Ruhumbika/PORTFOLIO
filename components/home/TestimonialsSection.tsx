@@ -14,18 +14,18 @@ const collaborationNotes = [
   {
     index: '01',
     title: 'Clear communication',
-    text: 'I turn requirements into a plain-language plan, explain tradeoffs early and keep progress visible from the first decision to delivery.',
+    text: 'I turn requirements into a plain language plan, explain tradeoffs early and keep progress visible from the first decision to delivery.',
     detail: 'Alignment before implementation',
   },
   {
     index: '02',
     title: 'Practical ownership',
     text: 'I work across product thinking, interface design, engineering and deployment so important details do not disappear between disciplines.',
-    detail: 'End-to-end product responsibility',
+    detail: 'End to end product responsibility',
   },
   {
     index: '03',
-    title: 'User-centred delivery',
+    title: 'User centred delivery',
     text: 'I stay close to the people using the product and measure success by whether the final workflow is useful, understandable and dependable.',
     detail: 'Real problems, usable outcomes',
   },

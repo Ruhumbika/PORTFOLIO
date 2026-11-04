@@ -16,12 +16,12 @@ export function InterviewBookingPreview() {
                   Interview calendar
                 </p>
                 <h2 className="mt-4 max-w-xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Pick an available time and send a ready-made request.
+                  Pick an available time and send a ready made request.
                 </h2>
                 <p className="mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
                   Recruiters and collaborators can view my weekday availability,
                   choose a suitable interview slot and contact me through a
-                  pre-filled WhatsApp message or email.
+                  pre filled WhatsApp message or email.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Button href="/availability">
@@ -42,7 +42,7 @@ export function InterviewBookingPreview() {
                 </div>
                 <div className="rounded-xl border border-border bg-background/40 p-4">
                   <Clock3 className="h-5 w-5 text-primary" aria-hidden="true" />
-                  <p className="mt-3 text-sm font-medium">09:00–17:00 EAT</p>
+                  <p className="mt-3 text-sm font-medium">09:00 to 17:00 EAT</p>
                   <p className="mt-1 text-xs text-muted-foreground">Times convert to the visitor’s local zone</p>
                 </div>
                 <div className="rounded-xl border border-border bg-background/40 p-4">

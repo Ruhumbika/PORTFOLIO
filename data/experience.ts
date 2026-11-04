@@ -4,12 +4,12 @@ export const currentEmployment: ExperienceItem = {
   organisation: 'Ma Cargo Transporters and Forwarders (ABOOD Group of Companies)',
   unit: 'Technology / Software Development',
   location: 'Tanzania',
-  role: 'Full-Stack Developer',
+  role: 'Full Stack Developer',
   periods: ['Present'],
   summary:
-    'Currently developing and supporting full-stack digital solutions for Ma Cargo Transporters and Forwarders, part of the ABOOD Group of Companies, while remaining open to more advantageous opportunities.',
+    'Currently developing and supporting full stack digital solutions for Ma Cargo Transporters and Forwarders, part of the ABOOD Group of Companies, while remaining open to more advantageous opportunities.',
   responsibilities: [
-    'Full-stack web application development',
+    'Full stack web application development',
     'Frontend and backend feature delivery',
     'Database and API integration',
     'Production support and troubleshooting',
@@ -23,20 +23,20 @@ export const experience: ExperienceItem[] = [
     location: 'Tanzania',
     role: 'Field Practical Training',
     // Two distinct placements in the same unit, never one continuous span.
-    periods: ['July 2024 – November 2024', 'July 2025 – November 2025'],
+    periods: ['July 2024 to November 2024', 'July 2025 to November 2025'],
     summary:
-      'Completed two separate practical training placements in the same ICT Unit. The second placement built directly on the experience gained during the first, deepening both technical support skills and understanding of public-sector service delivery.',
+      'Completed two separate practical training placements in the same ICT Unit. The second placement built directly on the experience gained during the first, deepening both technical support skills and understanding of public sector service delivery.',
     responsibilities: [
-      'End-user ICT support',
+      'End user ICT support',
       'Desktop and laptop software installation',
       'Computer configuration',
       'Biometric device support',
-      'Printer and office-equipment troubleshooting',
+      'Printer and office equipment troubleshooting',
       'Asset identification and labelling',
       'Data handling and digital records support',
       'Routine network and device support',
       'Staff technical assistance',
-      'Public-sector ICT support',
+      'Public sector ICT support',
     ],
   },
 ]
@@ -44,9 +44,9 @@ export const experience: ExperienceItem[] = [
 export const entrepreneurship = {
   title: 'Founder & Operator',
   organisation: 'RJAY Digital Hub & RJAY Barbershop',
-  period: '2024 – Present',
+  period: '2024 to Present',
   intro:
-    'Operating these businesses has built practical, hands-on experience across the full lifecycle of running real digital and service products.',
+    'Operating these businesses has built practical, hands on experience across the full lifecycle of running real digital and service products.',
   areas: [
     'Customer service',
     'Staff coordination',
@@ -57,7 +57,7 @@ export const entrepreneurship = {
     'Technology adoption',
     'Problem solving',
     'Business process improvement',
-    'Decision-making',
+    'Decision making',
     'Product thinking',
   ],
 }
@@ -69,19 +69,19 @@ export const training: TrainingItem[] = [
     areas: [
       'Leadership',
       'Confidence',
-      'Self-awareness',
+      'Self awareness',
       'Career planning',
       'Professional development',
     ],
   },
   {
     title: 'National Service Training (JKT), 822 KJ',
-    period: 'June 2023 – September 2023',
+    period: 'June 2023 to September 2023',
     areas: [
       'Discipline',
       'Teamwork',
       'Basic security',
-      'Productive-work training',
+      'Productive work training',
     ],
     note: 'Awarded Grade A for work competence and conduct.',
   },

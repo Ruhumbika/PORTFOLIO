@@ -9,7 +9,7 @@ export const newEngineeringProjects: Project[] = [
     "category": "Enterprise Automation",
     "status": "Prototype",
     "period": "2026",
-    "role": "Full-Stack Integration Developer",
+    "role": "Full Stack Integration Developer",
     "summary": "Designed and tested an ERP approval gateway connecting WhatsApp interactive decisions to authenticated ERP workflows, callback delivery and audit records.",
     "description": "Designed and tested an ERP approval gateway connecting WhatsApp interactive decisions to authenticated ERP workflows, callback delivery and audit records.",
     "problem": "Manual approval communication creates delays and fragmented decision records.",
@@ -21,7 +21,7 @@ export const newEngineeringProjects: Project[] = [
     ],
     "features": [
       "Interactive WhatsApp decision design",
-      "API-key authentication",
+      "API key authentication",
       "Workflow and approver validation",
       "ERP callback orchestration",
       "Audit event tracking",
@@ -78,7 +78,7 @@ export const newEngineeringProjects: Project[] = [
       "Device serial and employee ID handling",
       "Queued event forwarding",
       "Batch processing",
-      "Date-based filtering",
+      "Date based filtering",
       "Integration monitoring"
     ],
     "technologies": [
@@ -120,12 +120,12 @@ export const newEngineeringProjects: Project[] = [
     "role": "Software Integration Developer",
     "summary": "Developed and tested a Windows studio gateway to control RadioBOSS playback and scheduled audio actions through API commands.",
     "description": "Developed and tested a Windows studio gateway to control RadioBOSS playback and scheduled audio actions through API commands.",
-    "problem": "Radio playout automation needed a controllable bridge between ERP-driven schedules and a local RadioBOSS studio system.",
+    "problem": "Radio playout automation needed a controllable bridge between ERP driven schedules and a local RadioBOSS studio system.",
     "solution": "A local Windows gateway that validates assets and dispatches playback actions to the RadioBOSS API.",
     "contribution": [
       "Configured the Windows development environment",
       "Validated playback and track insert API commands",
-      "Tested hard inserts, force-play and integrity mismatch safeguards"
+      "Tested hard inserts, force play and integrity mismatch safeguards"
     ],
     "features": [
       "RadioBOSS API playback control",
@@ -164,7 +164,7 @@ export const newEngineeringProjects: Project[] = [
   },
 {
   "slug": "attendance-core-dashboard",
-  "title": "Attendance Core — Biometric Attendance Platform",
+  "title": "Attendance Core, Biometric Attendance Platform",
   "shortTitle": "Attendance Core",
   "category": "Enterprise Automation",
   "status": "Live",
@@ -196,7 +196,7 @@ export const newEngineeringProjects: Project[] = [
   "users": "HR, attendance administrators and technical operations teams",
   "images": [
     {
-      "label": "Attendance Core dashboard — company personnel, device and attendance overview",
+      "label": "Attendance Core dashboard, company personnel, device and attendance overview",
       "src": "/projects/attendance-core/dashboard.png",
       "ratio": "screen"
     }
@@ -223,17 +223,17 @@ export const newEngineeringProjects: Project[] = [
     "status": "Live",
     "period": "2026",
     "role": "Software Developer & Operator",
-    "summary": "Maintained a self-hosted WiFi application and production infrastructure with Nginx virtual hosting on a personal VPS.",
-    "description": "Maintained a self-hosted WiFi application and production infrastructure with Nginx virtual hosting on a personal VPS.",
+    "summary": "Maintained a self hosted WiFi application and production infrastructure with Nginx virtual hosting on a personal VPS.",
+    "description": "Maintained a self hosted WiFi application and production infrastructure with Nginx virtual hosting on a personal VPS.",
     "problem": "A WiFi service requires reliable web access and independently managed infrastructure.",
-    "solution": "A VPS-hosted platform with dedicated web routing and operations workflows.",
+    "solution": "A VPS hosted platform with dedicated web routing and operations workflows.",
     "contribution": [
       "Configured and maintained application hosting",
       "Managed VPS deployment alongside other isolated services"
     ],
     "features": [
       "Dedicated Nginx virtual hosting",
-      "Self-hosted deployment",
+      "Self hosted deployment",
       "Application operations",
       "Infrastructure configuration"
     ],
@@ -254,14 +254,14 @@ export const newEngineeringProjects: Project[] = [
     "caseStudySections": [
       {
         "title": "Engineering approach",
-        "body": "A VPS-hosted platform with dedicated web routing and operations workflows."
+        "body": "A VPS hosted platform with dedicated web routing and operations workflows."
       },
       {
         "title": "Delivery status",
-        "body": "Operational self-hosted web platform on the personal VPS."
+        "body": "Operational self hosted web platform on the personal VPS."
       }
     ],
-    "outcome": "Operational self-hosted web platform on the personal VPS.",
+    "outcome": "Operational self hosted web platform on the personal VPS.",
     "featured": true
   }
 ]

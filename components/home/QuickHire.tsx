@@ -29,7 +29,7 @@ const channels = [
   },
   {
     label: 'Quick DM on WhatsApp',
-    sub: 'Pre-filled message · fastest reply',
+    sub: 'Pre filled message · fastest reply',
     href: links.whatsapp,
     Icon: Whatsapp,
     primary: false,
@@ -37,7 +37,7 @@ const channels = [
   },
   {
     label: 'Discuss a collaboration by email',
-    sub: 'Opens a ready-to-send template',
+    sub: 'Opens a ready to send template',
     href: links.email,
     Icon: Mail,
     primary: false,
@@ -89,7 +89,7 @@ export function QuickHire() {
         <SectionHeading
           label="Strategic partnerships"
           title="Let’s build what comes next"
-          description="Connecting with founders, businesses and technology leaders to build practical solutions and explore high-impact collaborations."
+          description="Connecting with founders, businesses and technology leaders to build practical solutions and explore high impact collaborations."
         />
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
@@ -213,7 +213,7 @@ export function QuickHire() {
                 </motion.a>
               ))}
               <p className="mt-auto pt-3 text-xs leading-relaxed text-muted-foreground">
-                Each channel opens with a high-intent message pre-written for
+                Each channel opens with a high intent message pre written for
                 you. Just add your details and send.
               </p>
             </div>

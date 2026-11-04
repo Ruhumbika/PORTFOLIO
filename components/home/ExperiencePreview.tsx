@@ -11,8 +11,8 @@ export function ExperiencePreview() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             label="Selected Experience"
-            title="Full-stack development and practical ICT"
-            description="Currently building full-stack solutions at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), with earlier hands-on ICT experience in public-sector service delivery."
+            title="Full stack development and practical ICT"
+            description="Currently building full stack solutions at Ma Cargo Transporters and Forwarders (ABOOD Group of Companies), with earlier hands on ICT experience in public sector service delivery."
           />
           <Button href="/experience" variant="outline" size="sm" className="shrink-0">
             Full experience

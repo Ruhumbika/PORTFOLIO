@@ -160,9 +160,7 @@ export function Hero() {
             variants={item}
             className="mt-5 text-lg font-medium text-foreground/90"
           >
-            Software Engineer{' '}
-            <span className="text-muted-foreground">|</span> AI Automation{' '}
-            <span className="text-muted-foreground">|</span> Full-Stack Developer
+            Software engineer specialising in AI automation and full stack development.
           </motion.p>
 
           <motion.p

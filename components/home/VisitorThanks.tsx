@@ -11,7 +11,7 @@ export function VisitorThanks() {
             <div className="min-w-0">
               <span className="inline-flex items-center gap-2 rounded-full border border-[#F8A706]/30 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-[#F8A706]"><Gift className="h-3.5 w-3.5"/> For visitors & developers</span>
               <h2 id="visitor-thanks-heading" className="mt-5 text-balance text-2xl font-semibold sm:text-3xl lg:text-4xl">Thanks for exploring my work.</h2>
-              <p className="mt-4 max-w-2xl leading-relaxed text-gray-300">I appreciate your visit. If you enjoy exploring developer tools and interface design, here is a Studio Vue file-manager demo from SeanTheme to discover.</p>
+              <p className="mt-4 max-w-2xl leading-relaxed text-gray-300">I appreciate your visit. If you enjoy exploring developer tools and interface design, here is a Studio Vue file manager demo from SeanTheme to discover.</p>
               <a href="https://seantheme.com/studio-vue/page/file-manager" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#F8A706] px-5 py-3 text-sm font-semibold text-[#141414] transition hover:bg-[#ffbe38] focus-visible:outline-[#F8A706]">Explore Studio Vue file manager <ArrowUpRight className="h-4 w-4"/></a>
               <p className="mt-3 text-xs text-gray-400">External demo by SeanTheme. Availability and licensing are governed by its publisher.</p>
             </div>

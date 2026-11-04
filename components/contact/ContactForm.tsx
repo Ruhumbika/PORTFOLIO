@@ -55,7 +55,7 @@ export function ContactForm() {
       return
     }
 
-    // Build a ready-to-send email addressed to me, pre-filled with the recruiter's message.
+    // Build a ready-to-send email addressed to me, pre filled with the recruiter's message.
     const subject = `Strategic partnership inquiry from ${values.name}${
       values.company ? ` · ${values.company}` : ''
     }`

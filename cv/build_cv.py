@@ -19,11 +19,11 @@ styles = {
  'name': ParagraphStyle('name', fontName='CVBold', fontSize=22, leading=27, alignment=1, textColor=HexColor(NAVY), spaceAfter=6),
  'role': ParagraphStyle('role', alignment=1, fontName='CV', fontSize=12, leading=18, textColor=HexColor(TEAL), spaceAfter=6),
  'contact': ParagraphStyle('contact', alignment=1, fontName='CV', fontSize=10, leading=15, textColor=HexColor('#111111'), spaceAfter=2),
- 'section': ParagraphStyle('section', fontName='CVBold', fontSize=12.5, leading=18, textColor=HexColor(TEAL), spaceBefore=12, spaceAfter=7, keepWithNext=True),
+ 'section': ParagraphStyle('section', fontName='CVBold', fontSize=12.5, leading=18, textColor=HexColor(TEAL), spaceBefore=10, spaceAfter=5, keepWithNext=True),
  'entry': ParagraphStyle('entry', fontName='CVBold', fontSize=12, leading=18, textColor=HexColor(NAVY), spaceBefore=8, spaceAfter=3, keepWithNext=True),
  'meta': ParagraphStyle('meta', fontName='CV', fontSize=10.5, leading=15, textColor=HexColor(TEAL), spaceAfter=4, keepWithNext=True),
  'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=12, leading=18, leftIndent=12, firstLineIndent=0, bulletIndent=0, textColor=HexColor('#111111'), spaceAfter=5),
- 'body': ParagraphStyle('body', fontName='CV', fontSize=12, leading=18, textColor=HexColor('#111111'), spaceAfter=7),
+ 'body': ParagraphStyle('body', fontName='CV', fontSize=12, leading=18, textColor=HexColor('#111111'), spaceAfter=4),
 }
 # All public copy is maintained here so the PDF and HTML stay consistent.
 pages = [
@@ -49,9 +49,12 @@ pages = [
  ('meta', 'Kilindi District Council<br/>July to November 2024 and July to November 2025'),
  ('bullet', 'Provided user support, software installation and computer and printer configuration.'),
  ('bullet', 'Assisted with biometric devices and routine network troubleshooting.'),
+ ('body', '<b>Professional development:</b> NMB Nuru Yangu Scholarship Mentorship Programme, 2026. National Service Training, JKT 822 KJ, 2023.'),
  ],
  [
  ('section', 'Selected engineering work'),
+ ('entry', 'RJAY Barbershop booking and service platform'),
+ ('body', 'Developed a digital solution for appointment booking, service catalogues and administrative availability management. <a href="http://rjaybarber.shop/">rjaybarber.shop</a>'),
  ('entry', 'WhatsApp approval gateway'),
  ('body', 'Developed a solution for ERP approvals through WhatsApp, connecting approver identity, interactive decisions, ERP callbacks and audit records in one workflow.'),
  ('entry', 'Attendance integration'),
@@ -66,9 +69,9 @@ pages = [
  ('body', '<b>Bachelor of Science in Business Information Technology</b><br/>University of Dar es Salaam, 2023 to 2026. Graduated with honours.'),
  ('body', '<b>Advanced Certificate of Secondary Education</b><br/>Bunda High School, EGM, Division I, 2021 to 2023.'),
  ('body', '<b>Certificate of Secondary Education</b><br/>Iligamba Secondary School, Division I, 2020.'),
- ('section', 'Business and professional development'),
+ ('section', 'Entrepreneurship'),
  ('body', 'Founder and operator of RJAY Digital Hub and RJAY Barbershop, supporting customer operations and digital branding.'),
- ('body', 'NMB Nuru Yangu Scholarship Mentorship Programme, 2026. National Service Training, JKT 822 KJ, 2023.'),
+
  ],
 ]
 

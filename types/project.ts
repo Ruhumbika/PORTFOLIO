@@ -15,6 +15,8 @@ export interface ProjectImage {
   uncropped?: { width: number; height: number }
   /** Optional local WebM/MP4 recording, played only after the visitor chooses to play. */
   videoSrc?: string
+  /** Display the full phone recording and enable silent preview playback. */
+  mobileVideo?: boolean
   /** Suggested aspect ratio for the placeholder frame. */
   ratio?: 'video' | 'square' | 'portrait' | 'wide' | 'screen'
 }

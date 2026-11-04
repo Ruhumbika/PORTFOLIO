@@ -10,14 +10,14 @@ export const newEngineeringProjects: Project[] = [
     "status": "Prototype",
     "period": "2026",
     "role": "Full Stack Integration Developer",
-    "summary": "Designed and tested an ERP approval gateway connecting WhatsApp interactive decisions to authenticated ERP workflows, callback delivery and audit records.",
-    "description": "Designed and tested an ERP approval gateway connecting WhatsApp interactive decisions to authenticated ERP workflows, callback delivery and audit records.",
+    "summary": "An ERP approval solution connecting WhatsApp interactive decisions with authenticated workflows, callback delivery and audit records.",
+    "description": "An ERP approval solution connecting WhatsApp interactive decisions with authenticated workflows, callback delivery and audit records.",
     "problem": "Manual approval communication creates delays and fragmented decision records.",
     "solution": "A dedicated approval API and webhook gateway with identity binding, workflow validation, interactive decision handling, workers and ERP callbacks.",
     "contribution": [
       "Implemented the gateway API and webhook integration",
       "Developed approval workflow guards and request tracking",
-      "Tested integration contracts and callback behavior"
+      "Implemented integration contracts and callback handling"
     ],
     "features": [
       "Interactive WhatsApp decision design",
@@ -50,10 +50,10 @@ export const newEngineeringProjects: Project[] = [
       },
       {
         "title": "Delivery status",
-        "body": "Validated gateway request creation and ERP integration flows in a test environment; wider production rollout remains a separate milestone."
+        "body": "A central approval gateway connecting request creation, approver identity and ERP decision records."
       }
     ],
-    "outcome": "Validated gateway request creation and ERP integration flows in a test environment; wider production rollout remains a separate milestone.",
+    "outcome": "A central approval gateway connecting request creation, approver identity and ERP decision records.",
     "featured": true
   },
   {
@@ -64,14 +64,14 @@ export const newEngineeringProjects: Project[] = [
     "status": "Prototype",
     "period": "2026",
     "role": "Integration Developer",
-    "summary": "Built and tested a forwarder for EasyTimePro and ZKTeco attendance records to GHRM with batching, punch filtering and background processing.",
-    "description": "Built and tested a forwarder for EasyTimePro and ZKTeco attendance records to GHRM with batching, punch filtering and background processing.",
+    "summary": "An attendance integration solution connecting EasyTimePro and ZKTeco records to GHRM through filtering, batch delivery and background processing.",
+    "description": "An attendance integration solution connecting EasyTimePro and ZKTeco records to GHRM through filtering, batch delivery and background processing.",
     "problem": "Attendance transactions from biometric and mobile devices needed dependable synchronization with a central HR management system.",
     "solution": "A bridge that reads attendance transactions, maps required punch fields and queues delivery to the GHRM attendance endpoint.",
     "contribution": [
       "Developed attendance forwarding integration",
       "Validated transaction field mapping against GHRM contracts",
-      "Tested worker operations and event queue behavior"
+      "Implemented background processing and event queues"
     ],
     "features": [
       "Attendance transaction ingestion",
@@ -104,32 +104,32 @@ export const newEngineeringProjects: Project[] = [
       },
       {
         "title": "Delivery status",
-        "body": "Established and tested a direct attendance integration pipeline; further operational reconciliation and deduplication checks remain important."
+        "body": "A direct integration pipeline connecting attendance transactions with HRM workflows through queued processing."
       }
     ],
-    "outcome": "Established and tested a direct attendance integration pipeline; further operational reconciliation and deduplication checks remain important.",
+    "outcome": "A direct integration pipeline connecting attendance transactions with HRM workflows through queued processing.",
     "featured": true
   },
   {
     "slug": "abood-radio-studio-gateway",
-    "title": "RadioBOSS Studio Automation Gateway",
-    "shortTitle": "RadioBOSS Studio Automation Gateway",
+    "title": "ABOOD Media Radio Advertising Integration",
+    "shortTitle": "ABOOD Media Radio Advertising Integration",
     "category": "Media Automation",
     "status": "Prototype",
     "period": "2026",
     "role": "Software Integration Developer",
-    "summary": "Developed and tested a Windows studio gateway to control RadioBOSS playback and scheduled audio actions through API commands.",
-    "description": "Developed and tested a Windows studio gateway to control RadioBOSS playback and scheduled audio actions through API commands.",
-    "problem": "Radio playout automation needed a controllable bridge between ERP driven schedules and a local RadioBOSS studio system.",
-    "solution": "A local Windows gateway that validates assets and dispatches playback actions to the RadioBOSS API.",
+    "summary": "A studio integration for the ABOOD Media system, whose primary goal is tracking radio advertising sales, connecting ERP schedules to RadioBOSS playback and advertisement insertion.",
+    "description": "A studio integration for the ABOOD Media system, whose primary goal is tracking radio advertising sales, connecting ERP schedules to RadioBOSS playback and advertisement insertion.",
+    "problem": "Radio advertising operations need a connection between commercial advertising records, ERP schedules and studio playback.",
+    "solution": "A Windows studio gateway designed to connect ERP advertising schedules to RadioBOSS, validate audio assets and coordinate scheduled advertisement playback.",
     "contribution": [
-      "Configured the Windows development environment",
-      "Validated playback and track insert API commands",
-      "Tested hard inserts, force play and integrity mismatch safeguards"
+      "Developed the Windows studio integration environment",
+      "Integrated RadioBOSS playback and advertisement insertion commands",
+      "Implemented scheduling and audio integrity safeguards"
     ],
     "features": [
       "RadioBOSS API playback control",
-      "Track insertion tests",
+      "Advertisement track insertion",
       "Audio asset integrity checking",
       "Schedule gateway integration",
       "Studio worker coordination"
@@ -145,21 +145,21 @@ export const newEngineeringProjects: Project[] = [
     "users": "Operations and technology teams",
     "images": [
       {
-        "label": "RadioBOSS Studio Automation Gateway architecture and workflow overview",
+        "label": "ABOOD Media Radio Advertising Integration architecture and workflow overview",
         "ratio": "video"
       }
     ],
     "caseStudySections": [
       {
         "title": "Engineering approach",
-        "body": "A local Windows gateway that validates assets and dispatches playback actions to the RadioBOSS API."
+        "body": "A Windows studio gateway designed to connect ERP advertising schedules to RadioBOSS, validate audio assets and coordinate scheduled advertisement playback."
       },
       {
         "title": "Delivery status",
-        "body": "Confirmed local RadioBOSS playback control and gateway test cases; full ERP schedule integration is ongoing."
+        "body": "Connects the studio playback layer with the wider ABOOD Media advertising workflow. ERP schedule integration is in development."
       }
     ],
-    "outcome": "Confirmed local RadioBOSS playback control and gateway test cases; full ERP schedule integration is ongoing.",
+    "outcome": "Connects the studio playback layer with the wider ABOOD Media advertising workflow. ERP schedule integration is in development.",
     "featured": true
   },
 {
@@ -176,7 +176,7 @@ export const newEngineeringProjects: Project[] = [
   "solution": "A deployed attendance platform paired with an integration bridge for GHRM attendance ingestion.",
   "contribution": [
     "Configured EasyTimePro infrastructure and mobile punch tests",
-    "Developed and tested the GHRM event forwarding bridge",
+    "Developed the GHRM event forwarding bridge",
     "Validated employee and device transaction fields"
   ],
   "features": [
@@ -212,7 +212,7 @@ export const newEngineeringProjects: Project[] = [
       "body": "Production dashboards require authorized access; the portfolio shows a provided screenshot rather than embedding restricted company data."
     }
   ],
-  "outcome": "A working attendance platform with tested GHRM integration workflows; production data handling remains protected.",
+  "outcome": "An attendance platform with GHRM integration workflows and controlled access to operational records.",
   "featured": true
 },
   {

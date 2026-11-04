@@ -13,8 +13,8 @@ FONT = Path('/usr/share/fonts/truetype/dejavu')
 pdfmetrics.registerFont(TTFont('CV', str(FONT / 'DejaVuSans.ttf')))
 pdfmetrics.registerFont(TTFont('CVBold', str(FONT / 'DejaVuSans-Bold.ttf')))
 pdfmetrics.registerFontFamily('CV', normal='CV', bold='CVBold')
-NAVY = '#111111'
-TEAL = '#111111'
+NAVY = '#18313F'
+TEAL = '#087D80'
 styles = {
  'name': ParagraphStyle('name', fontName='CVBold', fontSize=22, leading=27, alignment=1, textColor=HexColor(NAVY), spaceAfter=6),
  'role': ParagraphStyle('role', alignment=1, fontName='CV', fontSize=12, leading=18, textColor=HexColor(TEAL), spaceAfter=6),
@@ -35,7 +35,7 @@ pages = [
  ('contact', '<a href="https://johnportifolio.rjaybarber.shop/">johnportifolio.rjaybarber.shop</a>'),
  ('contact', '<a href="https://www.linkedin.com/in/ruhumbika-mtumba-john/">linkedin.com/in/ruhumbika-mtumba-john</a> · <a href="https://github.com/Ruhumbika">github.com/Ruhumbika</a>'),
  ('section', 'Professional profile'),
- ('body', 'Software engineer developing web and mobile applications, enterprise integrations and business automation. Builds solutions that connect operational systems, streamline workflows and make business information easier to use. Bachelor of Science in Business Information Technology graduate.'),
+ ('body', 'Software engineer developing web and mobile applications, enterprise integrations and business automation. Builds solutions that connect operational systems, streamline workflows and make business information easier to use. Bachelor of Science in Business Information Technology graduate with honours.'),
  ('section', 'Technical capabilities'),
  ('body', '<b>Development:</b> PHP, JavaScript, TypeScript, Python, Dart, SQL, HTML and CSS. Laravel, Next.js, Node.js, Express.js, FastAPI, Flutter and Streamlit.'),
  ('body', '<b>Systems and data:</b> REST APIs, webhooks, authorization, PostgreSQL, MySQL, SQLite, Docker, Linux and Git.'),
@@ -63,7 +63,7 @@ pages = [
  ('entry', 'Student support AI assistant'),
  ('body', 'Developed a locally hosted academic support solution using FastAPI, Ollama and FAQ retrieval to deliver answers grounded in university information.'),
  ('section', 'Education'),
- ('body', '<b>Bachelor of Science in Business Information Technology</b><br/>University of Dar es Salaam, 2023 to 2026.'),
+ ('body', '<b>Bachelor of Science in Business Information Technology</b><br/>University of Dar es Salaam, 2023 to 2026. Graduated with honours.'),
  ('body', '<b>Advanced Certificate of Secondary Education</b><br/>Bunda High School, EGM, Division I, 2021 to 2023.'),
  ('body', '<b>Certificate of Secondary Education</b><br/>Iligamba Secondary School, Division I, 2020.'),
  ('section', 'Business and professional development'),
@@ -103,7 +103,7 @@ for i, page in enumerate(pages):
 doc = SimpleDocTemplate(str(out), pagesize=(595.276, 841.89), rightMargin=42, leftMargin=42, topMargin=35, bottomMargin=49, title='Ruhumbika Mtumba John, curriculum vitae', author='Ruhumbika Mtumba John')
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
 shutil.copyfile(out, ROOT / 'cv' / out.name)
-html = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>Ruhumbika Mtumba John, curriculum vitae</title><style>@page{size:A4;margin:14mm}body{font-family:Arial,sans-serif;color:#111;font-size:12pt;line-height:1.5;margin:0}section{break-after:page}section:last-child{break-after:auto}p{margin:0 0 7pt}a{color:inherit;text-decoration:none}.name{font-size:22pt;font-weight:bold;text-align:center}.role,.contact{text-align:center}.role{font-size:12pt}.contact{font-size:10pt}.section{margin-top:12pt;border-bottom:1px solid #777;padding-bottom:5pt;font-weight:bold}.entry{font-weight:bold;margin-top:10pt}.bullet{padding-left:14pt}.bullet:before{content:"• "}.meta{font-size:10.5pt}</style><body>']
+html = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>Ruhumbika Mtumba John, curriculum vitae</title><style>@page{size:A4;margin:14mm}body{font-family:Arial,sans-serif;color:#111;font-size:12pt;line-height:1.5;margin:0}section{break-after:page}section:last-child{break-after:auto}p{margin:0 0 7pt}a{color:inherit;text-decoration:none}.name{font-size:22pt;font-weight:bold;text-align:center}.role,.contact{text-align:center}.role{font-size:12pt;color:#087d80}.name{color:#18313f}.contact{font-size:10pt}.section{color:#087d80;margin-top:12pt;border-bottom:1px solid #777;padding-bottom:5pt;font-weight:bold}.entry{font-weight:bold;margin-top:10pt}.bullet{padding-left:14pt}.bullet:before{content:"• "}.meta{font-size:10.5pt}</style><body>']
 for page in pages:
  html.append('<section>')
  html.extend(f'<p class="{kind}">{text}</p>' for kind, text in page)

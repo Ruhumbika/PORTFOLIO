@@ -7,10 +7,10 @@ export const projects: Project[] = [
       "slug": "eagersky",
       "title": "Eagersky Real Estate Platform",
       "shortTitle": "Eagersky",
-      "category": "Real Estate Platform",
+      "category": "Freelance Real Estate Project",
       "status": "Live",
       "period": "Current",
-      "role": "Software Developer",
+      "role": "Freelance Software Developer",
       "summary": "A real estate and accommodation platform connecting property seekers with listings and booking requests.",
       "description": "Eagersky provides property and accommodation discovery across locations, including rooms, hostels and apartments.",
       "problem": "Property seekers need a clear way to compare accommodation and contact property providers.",
@@ -312,64 +312,6 @@ export const projects: Project[] = [
     outcome:
       'Produced a working MVP direction and a clear, scalable architecture for a trust focused rental marketplace.',
     featured: true,
-  },
-  {
-    slug: 'employee-id-portal',
-    title: 'Employee ID Card Generation Portal',
-    shortTitle: 'Employee ID Portal',
-    category: 'Web Application',
-    status: 'Academic Project',
-    period: '2024',
-    role: 'Web Developer',
-    summary:
-      'An authenticated portal for managing employee information and producing verifiable, QR enabled employee identity cards, reducing manual ID preparation.',
-    description:
-      'An authenticated portal for managing employee information and producing verifiable employee identity cards.',
-    problem:
-      'Preparing employee identity cards manually was slow and made records harder to organise and verify.',
-    solution:
-      'A secure portal that manages employee records and generates verifiable identity cards with QR based verification and PDF output.',
-    contribution: [
-      'Authentication and access control',
-      'Employee record management',
-      'QR code verification',
-      'PDF identity card generation',
-      'Print tracking and digital record handling',
-    ],
-    features: [
-      'Authentication',
-      'Employee record management',
-      'QR code verification',
-      'Print tracking',
-      'PDF identity card generation',
-      'Digital record handling',
-    ],
-    technologies: [
-      'PHP',
-      'MySQL',
-      'HTML',
-      'CSS',
-      'QR Code Generation',
-      'PDF Generation',
-    ],
-    users: 'Administrative staff responsible for employee records and ID issuance.',
-    images: [
-      { label: 'Login & authentication', ratio: 'video' },
-      { label: 'Employee records', ratio: 'video' },
-      { label: 'ID card generation', ratio: 'video' },
-      { label: 'QR verification', ratio: 'square' },
-    ],
-    liveUrl: undefined,
-    githubUrl: undefined,
-    caseStudySections: [
-      {
-        title: 'Outcome',
-        body: 'The portal reduced manual ID preparation and improved record organisation by centralising employee data and automating verifiable card output.',
-      },
-    ],
-    outcome:
-      'Reduced manual ID preparation and improved the organisation and verifiability of employee records.',
-    featured: false,
   },
   {
     slug: 'rjay-barbershop',

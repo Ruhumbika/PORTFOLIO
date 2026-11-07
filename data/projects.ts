@@ -4,6 +4,47 @@ import { newEngineeringProjects } from './engineering-projects'
 export const projects: Project[] = [
   ...newEngineeringProjects,
   {
+      "slug": "eagersky",
+      "title": "Eagersky Real Estate Platform",
+      "shortTitle": "Eagersky",
+      "category": "Real Estate Platform",
+      "status": "Live",
+      "period": "Current",
+      "role": "Software Developer",
+      "summary": "A real estate and accommodation platform connecting property seekers with listings and booking requests.",
+      "description": "Eagersky provides property and accommodation discovery across locations, including rooms, hostels and apartments.",
+      "problem": "Property seekers need a clear way to compare accommodation and contact property providers.",
+      "solution": "A web platform combining property listings, location and budget filters, accommodation categories and booking requests.",
+      "contribution": [
+          "Property discovery and listing workflows",
+          "Booking request user journeys",
+          "Responsive web interfaces"
+      ],
+      "features": [
+          "Property listings",
+          "Location and budget filters",
+          "Accommodation categories",
+          "Booking requests"
+      ],
+      "technologies": [],
+      "users": "Property seekers, tenants and property providers.",
+      "images": [
+          {
+              "label": "Eagersky property discovery and booking platform",
+              "ratio": "video"
+          }
+      ],
+      "liveUrl": "https://eagersky.com/",
+      "caseStudySections": [
+          {
+              "title": "Property discovery",
+              "body": "Visitors can browse accommodation by location, category and budget, then view property details and submit booking requests."
+          }
+      ],
+      "outcome": "A central place to discover accommodation and connect property seekers with providers.",
+      "featured": true
+  },
+  {
     slug: 'peta-holdings-erp',
     title: 'PETA Holdings ERP Dashboard',
     shortTitle: 'PETA ERP',
@@ -108,156 +149,6 @@ export const projects: Project[] = [
     ],
     outcome:
       'A live operational dashboard that helps teams understand portfolio performance and act on lease, revenue and invoice information.',
-    featured: true,
-  },
-  {
-    slug: 'kdilms',
-    title: 'Kilindi Traders Digital License Management System',
-    shortTitle: 'KDILMS',
-    category: 'Full Stack Web Application',
-    status: 'Final Year Project',
-    period: '2025 to 2026',
-    role: 'Full Stack Developer',
-    organisation: 'Kilindi District Council',
-    summary:
-      'A role based licensing platform that centralises trader records, licence renewals, debt tracking, SMS reminders and administrative reporting for a district council.',
-    description:
-      'A web based licensing platform developed to improve the management of trader records, business licences, renewals, debts, SMS reminders, reports and administrative accountability at Kilindi District Council.',
-    problem:
-      'Business licensing information and follow up processes required improved centralisation, monitoring, reporting and communication with traders.',
-    solution:
-      'A role based digital platform that supports trader data import, licence administration, debt monitoring, automated SMS reminders, dashboards, reports and audit logs.',
-    contribution: [
-      'Full stack application development',
-      'Database implementation',
-      'Role based access control',
-      'Import and validation workflows',
-      'System testing and documentation',
-      'Deployment support with DNS and SSL troubleshooting',
-      'Production migration troubleshooting',
-    ],
-    features: [
-      'Trader data import and validation from TAUSI exports',
-      'Licence issuance and renewal',
-      'Debt tracking',
-      'Automated SMS reminders',
-      'Role based dashboards',
-      'Reporting',
-      'Audit logs',
-      'User and permission management',
-    ],
-    technologies: [
-      'Laravel',
-      'PHP',
-      'MySQL',
-      'JavaScript',
-      'Bootstrap',
-      'NEXTSMS',
-      'MonkeysCloud',
-      'Git & GitHub',
-    ],
-    users:
-      'Council administrators, licensing officers and revenue staff at Kilindi District Council.',
-    images: [
-      {
-        label: 'KDILMS super admin analytical dashboard',
-        src: '/projects/kdilms/admin-dashboard.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'KDILMS secure sign-in screen',
-        src: '/projects/kdilms/sign-in.webp',
-        ratio: 'portrait',
-      },
-      {
-        label: 'Executive dashboard with revenue and licence analytics',
-        src: '/projects/kdilms/dashboard-overview.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Council performance dashboard',
-        src: '/projects/kdilms/performance-dashboard.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Administrative dashboard overview',
-        src: '/projects/kdilms/administration-dashboard.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Role and permission management',
-        src: '/projects/kdilms/role-management.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'TAUSI trader data import workflow',
-        src: '/projects/kdilms/trader-import.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Business licence management',
-        src: '/projects/kdilms/licence-management.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Licence renewal records and actions',
-        src: '/projects/kdilms/licence-renewals.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Payment processing dashboard',
-        src: '/projects/kdilms/payment-processing.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Automated SMS reminder management',
-        src: '/projects/kdilms/sms-management.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Reports and analytics centre',
-        src: '/projects/kdilms/reports-analytics.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'System activity and export logs',
-        src: '/projects/kdilms/system-logs.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'System user management',
-        src: '/projects/kdilms/user-management.webp',
-        ratio: 'screen',
-      },
-      {
-        label: 'Report generation options',
-        src: '/projects/kdilms/report-generation.webp',
-        ratio: 'screen',
-      },
-    ],
-    liveUrl: 'https://kdilms-kdilms-kdilms.monkeys.cloud/',
-    githubUrl: undefined,
-    caseStudySections: [
-      {
-        title: 'Context',
-        body: 'Kilindi District Council manages a large base of local traders whose licences, renewals and debts previously depended on fragmented follow up. The system consolidates these processes into one accountable platform.',
-      },
-      {
-        title: 'Data handling',
-        body: 'Trader records are imported and validated from TAUSI exports. The system works with imported data rather than a direct TAUSI API connection.',
-        bullets: [
-          'Structured import with validation rules',
-          'Duplicate and integrity checks before persistence',
-          'Audit logging for administrative accountability',
-        ],
-      },
-      {
-        title: 'Delivery & operations',
-        body: 'Beyond development, I supported cloud deployment on MonkeysCloud, resolved DNS and SSL configuration issues and handled production migration troubleshooting to reach a live test deployment.',
-      },
-    ],
-    outcome:
-      'Centralised licensing operations into a single accountable platform with automated trader communication and clearer administrative oversight.',
     featured: true,
   },
   {

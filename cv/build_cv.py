@@ -1,116 +1,76 @@
-"""Build the public CV and its editable HTML source with ReportLab."""
 from pathlib import Path
-from html import escape
-import shutil
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, KeepTogether, Table, TableStyle, HRFlowable
+from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,PageBreak,HRFlowable,KeepTogether
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.colors import HexColor
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-
-ROOT = Path(__file__).resolve().parents[1]
-FONT = Path('/usr/share/fonts/truetype/dejavu')
-pdfmetrics.registerFont(TTFont('CV', str(FONT / 'DejaVuSans.ttf')))
-pdfmetrics.registerFont(TTFont('CVBold', str(FONT / 'DejaVuSans-Bold.ttf')))
-pdfmetrics.registerFontFamily('CV', normal='CV', bold='CVBold')
-NAVY = '#18313F'
-TEAL = '#087D80'
-styles = {
- 'name': ParagraphStyle('name', fontName='CVBold', fontSize=22, leading=27, alignment=1, textColor=HexColor(NAVY), spaceAfter=6),
- 'role': ParagraphStyle('role', alignment=1, fontName='CV', fontSize=12, leading=18, textColor=HexColor(TEAL), spaceAfter=6),
- 'contact': ParagraphStyle('contact', alignment=1, fontName='CV', fontSize=10, leading=15, textColor=HexColor('#111111'), spaceAfter=2),
- 'section': ParagraphStyle('section', fontName='CVBold', fontSize=12.5, leading=18, textColor=HexColor(TEAL), spaceBefore=10, spaceAfter=5, keepWithNext=True),
- 'entry': ParagraphStyle('entry', fontName='CVBold', fontSize=12, leading=18, textColor=HexColor(NAVY), spaceBefore=8, spaceAfter=3, keepWithNext=True),
- 'meta': ParagraphStyle('meta', fontName='CV', fontSize=10.5, leading=15, textColor=HexColor(TEAL), spaceAfter=4, keepWithNext=True),
- 'bullet': ParagraphStyle('bullet', fontName='CV', fontSize=12, leading=18, leftIndent=12, firstLineIndent=0, bulletIndent=0, textColor=HexColor('#111111'), spaceAfter=5),
- 'body': ParagraphStyle('body', fontName='CV', fontSize=12, leading=18, textColor=HexColor('#111111'), spaceAfter=4),
+import fitz
+root=Path(__file__).resolve().parents[1]
+for name,file in [('CV','DejaVuSans.ttf'),('CVBold','DejaVuSans-Bold.ttf')]:pdfmetrics.registerFont(TTFont(name,'/usr/share/fonts/truetype/dejavu/'+file))
+pdfmetrics.registerFontFamily('CV',normal='CV',bold='CVBold')
+styles={
+'name':ParagraphStyle('name',fontName='CVBold',fontSize=22,leading=27,alignment=1,textColor=HexColor('#000000'),spaceAfter=4),
+'role':ParagraphStyle('role',fontName='CV',fontSize=12,leading=18,alignment=1,textColor=HexColor('#000000'),spaceAfter=4),
+'contact':ParagraphStyle('contact',fontName='CV',fontSize=10,leading=15,alignment=1,textColor=HexColor('#000000'),spaceAfter=1),
+'section':ParagraphStyle('section',fontName='CVBold',fontSize=12.5,leading=18,textColor=HexColor('#000000'),spaceBefore=9,spaceAfter=4,keepWithNext=True),
+'entry':ParagraphStyle('entry',fontName='CVBold',fontSize=12,leading=18,textColor=HexColor('#000000'),spaceBefore=6,spaceAfter=2,keepWithNext=True),
+'meta':ParagraphStyle('meta',fontName='CV',fontSize=10.5,leading=15,textColor=HexColor('#000000'),spaceAfter=3,keepWithNext=True),
+'body':ParagraphStyle('body',fontName='CV',fontSize=12,leading=18,textColor=HexColor('#000000'),spaceAfter=5),
+'bullet':ParagraphStyle('bullet',fontName='CV',fontSize=12,leading=18,textColor=HexColor('#000000'),leftIndent=11,bulletIndent=0,spaceAfter=4),
 }
-# All public copy is maintained here so the PDF and HTML stay consistent.
-pages = [
- [
- ('name', 'Ruhumbika Mtumba John'),
- ('role', 'Software engineer'),
- ('contact', 'Dar es Salaam, Tanzania'),
- ('contact', '<a href="mailto:ruhumbikamtumbajohn@gmail.com">ruhumbikamtumbajohn@gmail.com</a> · <a href="tel:+255787550399">+255 787 550 399</a>'),
- ('contact', '<a href="https://johnportifolio.rjaybarber.shop/">johnportifolio.rjaybarber.shop</a>'),
- ('contact', '<a href="https://www.linkedin.com/in/ruhumbika-mtumba-john/">linkedin.com/in/ruhumbika-mtumba-john</a> · <a href="https://github.com/Ruhumbika">github.com/Ruhumbika</a>'),
- ('section', 'Professional profile'),
- ('body', 'Software engineer developing web and mobile applications, enterprise integrations and business automation. Builds solutions that connect operational systems, streamline workflows and make business information easier to use. Bachelor of Science in Business Information Technology graduate with honours.'),
- ('section', 'Technical capabilities'),
- ('body', '<b>Development:</b> PHP, JavaScript, TypeScript, Python, Dart, SQL, HTML and CSS. Laravel, Next.js, Node.js, Express.js, FastAPI, Flutter and Streamlit.'),
- ('body', '<b>Systems and data:</b> REST APIs, webhooks, authorization, PostgreSQL, MySQL, SQLite, Docker, Linux and Git.'),
- ('body', '<b>Quality and delivery:</b> Postman, functional and regression testing, integration validation, UAT support, deployment troubleshooting and technical documentation.'),
- ('section', 'Professional experience'),
- ('entry', 'Full stack developer'),
- ('meta', 'Ma Cargo Transporters and Forwarders, ABOOD Group of Companies<br/>August 2026 to present'),
- ('bullet', 'Develop and support enterprise applications, APIs and operational workflows.'),
- ('bullet', 'Contribute to property management ERP functionality, approval workflows and attendance integration.'),
- ('entry', 'ICT field practical training'),
- ('meta', 'Kilindi District Council<br/>July to November 2024 and July to November 2025'),
- ('bullet', 'Provided user support, software installation and computer and printer configuration.'),
- ('bullet', 'Assisted with biometric devices and routine network troubleshooting.'),
- ('body', '<b>Professional development:</b> NMB Nuru Yangu Scholarship Mentorship Programme, 2026. National Service Training, JKT 822 KJ, 2023.'),
- ],
- [
- ('section', 'Selected engineering work'),
- ('entry', 'RJAY Barbershop booking and service platform'),
- ('body', 'Developed a digital solution for appointment booking, service catalogues and administrative availability management. <a href="http://rjaybarber.shop/">rjaybarber.shop</a>'),
- ('entry', 'WhatsApp approval gateway'),
- ('body', 'Developed a solution for ERP approvals through WhatsApp, connecting approver identity, interactive decisions, ERP callbacks and audit records in one workflow.'),
- ('entry', 'Attendance integration'),
- ('body', 'Built an integration connecting biometric attendance records to HRM workflows, with transaction filtering, device identification, queues and batch processing.'),
- ('entry', 'ABOOD Media radio advertising integration'),
- ('body', 'Developing a studio integration for the ABOOD Media system, whose goal is to track radio advertising sales. Connects ERP schedules to RadioBOSS playback and advertisement insertion.'),
- ('entry', 'Kilindi traders digital licence management system'),
- ('body', 'Developed a centralised solution for trader licensing, renewals, debt monitoring, SMS reminders and reporting, with permissions and audit records for administrative accountability.'),
- ('entry', 'Student support AI assistant'),
- ('body', 'Developed a locally hosted academic support solution using FastAPI, Ollama and FAQ retrieval to deliver answers grounded in university information.'),
- ('section', 'Education'),
- ('body', '<b>Bachelor of Science in Business Information Technology</b><br/>University of Dar es Salaam, 2023 to 2026. Graduated with honours.'),
- ('body', '<b>Advanced Certificate of Secondary Education</b><br/>Bunda High School, EGM, Division I, 2021 to 2023.'),
- ('body', '<b>Certificate of Secondary Education</b><br/>Iligamba Secondary School, Division I, 2020.'),
- ('section', 'Entrepreneurship'),
- ('body', 'Founder and operator of RJAY Digital Hub and RJAY Barbershop, supporting customer operations and digital branding.'),
+story=[]
+html=[]
+def p(text,kind='body'):
+ story.append(Paragraph(text,styles[kind],bulletText='•' if kind=='bullet' else None))
+ html.append(f'<p class="{kind}">{text}</p>')
+def section(text):
+ p(text,'section');story.append(HRFlowable(width='100%',thickness=.5,color=HexColor('#000000'),spaceAfter=5))
+def project(title,stack,body):
+ html.extend([f'<p class="entry">{title}</p>',f'<p class="meta">{stack}</p>',f'<p>{body}</p>'])
+ story.append(KeepTogether([Paragraph(title,styles['entry']),Paragraph(stack,styles['meta']),Paragraph(body,styles['body'])]))
+p('Ruhumbika Mtumba John','name')
+p('Software engineer · Full stack development and enterprise integration','role')
+p('Dar es Salaam, Tanzania · <a href="tel:+255787550399">+255 787 550 399</a>','contact')
+p('<a href="mailto:ruhumbikamtumbajohn@gmail.com">ruhumbikamtumbajohn@gmail.com</a>','contact')
+p('<a href="https://johnportifolio.rjaybarber.shop/">johnportifolio.rjaybarber.shop</a> · <a href="https://github.com/Ruhumbika">github.com/Ruhumbika</a>','contact')
+p('<a href="https://www.linkedin.com/in/ruhumbika-mtumba-john/">linkedin.com/in/ruhumbika-mtumba-john</a>','contact')
+section('Professional profile')
+p('Software engineer building web applications, APIs and enterprise integrations. Develops business platforms and automation workflows, with experience in database design, deployment and troubleshooting.')
+section('Technical skills')
+p('<b>Development:</b> PHP, JavaScript, Vue.js, Dart, MySQL, HTML, CSS and Python.')
+p('<b>Integration and data:</b> REST APIs, webhooks, authentication and database design.')
+p('<b>Delivery:</b> Git, Linux, Docker, Nginx, Postman, automated and manual testing, deployment and technical documentation.')
+section('Professional experience')
+p('Full stack developer','entry')
+p('Ma Cargo Transporters and Forwarders, ABOOD Group of Companies<br/>August 2026 to present','meta')
+p('Develop and support enterprise application features, REST APIs and operational workflows.','bullet')
+p('Build integrations for ERP approvals, attendance data and radio advertising workflows.','bullet')
+p('Investigate application and integration issues, validate changes and support deployment.','bullet')
+p('ICT field practical training','entry')
+p('Kilindi District Council · July to November 2024 and July to November 2025','meta')
+p('Provided user support, software installation, device configuration and routine network troubleshooting.','bullet')
+section('Education')
+p('<b>Bachelor of Science in Business Information Technology</b><br/>University of Dar es Salaam, 2023 to 2026.')
 
- ],
-]
+story.append(PageBreak())
+p('Ruhumbika Mtumba John','contact')
+section('Selected engineering work')
+p('View completed projects and further details at <a href="https://johnportifolio.rjaybarber.shop/">johnportifolio.rjaybarber.shop</a>.','meta')
+project('RJAY Barbershop booking and service platform','React, FastAPI, MongoDB · <a href="https://rjaybarber.shop/">rjaybarber.shop</a>','Developed a customer booking platform with service catalogues, appointment workflows and administrative availability controls. Supported deployment on a Linux VPS.')
+project('Eagersky real estate platform','<a href="https://eagersky.com/">eagersky.com</a>','Contributed to a real estate platform for discovering accommodation, browsing property listings and submitting booking requests.')
+project('WhatsApp ERP approval gateway','Python, REST APIs, webhooks, SQLite','Built a gateway connecting WhatsApp decisions with ERP approval workflows, approver identity, callbacks and audit records. Implemented background delivery and retry handling.')
+project('Biometric attendance integration','Python, PostgreSQL, Docker, REST APIs','Built an integration forwarding biometric attendance records into HRM workflows, with transaction filtering, device identification, queues and batch processing.')
+project('ABOOD Media radio advertising integration','Python, RadioBOSS API · <a href="https://appdemo.abooderp.com/">appdemo.abooderp.com</a>','Developing the studio integration for a system designed to track radio advertising sales. Connects ERP schedules with RadioBOSS playback and advertisement insertion.')
+project('Student support AI assistant','Academic project · FastAPI, Ollama, Streamlit, retrieval augmented generation','Developed a locally hosted assistant that retrieves university FAQ information and uses a language model to provide relevant student support responses.')
+section('Entrepreneurship and professional development')
+p('Founder and operator of RJAY Digital Hub and RJAY Barbershop, applying software, digital branding and customer service to business operations.')
+p('NMB Nuru Yangu Scholarship Mentorship Programme, 2026. National Service Training, JKT 822 KJ, 2023.','meta')
+def footer(c,d):
+ c.saveState();c.setStrokeColor(HexColor('#000000'));c.line(42,35,553,35);c.setFont('CV',8);c.setFillColor(HexColor('#000000'));c.drawString(42,22,'Ruhumbika Mtumba John · Software engineer');c.drawRightString(553,22,str(d.page));c.restoreState()
+out=root/'public/cv/Ruhumbika_Mtumba_John_Curriculum_Vitae.pdf'
+SimpleDocTemplate(str(out),pagesize=(595.276,841.89),leftMargin=42,rightMargin=42,topMargin=32,bottomMargin=48,title='Ruhumbika Mtumba John, software engineer',author='Ruhumbika Mtumba John').build(story,onFirstPage=footer,onLaterPages=footer)
 
-def footer(canvas, doc):
- canvas.saveState()
- canvas.setStrokeColor(HexColor('#D8E3E7'))
- canvas.line(42, 37, doc.pagesize[0] - 42, 37)
- canvas.setFont('CV', 8)
- canvas.setFillColor(HexColor('#111111'))
- canvas.drawString(42, 23, 'Ruhumbika Mtumba John · Curriculum vitae')
- canvas.drawRightString(doc.pagesize[0] - 42, 23, str(doc.page))
- canvas.restoreState()
+import shutil
+shutil.copyfile(out, root/'cv/Ruhumbika_Mtumba_John_Curriculum_Vitae.pdf')
 
-out = ROOT / 'public/cv/Ruhumbika_Mtumba_John_Curriculum_Vitae.pdf'
-story = []
-for i, page in enumerate(pages):
- if i:
-  story.append(PageBreak())
-  story.append(Paragraph('Ruhumbika Mtumba John', styles['contact']))
-  story.append(Spacer(1, 6))
- else:
-  story.append(Paragraph(page[0][1], styles['name']))
-  story.append(Paragraph('Software engineer · Enterprise integration and automation', styles['role']))
- for j, (kind, text) in enumerate(page):
-  if not i and j < 2: continue
-  if not i and j == 2: text = 'Dar es Salaam, Tanzania'
-  if kind == 'section':
-   story.append(Paragraph(text, styles[kind]))
-   story.append(HRFlowable(width='100%', thickness=.6, color=HexColor('#777777'), spaceAfter=6))
-  else:
-   story.append(Paragraph(text, styles[kind], bulletText='•' if kind == 'bullet' else None))
-doc = SimpleDocTemplate(str(out), pagesize=(595.276, 841.89), rightMargin=42, leftMargin=42, topMargin=35, bottomMargin=49, title='Ruhumbika Mtumba John, curriculum vitae', author='Ruhumbika Mtumba John')
-doc.build(story, onFirstPage=footer, onLaterPages=footer)
-shutil.copyfile(out, ROOT / 'cv' / out.name)
-html = ['<!doctype html><html lang="en"><meta charset="utf-8"><title>Ruhumbika Mtumba John, curriculum vitae</title><style>@page{size:A4;margin:14mm}body{font-family:Arial,sans-serif;color:#111;font-size:12pt;line-height:1.5;margin:0}section{break-after:page}section:last-child{break-after:auto}p{margin:0 0 7pt}a{color:inherit;text-decoration:none}.name{font-size:22pt;font-weight:bold;text-align:center}.role,.contact{text-align:center}.role{font-size:12pt;color:#087d80}.name{color:#18313f}.contact{font-size:10pt}.section{color:#087d80;margin-top:12pt;border-bottom:1px solid #777;padding-bottom:5pt;font-weight:bold}.entry{font-weight:bold;margin-top:10pt}.bullet{padding-left:14pt}.bullet:before{content:"• "}.meta{font-size:10.5pt}</style><body>']
-for page in pages:
- html.append('<section>')
- html.extend(f'<p class="{kind}">{text}</p>' for kind, text in page)
- html.append('</section>')
-html.append('</body></html>')
-(ROOT / 'cv/Ruhumbika_Mtumba_John_CV.html').write_text('\n'.join(html))
-print(out)
+(root/'cv/Ruhumbika_Mtumba_John_CV.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><title>Ruhumbika Mtumba John CV</title><style>body{font:12pt/1.5 Arial;color:black;max-width:760px;margin:32px auto}p{margin:6px 0}.name{font-size:22pt;font-weight:bold;text-align:center}.role,.contact{text-align:center}.entry,.section{font-weight:bold}.section{border-bottom:1px solid black;margin-top:20px}.meta,.contact{font-size:10.5pt}a{color:black}</style><body>'+''.join(html)+'</body></html>')

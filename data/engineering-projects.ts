@@ -112,6 +112,7 @@ export const newEngineeringProjects: Project[] = [
   },
   {
     "slug": "abood-radio-studio-gateway",
+    "liveUrl": "https://appdemo.abooderp.com/",
     "title": "ABOOD Media Radio Advertising Integration",
     "shortTitle": "ABOOD Media Radio Advertising Integration",
     "category": "Media Automation",

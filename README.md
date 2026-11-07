@@ -109,7 +109,7 @@ Add screenshots under `public/projects/<project-name>/` and set the `src` field 
 images: [
   {
     label: 'Administrative dashboard',
-    src: '/projects/kdilms/dashboard.webp',
+    src: '/projects/example/dashboard.webp',
     ratio: 'video',
   },
 ]

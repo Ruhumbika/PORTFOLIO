@@ -9,7 +9,7 @@ export type ProjectStatus =
 export interface ProjectImage {
   /** Descriptive label shown on the placeholder and used as alt text. */
   label: string
-  /** Optional real screenshot path, e.g. /projects/kdilms/dashboard.webp */
+  /** Optional real screenshot path, e.g. /projects/example/dashboard.webp */
   src?: string
   /** Preserve the complete screenshot at its native proportions. */
   uncropped?: { width: number; height: number }

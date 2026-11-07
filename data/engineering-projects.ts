@@ -7,11 +7,11 @@ export const newEngineeringProjects: Project[] = [
     "title": "WhatsApp ERP Approval Gateway",
     "shortTitle": "WhatsApp ERP Approval Gateway",
     "category": "Enterprise Automation",
-    "status": "Prototype",
+    "status": "Live",
     "period": "2026",
     "role": "Full Stack Integration Developer",
-    "summary": "An ERP approval solution connecting WhatsApp interactive decisions with authenticated workflows, callback delivery and audit records.",
-    "description": "An ERP approval solution connecting WhatsApp interactive decisions with authenticated workflows, callback delivery and audit records.",
+    "summary": "A live backend gateway connecting ERP approval workflows to WhatsApp, where approvers receive requests and submit decisions.",
+    "description": "A live backend gateway connecting ERP approval workflows to WhatsApp, where approvers receive requests and submit decisions.",
     "problem": "Manual approval communication creates delays and fragmented decision records.",
     "solution": "A dedicated approval API and webhook gateway with identity binding, workflow validation, interactive decision handling, workers and ERP callbacks.",
     "contribution": [
@@ -20,7 +20,7 @@ export const newEngineeringProjects: Project[] = [
       "Implemented integration contracts and callback handling"
     ],
     "features": [
-      "Interactive WhatsApp decision design",
+      "Interactive approval decisions through WhatsApp",
       "API key authentication",
       "Workflow and approver validation",
       "ERP callback orchestration",
@@ -36,7 +36,7 @@ export const newEngineeringProjects: Project[] = [
       "Background Workers",
       "ERP Integration"
     ],
-    "users": "Operations and technology teams",
+    "users": "ERP approvers and operations teams using WhatsApp",
     "images": [
       {
         "label": "WhatsApp ERP Approval Gateway architecture and workflow overview",
@@ -49,11 +49,11 @@ export const newEngineeringProjects: Project[] = [
         "body": "A dedicated approval API and webhook gateway with identity binding, workflow validation, interactive decision handling, workers and ERP callbacks."
       },
       {
-        "title": "Delivery status",
-        "body": "A central approval gateway connecting request creation, approver identity and ERP decision records."
+        "title": "Live operation",
+        "body": "The gateway runs as a backend service connected to WhatsApp. WhatsApp is the primary interface for approvers, while authenticated APIs, webhooks and background workers connect decisions to ERP workflows."
       }
     ],
-    "outcome": "A central approval gateway connecting request creation, approver identity and ERP decision records.",
+    "outcome": "A live WhatsApp connected backend linking approval requests, approver identity and ERP decision records.",
     "featured": true
   },
   {
@@ -103,8 +103,8 @@ export const newEngineeringProjects: Project[] = [
         "body": "A bridge that reads attendance transactions, maps required punch fields and queues delivery to the GHRM attendance endpoint."
       },
       {
-        "title": "Delivery status",
-        "body": "A direct integration pipeline connecting attendance transactions with HRM workflows through queued processing."
+        "title": "Live integration",
+        "body": "The live backend integration connects biometric attendance transactions to GHRM workflows through queued processing. Access to the connected HR platform requires an authorised account."
       }
     ],
     "outcome": "A live integration connecting biometric attendance transactions with GHRM workflows through queued processing.",

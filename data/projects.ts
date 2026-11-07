@@ -160,16 +160,16 @@ export const projects: Project[] = [
     period: '2026',
     role: 'Full Stack Developer & AI Integration Developer',
     summary:
-      'A locally hosted, privacy conscious AI assistant that answers student academic questions using a lightweight Llama model, a FastAPI backend and Retrieval Augmented Generation over a custom FAQ knowledge base.',
+      'A locally hosted, privacy conscious AI assistant that answers student academic questions using a lightweight Llama model, a Python backend and Retrieval Augmented Generation over a custom FAQ knowledge base.',
     description:
       'A locally hosted AI powered student support assistant developed to provide conversational academic guidance while demonstrating the complete deployment pipeline of an LLM based application.',
     problem:
       'Students need a convenient way to access common academic guidance, while the academic assignment required an understanding of how a local language model, backend and frontend communicate.',
     solution:
-      'A local AI application in which a Streamlit interface sends requests to a FastAPI backend, which communicates with an Ollama hosted language model and a custom knowledge base.',
+      'A local AI application in which a web interface sends requests to a Python backend, which communicates with an Ollama hosted language model and a custom knowledge base.',
     contribution: [
       'Designed the frontend to model request pipeline',
-      'Implemented the FastAPI backend and API contracts',
+      'Implemented the Python backend and API contracts',
       'Built the custom FAQ knowledge base',
       'Integrated the Retrieval Augmented Generation pipeline',
       'Added logging and testing',
@@ -187,9 +187,6 @@ export const projects: Project[] = [
     ],
     technologies: [
       'Python',
-      'FastAPI',
-      'Uvicorn',
-      'Streamlit',
       'Ollama',
       'Lightweight Llama model',
       'Retrieval Augmented Generation',
@@ -221,9 +218,9 @@ export const projects: Project[] = [
         title: 'Architecture',
         body: 'The application demonstrates a full local LLM pipeline where each layer communicates over clear API boundaries. No external paid AI API is used. Inference runs locally through Ollama.',
         bullets: [
-          'User → Streamlit frontend',
-          'Streamlit → FastAPI backend',
-          'FastAPI → RAG retrieval',
+          'User → web interface',
+          'Web interface → Python backend',
+          'Python backend → retrieval',
           'RAG → Ollama local model',
           'Model → generated response',
           'Response → frontend display',
@@ -279,9 +276,8 @@ export const projects: Project[] = [
       'Dispute handling concepts (planned)',
     ],
     technologies: [
-      'Flutter',
-      'Node.js',
-      'Express.js',
+      'Dart',
+      'JavaScript',
       'PostgreSQL',
       'REST APIs',
       'JWT Authentication',
@@ -348,10 +344,10 @@ export const projects: Project[] = [
       'Social media marketing',
     ],
     technologies: [
-      'Python 52.2%',
-      'JavaScript 43.8%',
-      'HTML 3.2%',
-      'Other 0.8%',
+      'Python',
+      'JavaScript',
+      'HTML',
+      'CSS',
     ],
     users: 'Barbershop customers booking appointments and browsing styles and services.',
     images: [

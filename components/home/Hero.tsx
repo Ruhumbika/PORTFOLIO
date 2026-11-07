@@ -25,11 +25,12 @@ import {
   ShieldCheck,
 } from 'lucide-react'
 import { site } from '@/data/site'
+import { coreStack } from '@/data/skills'
 import { Button } from '@/components/shared/Button'
 import { SocialLinks } from '@/components/shared/SocialLinks'
 import { TechTag } from '@/components/shared/TechTag'
 
-const heroTech = ['Laravel', 'FastAPI', 'Flutter', 'Node.js', 'Ollama', 'PostgreSQL', 'Cybersecurity']
+const heroTech = coreStack
 const workflowNodes = Array.from({ length: 20 }, (_, index) => index)
 const orbitCards = [
   {

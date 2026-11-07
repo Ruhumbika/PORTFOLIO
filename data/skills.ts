@@ -1,137 +1,22 @@
 export interface SkillGroup {
   category: string
-  /** Higher emphasis groups are visually dominant per the brief. */
   emphasis?: boolean
   items: string[]
 }
 
+// Core skills confirmed by the portfolio owner.
+export const coreLanguages = ['PHP', 'JavaScript', 'Python', 'Dart', 'HTML', 'CSS']
+export const coreStack = ['PHP', 'JavaScript', 'Vue.js', 'Python', 'Dart', 'MySQL', 'HTML', 'CSS']
+
 export const skillGroups: SkillGroup[] = [
-  {
-    category: 'Backend',
-    emphasis: true,
-    items: [
-      'Laravel',
-      'Node.js',
-      'Express.js',
-      'FastAPI',
-      'REST API Development',
-      'API Integration',
-    ],
-  },
-  {
-    category: 'AI Application Development',
-    emphasis: true,
-    items: [
-      'Ollama',
-      'Local LLM Deployment',
-      'Retrieval Augmented Generation',
-      'Knowledge Base Integration',
-      'Prompt Engineering',
-      'AI Application Architecture',
-    ],
-  },
-  {
-    category: 'Programming',
-    items: ['PHP', 'JavaScript', 'Dart', 'SQL', 'HTML', 'CSS', 'Basic Python'],
-  },
-  {
-    category: 'Frontend & Mobile',
-    items: [
-      'Flutter',
-      'Responsive Web Design',
-      'Tailwind CSS',
-      'Bootstrap',
-      'Streamlit',
-    ],
-  },
-  {
-    category: 'Databases',
-    items: [
-      'MySQL',
-      'PostgreSQL',
-      'SQLite',
-      'Microsoft SQL Server',
-      'Database Design',
-    ],
-  },
-  {
-    category: 'Data & Business Intelligence',
-    emphasis: true,
-    items: [
-      'Power BI (Strong Proficiency)',
-      'Data Visualization',
-      'Reporting Dashboards',
-      'Data Analysis',
-      'Business Intelligence',
-      'Data Import & Validation',
-    ],
-  },
-  {
-    category: 'Quality Assurance & Testing',
-    items: [
-      'Manual Functional Testing',
-      'System Testing',
-      'User Acceptance Testing',
-      'API Testing with Postman',
-      'Test Case Design',
-      'Defect Documentation & Retesting',
-    ],
-  },
-  {
-    category: 'System Security & Cybersecurity',
-    emphasis: true,
-    items: [
-      'System Security Fundamentals',
-      'Role Based Access Control',
-      'Secure API Design',
-      'Web Security Assessment',
-      'Security Header Review',
-      'OSINT',
-      'Password Security Concepts',
-      'IT Audit & Controls',
-    ],
-  },
-  {
-    category: 'Tools & Platforms',
-    items: [
-      'Git',
-      'GitHub',
-      'Linux',
-      'Ubuntu',
-      'Postman',
-      'XAMPP',
-      'VS Code',
-      'Android Studio',
-      'MonkeysCloud',
-    ],
-  },
-  {
-    category: 'Product & Delivery',
-    items: [
-      'Agile',
-      'Scrum',
-      'Sprint Planning',
-      'User Stories',
-      'UAT',
-      'SRS Documentation',
-      'Troubleshooting',
-      'Technical Documentation',
-      'Systems Analysis & Design',
-    ],
-  },
-  {
-    category: 'Design Support',
-    items: [
-      'Figma',
-      'UI/UX Thinking',
-      'Responsive Interface Design',
-      'Product Flows',
-      'Digital Branding',
-    ],
-  },
+  { category: 'Programming languages', emphasis: true, items: coreLanguages },
+  { category: 'Web interfaces', items: ['Vue.js', 'Responsive web design', 'HTML', 'CSS'] },
+  { category: 'APIs and integration', emphasis: true, items: ['REST APIs', 'Webhooks', 'ERP integration', 'WhatsApp Cloud API', 'Background processing'] },
+  { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'SQLite'] },
+  { category: 'Server management', emphasis: true, items: ['Contabo VPS', 'cPanel', 'Linux', 'Nginx', 'Docker', 'Application deployment'] },
+  { category: 'Development and delivery', items: ['Git', 'GitHub', 'Postman', 'API testing', 'Troubleshooting', 'Technical documentation'] },
 ]
 
-// The three professional pillars for the "What I Build" section.
 export interface Pillar {
   index: string
   title: string
@@ -143,47 +28,23 @@ export interface Pillar {
 export const pillars: Pillar[] = [
   {
     index: '01',
-    title: 'Full Stack Systems',
-    description:
-      'Designing and developing reliable web and mobile systems with secure backend logic, structured databases, APIs and user friendly interfaces.',
-    technologies: [
-      'Laravel',
-      'PHP',
-      'Node.js',
-      'Express.js',
-      'Flutter',
-      'JavaScript',
-      'REST APIs',
-    ],
+    title: 'Web and mobile applications',
+    description: 'Building business applications with clear interfaces, backend logic and structured data.',
+    technologies: ['PHP', 'JavaScript', 'Vue.js', 'Dart', 'MySQL'],
     emphasis: true,
   },
   {
     index: '02',
-    title: 'AI Applications',
-    description:
-      'Building locally hosted and privacy conscious AI applications using language models, Retrieval Augmented Generation and structured knowledge bases.',
-    technologies: [
-      'Python',
-      'FastAPI',
-      'Streamlit',
-      'Ollama',
-      'Local LLMs',
-      'RAG',
-    ],
+    title: 'Enterprise integration and automation',
+    description: 'Connecting ERP workflows, WhatsApp approval decisions and biometric attendance through APIs and background processing.',
+    technologies: ['Python', 'REST APIs', 'Webhooks', 'WhatsApp Cloud API'],
     emphasis: true,
   },
   {
     index: '03',
-    title: 'Digital Product Design',
-    description:
-      'Turning real user and business challenges into usable digital products through systems analysis, product thinking and user centred interface design.',
-    technologies: [
-      'Figma',
-      'Responsive Design',
-      'User Flows',
-      'Product Planning',
-      'Testing & Documentation',
-    ],
+    title: 'Deployment and server management',
+    description: 'Deploying and maintaining applications on VPS infrastructure and cPanel hosting.',
+    technologies: ['Contabo VPS', 'cPanel', 'Linux', 'Nginx', 'Docker'],
     emphasis: false,
   },
 ]

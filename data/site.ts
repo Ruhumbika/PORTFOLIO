@@ -40,7 +40,7 @@ export const site = {
     reasons: [
       'Builds full stack software and AI automation solutions',
       'Completed two ICT field placements in a public sector environment',
-      'Works across Laravel, FastAPI, Flutter and Node.js',
+      'Builds with PHP, JavaScript, Vue.js, Python and Dart',
       'Open to strategic partnerships, enterprise projects and technical collaborations',
     ],
   },

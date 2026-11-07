@@ -11,6 +11,8 @@ export interface ProjectImage {
   label: string
   /** Optional real screenshot path, e.g. /projects/example/dashboard.webp */
   src?: string
+  /** Keep full screenshots visible when their frame uses a different ratio. */
+  fit?: 'cover' | 'contain'
   /** Preserve the complete screenshot at its native proportions. */
   uncropped?: { width: number; height: number }
   /** Optional local WebM/MP4 recording, played only after the visitor chooses to play. */

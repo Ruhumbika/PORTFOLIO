@@ -74,7 +74,7 @@ export function PlaceholderImage({
           alt={image.label}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover"
+          className={image.fit === 'contain' ? 'object-contain' : 'object-cover'}
           priority={priority}
         />
       </div>

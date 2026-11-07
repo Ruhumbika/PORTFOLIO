@@ -61,7 +61,7 @@ export const newEngineeringProjects: Project[] = [
     "title": "Biometric Attendance & GHRM Integration",
     "shortTitle": "Biometric Attendance & GHRM Integration",
     "category": "Enterprise Automation",
-    "status": "Prototype",
+    "status": "Live",
     "period": "2026",
     "role": "Integration Developer",
     "summary": "An attendance integration solution connecting EasyTimePro and ZKTeco records to GHRM through filtering, batch delivery and background processing.",
@@ -107,7 +107,7 @@ export const newEngineeringProjects: Project[] = [
         "body": "A direct integration pipeline connecting attendance transactions with HRM workflows through queued processing."
       }
     ],
-    "outcome": "A direct integration pipeline connecting attendance transactions with HRM workflows through queued processing.",
+    "outcome": "A live integration connecting biometric attendance transactions with GHRM workflows through queued processing.",
     "featured": true
   },
   {
@@ -116,7 +116,7 @@ export const newEngineeringProjects: Project[] = [
     "title": "ABOOD Media Radio Advertising Integration",
     "shortTitle": "ABOOD Media Radio Advertising Integration",
     "category": "Media Automation",
-    "status": "Prototype",
+    "status": "Live",
     "period": "2026",
     "role": "Software Integration Developer",
     "summary": "A studio integration for the ABOOD Media system, whose primary goal is tracking radio advertising sales, connecting ERP schedules to RadioBOSS playback and advertisement insertion.",
@@ -146,8 +146,10 @@ export const newEngineeringProjects: Project[] = [
     "users": "Operations and technology teams",
     "images": [
       {
-        "label": "ABOOD Media Radio Advertising Integration architecture and workflow overview",
-        "ratio": "video"
+        "label": "ABOOD Media sign in page",
+        "src": "/projects/abood-media/login.png",
+        "ratio": "screen",
+        "fit": "contain"
       }
     ],
     "caseStudySections": [
@@ -156,76 +158,77 @@ export const newEngineeringProjects: Project[] = [
         "body": "A Windows studio gateway designed to connect ERP advertising schedules to RadioBOSS, validate audio assets and coordinate scheduled advertisement playback."
       },
       {
-        "title": "Delivery status",
-        "body": "Connects the studio playback layer with the wider ABOOD Media advertising workflow. ERP schedule integration is in development."
+        "title": "Live deployment",
+        "body": "The ABOOD Media application is deployed. Access to internal advertising and studio workflows requires an authorised account."
       }
     ],
-    "outcome": "Connects the studio playback layer with the wider ABOOD Media advertising workflow. ERP schedule integration is in development.",
+    "outcome": "A deployed media system connecting radio advertising operations with studio integration workflows.",
     "featured": true
   },
-{
-  "slug": "attendance-core-dashboard",
-  "title": "Attendance Core, Biometric Attendance Platform",
-  "shortTitle": "Attendance Core",
-  "category": "Enterprise Automation",
-  "status": "Live",
-  "period": "2026",
-  "role": "Integration Developer",
-  "summary": "Enterprise attendance platform combining staff records, biometric devices and operational dashboards, with GHRM integration work.",
-  "description": "Attendance Core provides personnel and device monitoring, attendance reports and operational dashboards. My contribution focuses on integration and event forwarding.",
-  "problem": "Attendance from distributed devices requires central visibility and integration with HR systems.",
-  "solution": "A deployed attendance platform paired with an integration bridge for GHRM attendance ingestion.",
-  "contribution": [
-    "Configured EasyTimePro infrastructure and mobile punch tests",
-    "Developed the GHRM event forwarding bridge",
-    "Validated employee and device transaction fields"
-  ],
-  "features": [
-    "Employee and device overview",
-    "Attendance monitoring",
-    "Biometric device status",
-    "GHRM integration bridge"
-  ],
-  "technologies": [
-    "EasyTimePro",
-    "ZKTeco",
-    "PostgreSQL",
-    "Docker",
-    "Python",
-    "REST APIs"
-  ],
-  "users": "HR, attendance administrators and technical operations teams",
-  "images": [
-    {
-      "label": "Attendance Core dashboard, company personnel, device and attendance overview",
-      "src": "/projects/attendance-core/dashboard.png",
-      "ratio": "screen"
-    }
-  ],
-  "liveUrl": "https://attendance-core.abooderp.com/",
-  "caseStudySections": [
-    {
-      "title": "System and integration",
-      "body": "The dashboard is part of the attendance platform. My engineering work includes deploying supporting services and forwarding attendance transactions to GHRM."
-    },
-    {
-      "title": "Privacy",
-      "body": "Production dashboards require authorized access; the portfolio shows a provided screenshot rather than embedding restricted company data."
-    }
-  ],
-  "outcome": "An attendance platform with GHRM integration workflows and controlled access to operational records.",
-  "featured": true
-},
+  {
+    "slug": "attendance-core-dashboard",
+    "title": "Attendance Core, Biometric Attendance Platform",
+    "shortTitle": "Attendance Core",
+    "category": "Enterprise Automation",
+    "status": "Live",
+    "period": "2026",
+    "role": "Integration Developer",
+    "summary": "Enterprise attendance platform combining staff records, biometric devices and operational dashboards, with GHRM integration work.",
+    "description": "Attendance Core provides personnel and device monitoring, attendance reports and operational dashboards. My contribution focuses on integration and event forwarding.",
+    "problem": "Attendance from distributed devices requires central visibility and integration with HR systems.",
+    "solution": "A deployed attendance platform paired with an integration bridge for GHRM attendance ingestion.",
+    "contribution": [
+      "Configured EasyTimePro infrastructure and mobile punch tests",
+      "Developed the GHRM event forwarding bridge",
+      "Validated employee and device transaction fields"
+    ],
+    "features": [
+      "Employee and device overview",
+      "Attendance monitoring",
+      "Biometric device status",
+      "GHRM integration bridge"
+    ],
+    "technologies": [
+      "EasyTimePro",
+      "ZKTeco",
+      "PostgreSQL",
+      "Docker",
+      "Python",
+      "REST APIs"
+    ],
+    "users": "HR, attendance administrators and technical operations teams",
+    "images": [
+      {
+        "label": "Attendance Core overview with personnel details excluded",
+        "src": "/projects/attendance-core/overview-public.png",
+        "ratio": "screen",
+        "fit": "contain"
+      }
+    ],
+    "liveUrl": "http://attendance-core.abooderp.com/",
+    "caseStudySections": [
+      {
+        "title": "System and integration",
+        "body": "The dashboard is part of the attendance platform. My engineering work includes deploying supporting services and forwarding attendance transactions to GHRM."
+      },
+      {
+        "title": "Access control",
+        "body": "The deployed attendance platform requires authorised access. This portfolio image excludes employee records."
+      }
+    ],
+    "outcome": "An attendance platform with GHRM integration workflows and controlled access to operational records.",
+    "featured": true
+  },
   {
     "slug": "rjay-wifi-platform",
-    "title": "RJAY WiFi Digital Platform",
-    "shortTitle": "RJAY WiFi Digital Platform",
+    "title": "Mwanakitaa Kitonga WiFi",
+    "shortTitle": "Mwanakitaa Kitonga WiFi",
     "category": "Digital Products",
     "status": "Live",
     "period": "2026",
     "role": "Software Developer & Operator",
-    "summary": "Maintained a self hosted WiFi application and production infrastructure with Nginx virtual hosting on a personal VPS.",
-    "description": "Maintained a self hosted WiFi application and production infrastructure with Nginx virtual hosting on a personal VPS.",
+    "summary": "A live WiFi access platform with voucher login, internet packages and self hosted application infrastructure.",
+    "description": "A live WiFi access platform with voucher login, internet packages and self hosted application infrastructure.",
     "problem": "A WiFi service requires reliable web access and independently managed infrastructure.",
     "solution": "A VPS hosted platform with dedicated web routing and operations workflows.",
     "contribution": [
@@ -245,11 +248,13 @@ export const newEngineeringProjects: Project[] = [
       "Git",
       "Web Applications"
     ],
-    "users": "Operations and technology teams",
+    "users": "WiFi customers and service operators",
     "images": [
       {
-        "label": "RJAY WiFi Digital Platform architecture and workflow overview",
-        "ratio": "video"
+        "label": "Mwanakitaa Kitonga WiFi voucher access and internet packages",
+        "src": "/projects/mwanakitaa-kitonga-wifi/portal.png",
+        "ratio": "screen",
+        "fit": "contain"
       }
     ],
     "caseStudySections": [
@@ -263,6 +268,7 @@ export const newEngineeringProjects: Project[] = [
       }
     ],
     "outcome": "Operational self hosted web platform on the personal VPS.",
-    "featured": true
+    "featured": true,
+    "liveUrl": "https://wifi.95-111-248-145.sslip.io/"
   }
 ]

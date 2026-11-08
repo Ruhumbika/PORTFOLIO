@@ -1,6 +1,6 @@
 # Ruhumbika Mtumba John | Software Engineering Portfolio
 
-A live portfolio of full stack applications, enterprise integrations and workflow automation across property, transport, media and service businesses.
+I built this portfolio to present my software engineering work across enterprise systems, transport, media and digital services. Each case study connects the business need with my contribution, implementation and delivery stage.
 
 **[Visit the portfolio](https://johnportifolio.rjaybarber.shop)** · **[Experience](https://johnportifolio.rjaybarber.shop/experience)** · **[Project case studies](https://johnportifolio.rjaybarber.shop/projects)**
 
@@ -11,7 +11,7 @@ A live portfolio of full stack applications, enterprise integrations and workflo
 - **Kilindi District Council:** trader licensing software and two separate ICT field placements.
 - **Selected projects:** implementation context, contribution, technologies, screenshots and delivery stage.
 
-## What this repository demonstrates
+## Implementation
 
 | Area | Implementation |
 | --- | --- |

@@ -4,6 +4,7 @@ export const experienceGroups: ExperienceGroup[] = [
   {
     id: 'abood-group',
     organisation: 'Abood Group',
+    website: 'https://www.aboodgroup.com/',
     location: 'Morogoro, Tanzania',
     period: 'August 2026 to Present',
     summary: 'Full stack development, systems integration and application reliability across group companies.',
@@ -44,6 +45,7 @@ export const experienceGroups: ExperienceGroup[] = [
   {
     id: 'rjay-digital-hub',
     organisation: 'RJAY Digital Hub',
+    website: 'https://rjaybarber.shop/',
     location: 'Dar es Salaam, Tanzania',
     period: 'November 2024 to Present',
     logo: '/brand/rj-logo.png',
@@ -67,6 +69,7 @@ export const experienceGroups: ExperienceGroup[] = [
   {
     id: 'kilindi-district-council',
     organisation: 'Kilindi District Council',
+    website: 'https://kilindidc.go.tz/',
     location: 'Kilindi, Tanzania',
     period: '2024 to 2026',
     summary: 'Licensing software development and two separate ICT field placements.',

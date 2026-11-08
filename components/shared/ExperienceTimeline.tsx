@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Building2, MapPin } from 'lucide-react'
+import { ArrowUpRight, Building2, MapPin } from 'lucide-react'
 import type { ExperienceGroup } from '@/types/experience'
 
 export function ExperienceTimeline({ group }: { group: ExperienceGroup }) {
@@ -14,7 +14,20 @@ export function ExperienceTimeline({ group }: { group: ExperienceGroup }) {
           )}
         </span>
         <div className="min-w-0">
-          <h2 id={`${group.id}-heading`} className="text-xl font-semibold tracking-tight sm:text-2xl">{group.organisation}</h2>
+          <h2 id={`${group.id}-heading`} className="text-xl font-semibold tracking-tight sm:text-2xl">
+            {group.website ? (
+              <a
+                href={group.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                {group.organisation}
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ) : group.organisation}
+          </h2>
           <p className="mt-1 text-sm text-primary">{group.period}</p>
           <p className="mt-2 flex items-center gap-1.5 text-xs text-muted-foreground">
             <MapPin className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />

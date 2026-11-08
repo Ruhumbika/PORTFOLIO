@@ -13,6 +13,7 @@ export interface ExperienceGroup {
   period: string
   summary: string
   logo?: string
+  website?: string
   roles: ExperienceRole[]
 }
 

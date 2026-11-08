@@ -1,135 +1,65 @@
-# Ruhumbika Mtumba John: Personal Portfolio
+# Ruhumbika Mtumba John | Software Engineering Portfolio
 
-A responsive portfolio built with Next.js App Router, TypeScript, Tailwind CSS and Framer Motion. It positions Ruhumbika as a Full-Stack Developer, AI Application Developer and Digital Product Builder, with UI/UX as a supporting advantage.
+A live portfolio of full stack applications, enterprise integrations and workflow automation across property, transport, media and service businesses.
 
-## Main additions in this version
+**[Visit the portfolio](https://johnportifolio.rjaybarber.shop)** · **[Experience](https://johnportifolio.rjaybarber.shop/experience)** · **[Project case studies](https://johnportifolio.rjaybarber.shop/projects)**
 
-- Professional profile photograph integrated into the hero and About page.
-- Dedicated interview availability page at `/availability`.
-- Weekday interview slots with East Africa Time and visitor-local conversion.
-- Pre-filled interview requests through WhatsApp and email.
-- Tentative `.ics` calendar hold download.
-- One-time branded startup preloader and route loading skeleton.
-- Dynamic project case-study routes under `/projects/[slug]`.
-- Custom 404 page, sitemap, robots metadata and Open Graph image.
-- TypeScript build errors are no longer ignored in `next.config.mjs`.
+## What to explore
+
+- **Abood Group:** ERP development, WhatsApp ticketing support, approval workflows, biometric attendance integration and advertising/broadcast operations.
+- **RJAY Digital Hub:** business ownership and development of a barbershop booking platform.
+- **Kilindi District Council:** trader licensing software and two separate ICT field placements.
+- **Selected projects:** implementation context, contribution, technologies, screenshots and delivery stage.
+
+## What this repository demonstrates
+
+| Area | Implementation |
+| --- | --- |
+| Application structure | Next.js App Router, typed data modules and reusable React components |
+| Experience presentation | Organisation groups, role timelines, separate placement dates and current-role indicators |
+| Project storytelling | Dynamic case-study routes with technical and business context |
+| User experience | Responsive layouts, theme support and reduced-motion-aware animation |
+| Discovery | Metadata, canonical URLs, sitemap, robots and Open Graph assets |
+| Contact workflow | Configurable availability and prepared meeting requests |
+
+## Stack
+
+Next.js, React, TypeScript, Tailwind CSS and Framer Motion. The production application runs on a VPS; the GitHub integration also provides Vercel previews for review.
 
 ## Run locally
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
 Open `http://localhost:3000`.
 
-## Production checks
+## Validate and build
 
 ```bash
 npm run check
 npm run build
 ```
 
-## Interview availability configuration
-
-Edit `data/site.ts`:
-
-```ts
-schedule: {
-  timeZone: 'Africa/Dar_es_Salaam',
-  timeZoneLabel: 'East Africa Time (EAT · UTC+3)',
-  weekdayLabel: 'Monday–Friday',
-  startHour: 9,
-  endHour: 17,
-  slotMinutes: 60,
-  minimumLeadHours: 12,
-  bookingWindowDays: 42,
-  unavailableDates: [],
-  unavailableSlots: [],
-}
+```bash
+npm run start
 ```
 
-### Block a full date
+## Content and configuration
 
-Use ISO dates:
+| Path | Purpose |
+| --- | --- |
+| [`data/experience.ts`](data/experience.ts) | Organisation groups, roles, dates and summaries |
+| [`components/shared/ExperienceTimeline.tsx`](components/shared/ExperienceTimeline.tsx) | Shared role timeline |
+| [`data/projects.ts`](data/projects.ts) | Project case studies |
+| [`data/engineering-projects.ts`](data/engineering-projects.ts) | Additional integration case studies |
+| [`data/site.ts`](data/site.ts) | Profile, site URL, contact destinations and availability |
+| [`public/projects/`](public/projects/) | Project screenshots and media |
+| [`public/cv/`](public/cv/) | Downloadable CV |
 
-```ts
-unavailableDates: ['2026-07-24', '2026-08-03'],
-```
+Availability is configuration-based. Selecting a slot prepares a meeting request; it does not create a confirmed booking or read a private calendar. See the availability page for the visitor-facing flow.
 
-### Block individual interview slots
+## Release workflow
 
-Use `YYYY-MM-DDTHH:mm` in East Africa Time:
-
-```ts
-unavailableSlots: [
-  '2026-07-27T10:00',
-  '2026-07-28T14:00',
-],
-```
-
-The current calendar is configuration-based. It does not automatically read private events from Google Calendar. Visitors select an available slot and send a pre-filled WhatsApp or email request. Ruhumbika must confirm the appointment personally.
-
-## Contact destination
-
-WhatsApp and email requests use the values in `data/site.ts`:
-
-```ts
-phone: '+255 787 550 399',
-email: 'ruhumbikamtumbajohn@gmail.com',
-whatsapp: '255787550399',
-```
-
-The WhatsApp value must use digits only, including the country code.
-
-## Profile photograph
-
-The optimized portfolio photographs are stored at:
-
-```text
-public/profile/ruhumbika-profile.webp
-public/profile/ruhumbika-profile-square.webp
-```
-
-Replace these files while keeping the same names, or update `profileImage` and `profileImageSquare` in `data/site.ts`.
-
-## CV
-
-Replace the downloadable CV at:
-
-```text
-public/cv/ruhumbika-mtumba-john-cv.pdf
-```
-
-## Project screenshots
-
-Add screenshots under `public/projects/<project-name>/` and set the `src` field in `data/projects.ts`:
-
-```ts
-images: [
-  {
-    label: 'Administrative dashboard',
-    src: '/projects/example/dashboard.webp',
-    ratio: 'video',
-  },
-]
-```
-
-When `src` is omitted, the website displays a clean screenshot placeholder.
-
-## Deployment to Vercel
-
-1. Push the project to GitHub.
-2. Import the repository in Vercel.
-3. Keep the detected framework as Next.js.
-4. Run the production build.
-5. Update `site.url` in `data/site.ts` to the real deployed domain.
-6. Redeploy so canonical URLs, the sitemap and structured metadata use the correct domain.
-
-## Important booking behaviour
-
-- Selecting a date does not reserve it automatically.
-- The visitor must send the prepared WhatsApp message or email.
-- The downloaded calendar file is marked tentative.
-- No visitor details are stored by the portfolio.
-- A real-time calendar sync would require a protected backend and Google Calendar or Microsoft Graph integration.
+Create a feature branch, open a pull request, review the preview, then merge approved changes. Update the VPS checkout, build and restart `john-portfolio.service` after review. Repository changes and production deployment are separate steps.

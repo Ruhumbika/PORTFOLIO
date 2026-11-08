@@ -4,7 +4,7 @@ import { ArrowUpRight, Bot, ShieldCheck, Workflow, RadioTower } from 'lucide-rea
 const highlights = [
   { title: 'ERP & Workflow Automation', description: 'WhatsApp approval orchestration, identity verification, audit trails and integration contracts.', href: '/projects/whatsapp-approval-gateway', Icon: Workflow },
   { title: 'Biometrics & HRM Integration', description: 'Device attendance ingestion, event queues and reliable HRM data pipelines.', href: '/projects/ghrm-attendance-bridge', Icon: ShieldCheck },
-  { title: 'Broadcast Automation', description: 'RadioBOSS studio gateway, schedule integration and playout API testing.', href: '/projects/abood-radio-studio-gateway', Icon: RadioTower },
+  { title: 'Advertising & Broadcast Operations', description: 'Advertising sales, scheduling and broadcast tracking that connects sold advertising with aired placements.', href: '/projects/abood-radio-studio-gateway', Icon: RadioTower },
   { title: 'AI & Software Engineering', description: 'Full stack applications, local LLM solutions and security conscious product engineering.', href: '/projects/student-support-llm', Icon: Bot },
 ]
 

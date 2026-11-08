@@ -1,65 +1,104 @@
-import type { ExperienceItem, TrainingItem } from '@/types/experience'
+import type { ExperienceGroup, TrainingItem } from '@/types/experience'
 
-export const currentEmployment: ExperienceItem = {
-  organisation: 'Ma Cargo Transporters and Forwarders (ABOOD Group of Companies)',
-  unit: 'Technology / Software Development',
-  location: 'Tanzania',
-  role: 'Full Stack Developer',
-  periods: ['Present'],
-  summary:
-    'Currently developing and supporting full stack digital solutions for Ma Cargo Transporters and Forwarders, part of the ABOOD Group of Companies, while remaining open to more advantageous opportunities.',
-  responsibilities: [
-    'Full stack web application development',
-    'Frontend and backend feature delivery',
-    'Database and API integration',
-    'Production support and troubleshooting',
-  ],
-}
-
-export const experience: ExperienceItem[] = [
+export const experienceGroups: ExperienceGroup[] = [
   {
+    id: 'abood-group',
+    organisation: 'Abood Group',
+    location: 'Morogoro, Tanzania',
+    period: 'August 2026 to Present',
+    summary: 'Full stack development, systems integration and application reliability across group companies.',
+    roles: [
+      {
+        id: 'abood-media',
+        title: 'Full Stack Developer | Abood Media',
+        period: 'October 2026 to Present',
+        current: true,
+        summary: 'Developing an advertising sales, scheduling and broadcast tracking system that connects sold advertising with aired placements and proof of play.',
+      },
+      {
+        id: 'attendance',
+        title: 'Systems Integration Developer | Attendance',
+        period: 'October 2026 to November 2026',
+        summary: 'Developed attendance synchronization between ZKTeco, EasyTimePro and GHRM using API integration, transaction filtering, queues and batch processing.',
+      },
+      {
+        id: 'whatsapp-approvals',
+        title: 'Systems Integration Developer | WhatsApp Approvals',
+        period: 'October 2026 to November 2026',
+        summary: 'Developed a WhatsApp gateway for ERP approvals with verified approvers, interactive decisions, callbacks and traceable audit records.',
+      },
+      {
+        id: 'abood-bus',
+        title: 'Application Support | Abood Bus',
+        period: 'August 2026 to November 2026',
+        summary: 'Diagnosed and resolved faults in the WhatsApp ticketing bot and maintained dependable daily booking operations.',
+      },
+      {
+        id: 'peta-holdings',
+        title: 'Full Stack Developer | PETA Holdings',
+        period: 'August 2026 to November 2026',
+        summary: 'Developed ERP functionality for property management, leasing and revenue operations, including reusable interfaces and API integration.',
+      },
+    ],
+  },
+  {
+    id: 'rjay-digital-hub',
+    organisation: 'RJAY Digital Hub',
+    location: 'Dar es Salaam, Tanzania',
+    period: 'November 2024 to Present',
+    logo: '/brand/rj-logo.png',
+    summary: 'Software development, business operations and digital customer services.',
+    roles: [
+      {
+        id: 'founder',
+        title: 'Founder',
+        period: 'November 2024 to Present',
+        current: true,
+        summary: 'Founded and operate RJAY Digital Hub and RJAY Barbershop, overseeing business operations, branding and digital services.',
+      },
+      {
+        id: 'barbershop-platform',
+        title: 'Full Stack Developer',
+        period: 'November 2025 to November 2026',
+        summary: 'Built and deployed the barbershop booking platform for service selection, appointments, scheduling and customer records. Managed frontend and backend development, production hosting and product improvements.',
+      },
+    ],
+  },
+  {
+    id: 'kilindi-district-council',
     organisation: 'Kilindi District Council',
-    unit: 'ICT Unit',
-    location: 'Tanzania',
-    role: 'Field Practical Training',
-    // Two distinct placements in the same unit, never one continuous span.
-    periods: ['July 2024 to November 2024', 'July 2025 to November 2025'],
-    summary:
-      'Completed two separate practical training placements in the same ICT Unit. The second placement built directly on the experience gained during the first, deepening both technical support skills and understanding of public sector service delivery.',
-    responsibilities: [
-      'End user ICT support',
-      'Desktop and laptop software installation',
-      'Computer configuration',
-      'Biometric device support',
-      'Printer and office equipment troubleshooting',
-      'Asset identification and labelling',
-      'Data handling and digital records support',
-      'Routine network and device support',
-      'Staff technical assistance',
-      'Public sector ICT support',
+    location: 'Kilindi, Tanzania',
+    period: '2024 to 2026',
+    summary: 'Licensing software development and two separate ICT field placements.',
+    roles: [
+      {
+        id: 'kdilms',
+        title: 'Full Stack Developer | KDILMS',
+        period: 'November 2025 to November 2026',
+        summary: 'Developed and deployed KDILMS for trader registration, licensing, renewals, debt tracking, SMS reminders and reporting. Implemented access controls, audit trails and data validation, and managed production deployment.',
+      },
+      {
+        id: 'ict-intern-2025',
+        title: 'ICT Intern',
+        period: 'July 2025 to November 2025',
+        summary: 'Delivered technical support for council operations, resolving workstation, printer and network issues. Configured software and biometric devices, and maintained ICT asset and digital records.',
+      },
+      {
+        id: 'ict-intern-2024',
+        title: 'ICT Intern',
+        period: 'July 2024 to November 2024',
+        summary: 'Provided user support, software installation, computer and printer configuration, network troubleshooting and biometric device assistance.',
+      },
     ],
   },
 ]
 
 export const entrepreneurship = {
-  title: 'Founder & Operator',
-  organisation: 'RJAY Digital Hub & RJAY Barbershop',
-  period: '2024 to Present',
-  intro:
-    'Operating these businesses has built practical, hands on experience across the full lifecycle of running real digital and service products.',
-  areas: [
-    'Customer service',
-    'Staff coordination',
-    'Budgeting',
-    'Branding',
-    'Digital marketing',
-    'Service operations',
-    'Technology adoption',
-    'Problem solving',
-    'Business process improvement',
-    'Decision making',
-    'Product thinking',
-  ],
+  title: 'Founder',
+  organisation: 'RJAY Digital Hub and RJAY Barbershop',
+  period: 'November 2024 to Present',
+  intro: 'Founded and operate digital and service businesses, combining software development with customer experience, branding and daily operations.',
+  areas: ['Software development', 'Business operations', 'Customer experience', 'Branding', 'Digital marketing'],
 }
 
 export const training: TrainingItem[] = [

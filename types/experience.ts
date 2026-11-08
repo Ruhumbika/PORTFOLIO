@@ -1,12 +1,19 @@
-export interface ExperienceItem {
-  organisation: string
-  unit?: string
-  location: string
-  role: string
-  /** Kept as an array so distinct placements are never merged into one span. */
-  periods: string[]
+export interface ExperienceRole {
+  id: string
+  title: string
+  period: string
   summary: string
-  responsibilities: string[]
+  current?: boolean
+}
+
+export interface ExperienceGroup {
+  id: string
+  organisation: string
+  location: string
+  period: string
+  summary: string
+  logo?: string
+  roles: ExperienceRole[]
 }
 
 export interface EducationItem {

@@ -354,7 +354,7 @@ export const projects: Project[] = [
       {
         label: 'RJAY Barbershop haircut gallery and booking interface',
         src: '/projects/rjay-barbershop/mobile-video-poster.jpg',
-        videoSrc: '/projects/rjay-barbershop/mobile-demo.webm',
+        videoSrc: '/projects/rjay-barbershop/booking-demo.mp4',
         ratio: 'screen',
       },
       {
